@@ -1,0 +1,431 @@
+{
+  "C01": {
+    "improve": [
+      14
+    ],
+    "worsen": [
+      1,
+      2
+    ],
+    "principles_cited": [
+      1,
+      40,
+      8,
+      15,
+      26
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C02": {
+    "improve": [
+      15
+    ],
+    "worsen": [
+      1,
+      7
+    ],
+    "principles_cited": [
+      19,
+      5,
+      34,
+      31,
+      10
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C03": {
+    "improve": [
+      9,
+      39
+    ],
+    "worsen": [
+      27,
+      29
+    ],
+    "principles_cited": [
+      10,
+      35,
+      28,
+      32,
+      1
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C04": {
+    "improve": [
+      29
+    ],
+    "worsen": [
+      25,
+      39
+    ],
+    "principles_cited": [
+      32,
+      18,
+      26,
+      28,
+      10
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C05": {
+    "improve": [
+      17
+    ],
+    "worsen": [
+      31
+    ],
+    "principles_cited": [
+      22,
+      35,
+      2,
+      24
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C06": {
+    "improve": [
+      35
+    ],
+    "worsen": [
+      36,
+      33
+    ],
+    "principles_cited": [
+      15,
+      29,
+      37,
+      28,
+      34
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C07": {
+    "improve": [
+      38,
+      39
+    ],
+    "worsen": [
+      36,
+      26
+    ],
+    "principles_cited": [
+      24,
+      35,
+      15,
+      10,
+      13
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C08": {
+    "improve": [
+      2,
+      1
+    ],
+    "worsen": [
+      14,
+      11
+    ],
+    "principles_cited": [
+      10,
+      40,
+      28,
+      27,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C09": {
+    "improve": [
+      18
+    ],
+    "worsen": [
+      20,
+      22,
+      21
+    ],
+    "principles_cited": [
+      32,
+      1,
+      35,
+      15,
+      13
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C10": {
+    "improve": [
+      28
+    ],
+    "worsen": [
+      33,
+      36
+    ],
+    "principles_cited": [
+      34,
+      1,
+      13,
+      17
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C11": {
+    "improve": [
+      34
+    ],
+    "worsen": [
+      27,
+      36
+    ],
+    "principles_cited": [
+      11,
+      1,
+      10,
+      16,
+      35
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C12": {
+    "improve": [
+      26,
+      2
+    ],
+    "worsen": [
+      14,
+      27
+    ],
+    "principles_cited": [
+      10,
+      28,
+      3,
+      14,
+      35
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C13": {
+    "improve": [
+      1,
+      2
+    ],
+    "worsen": [
+      14,
+      27
+    ],
+    "principles_cited": [
+      3,
+      10,
+      28,
+      27,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C14": {
+    "improve": [
+      9,
+      39
+    ],
+    "worsen": [
+      24,
+      27
+    ],
+    "principles_cited": [
+      13,
+      35,
+      26,
+      11,
+      27
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C15": {
+    "improve": [
+      21,
+      10
+    ],
+    "worsen": [
+      31
+    ],
+    "principles_cited": [
+      2,
+      35,
+      18,
+      13,
+      3
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C16": {
+    "improve": [
+      39,
+      9
+    ],
+    "worsen": [
+      20,
+      22
+    ],
+    "principles_cited": [
+      35,
+      1,
+      28,
+      10,
+      29
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C17": {
+    "improve": [
+      3
+    ],
+    "worsen": [
+      12,
+      13,
+      14
+    ],
+    "principles_cited": [
+      8,
+      1,
+      29,
+      34
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C18": {
+    "improve": [
+      26,
+      1
+    ],
+    "worsen": [
+      14,
+      27
+    ],
+    "principles_cited": [
+      3,
+      40,
+      27,
+      28,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C19": {
+    "improve": [
+      9,
+      39
+    ],
+    "worsen": [
+      23,
+      15,
+      13
+    ],
+    "principles_cited": [
+      35,
+      28,
+      10,
+      18,
+      3
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C20": {
+    "improve": [
+      35,
+      12
+    ],
+    "worsen": [
+      14,
+      27
+    ],
+    "principles_cited": [
+      35,
+      10,
+      40,
+      3,
+      32
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  }
+}

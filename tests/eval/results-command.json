@@ -1,0 +1,426 @@
+{
+  "C01": {
+    "improve": [
+      14
+    ],
+    "worsen": [
+      1,
+      26
+    ],
+    "principles_cited": [
+      40,
+      1,
+      15,
+      8,
+      29
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C02": {
+    "improve": [
+      15
+    ],
+    "worsen": [
+      1,
+      7
+    ],
+    "principles_cited": [
+      19,
+      34,
+      31,
+      5,
+      10
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C03": {
+    "improve": [
+      9,
+      39
+    ],
+    "worsen": [
+      27,
+      29
+    ],
+    "principles_cited": [
+      10,
+      35,
+      28,
+      32,
+      1
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C04": {
+    "improve": [
+      29
+    ],
+    "worsen": [
+      9,
+      25,
+      39
+    ],
+    "principles_cited": [
+      32,
+      10,
+      28,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C05": {
+    "improve": [
+      17
+    ],
+    "worsen": [
+      31
+    ],
+    "principles_cited": [
+      22,
+      35,
+      2,
+      24
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C06": {
+    "improve": [
+      35
+    ],
+    "worsen": [
+      36,
+      33
+    ],
+    "principles_cited": [
+      15,
+      28,
+      34,
+      29,
+      37
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C07": {
+    "improve": [
+      38
+    ],
+    "worsen": [
+      36,
+      26
+    ],
+    "principles_cited": [
+      15,
+      24,
+      10,
+      35,
+      13
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C08": {
+    "improve": [
+      2,
+      26
+    ],
+    "worsen": [
+      14,
+      11
+    ],
+    "principles_cited": [
+      10,
+      14,
+      13,
+      29,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C09": {
+    "improve": [
+      18
+    ],
+    "worsen": [
+      20,
+      21,
+      22
+    ],
+    "principles_cited": [
+      32,
+      1,
+      35,
+      15,
+      13
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C10": {
+    "improve": [
+      28
+    ],
+    "worsen": [
+      33,
+      36
+    ],
+    "principles_cited": [
+      34,
+      1,
+      13,
+      17,
+      27
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C11": {
+    "improve": [
+      34,
+      35
+    ],
+    "worsen": [
+      27,
+      15
+    ],
+    "principles_cited": [
+      11,
+      1,
+      35,
+      13,
+      10
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C12": {
+    "improve": [
+      26,
+      2
+    ],
+    "worsen": [
+      14,
+      13
+    ],
+    "principles_cited": [
+      10,
+      2,
+      40,
+      14,
+      35
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C13": {
+    "improve": [
+      2,
+      1
+    ],
+    "worsen": [
+      14,
+      27
+    ],
+    "principles_cited": [
+      3,
+      10,
+      28,
+      27,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C14": {
+    "improve": [
+      9,
+      39
+    ],
+    "worsen": [
+      24,
+      27
+    ],
+    "principles_cited": [
+      13,
+      35,
+      26,
+      11,
+      27
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C15": {
+    "improve": [
+      21,
+      10
+    ],
+    "worsen": [
+      31
+    ],
+    "principles_cited": [
+      2,
+      35,
+      18,
+      13,
+      3
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C16": {
+    "improve": [
+      39,
+      9
+    ],
+    "worsen": [
+      20,
+      21
+    ],
+    "principles_cited": [
+      35,
+      1,
+      20,
+      10,
+      19
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C17": {
+    "improve": [
+      3
+    ],
+    "worsen": [
+      14,
+      13,
+      12
+    ],
+    "principles_cited": [
+      8,
+      1,
+      29,
+      34
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C18": {
+    "improve": [
+      26
+    ],
+    "worsen": [
+      14,
+      30,
+      27
+    ],
+    "principles_cited": [
+      35,
+      14,
+      34,
+      10,
+      33
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C19": {
+    "improve": [
+      9,
+      39
+    ],
+    "worsen": [
+      15,
+      23,
+      13
+    ],
+    "principles_cited": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C20": {
+    "improve": [
+      35,
+      12
+    ],
+    "worsen": [
+      14,
+      13
+    ],
+    "principles_cited": [
+      35,
+      30,
+      14,
+      3,
+      32
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  }
+}

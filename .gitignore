@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# blind-eval raw streams contain local paths and session ids
+tests/eval/**/raw/*.jsonl

@@ -23,6 +23,8 @@ To try it from a local checkout: `claude --plugin-dir .`
 /triz Raising the top speed of my e-scooter drains the battery too fast
 ```
 
+If `/triz` is not recognised in your session, use the full name `/triz-decider:triz`.
+
 You can also just describe a trade-off in plain language (English or Korean); the `triz-analysis` skill activates on its own. The answer follows the language you write in.
 
 The flow:
@@ -60,7 +62,7 @@ The skill folder is self-contained (`data/` and `scripts/` live inside it), so i
 | --- | --- |
 | Contradiction matrix | 1239 cells cross-checked against independent public sources. **9 disputed cells are withheld** and reported as `unverified_cell` warnings instead of guessed. Not yet compared with a printed original. |
 | 39 parameters, 40 principles | Numbers and names cross-checked; definitions, sub-principles and examples written for this project |
-| Mapping accuracy | 20 eval cases written; **accuracy not yet measured** (see `tests/eval/results-v0.1.md`) |
+| Mapping accuracy | 20 eval cases, blind run: Top-3 hit rate 20/20, 0 hallucinated principle numbers. Small and easy set with author-written expected values, so treat it as a smoke test, not a benchmark (see `tests/eval/results-v0.1.md`) |
 
 Sources, method and the disputed cells are listed in [DATA_SOURCES.md](DATA_SOURCES.md). TRIZ output is a source of ideas, not a verdict: check the mapping and validate ideas before acting on them.
 

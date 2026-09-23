@@ -1,0 +1,236 @@
+{
+  "C10": {
+    "improve": [
+      28
+    ],
+    "worsen": [
+      33,
+      36
+    ],
+    "principles_cited": [
+      34,
+      1,
+      13,
+      17,
+      27
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C11": {
+    "improve": [
+      34,
+      35
+    ],
+    "worsen": [
+      27,
+      15
+    ],
+    "principles_cited": [
+      11,
+      1,
+      35,
+      13,
+      10
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C12": {
+    "improve": [
+      26,
+      2
+    ],
+    "worsen": [
+      14,
+      13
+    ],
+    "principles_cited": [
+      10,
+      2,
+      40,
+      14,
+      35
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C13": {
+    "improve": [
+      2,
+      1
+    ],
+    "worsen": [
+      14,
+      27
+    ],
+    "principles_cited": [
+      3,
+      10,
+      28,
+      27,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C14": {
+    "improve": [
+      9,
+      39
+    ],
+    "worsen": [
+      24,
+      27
+    ],
+    "principles_cited": [
+      13,
+      35,
+      26,
+      11,
+      27
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C15": {
+    "improve": [
+      21,
+      10
+    ],
+    "worsen": [
+      31
+    ],
+    "principles_cited": [
+      2,
+      35,
+      18,
+      13,
+      3
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C16": {
+    "improve": [
+      39,
+      9
+    ],
+    "worsen": [
+      20,
+      21
+    ],
+    "principles_cited": [
+      35,
+      1,
+      20,
+      10,
+      19
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C17": {
+    "improve": [
+      3
+    ],
+    "worsen": [
+      14,
+      13,
+      12
+    ],
+    "principles_cited": [
+      8,
+      1,
+      29,
+      34
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C18": {
+    "improve": [
+      26
+    ],
+    "worsen": [
+      14,
+      30,
+      27
+    ],
+    "principles_cited": [
+      35,
+      14,
+      34,
+      10,
+      33
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C19": {
+    "improve": [
+      9,
+      39
+    ],
+    "worsen": [
+      15,
+      23,
+      13
+    ],
+    "principles_cited": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  },
+  "C20": {
+    "improve": [
+      35,
+      12
+    ],
+    "worsen": [
+      14,
+      13
+    ],
+    "principles_cited": [
+      35,
+      30,
+      14,
+      3,
+      32
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0
+  }
+}
