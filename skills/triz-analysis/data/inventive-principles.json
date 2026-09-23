@@ -1,0 +1,686 @@
+{
+  "principles": [
+    {
+      "id": 1,
+      "name": "Segmentation",
+      "name_ko": "분할",
+      "description": "Divide an object into independent parts; make an object sectional; increase the degree of fragmentation.",
+      "description_ko": "물체를 독립적인 부분으로 나눈다. 물체를 분리형으로 만든다. 세분화 정도를 높인다.",
+      "examples": [
+        "Sectional furniture that can be reconfigured",
+        "Modular computer systems",
+        "Perforated lines on paper for easy tearing",
+        "Blinds instead of curtains"
+      ],
+      "examples_ko": [
+        "재구성 가능한 조립식 가구",
+        "모듈식 컴퓨터 시스템",
+        "쉽게 찢을 수 있는 종이의 천공선",
+        "커튼 대신 블라인드"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Taking Out (Extraction)",
+      "name_ko": "추출",
+      "description": "Separate an interfering part or property from an object, or extract only the necessary part/property.",
+      "description_ko": "물체에서 방해되는 부분이나 특성을 분리하거나, 필요한 부분/특성만 추출한다.",
+      "examples": [
+        "Noise-canceling headphones extract unwanted sound",
+        "Air conditioner compressor moved outside",
+        "Separate car alarm from the car body"
+      ],
+      "examples_ko": [
+        "노이즈 캔슬링 헤드폰이 원치 않는 소리를 제거",
+        "에어컨 압축기를 외부로 이동",
+        "자동차 알람을 차체와 분리"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Local Quality",
+      "name_ko": "국소적 품질",
+      "description": "Transition from homogeneous structure to heterogeneous. Make each part function in conditions most suitable for its operation.",
+      "description_ko": "균일한 구조에서 불균일한 구조로 전환한다. 각 부분이 최적 조건에서 기능하도록 만든다.",
+      "examples": [
+        "Pencil with eraser at the end",
+        "Graduated temperature zones in a refrigerator",
+        "Multi-layer clothing for different body parts"
+      ],
+      "examples_ko": [
+        "끝에 지우개가 달린 연필",
+        "냉장고의 온도 구역 분리",
+        "신체 부위별 다층 의복"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Asymmetry",
+      "name_ko": "비대칭",
+      "description": "If an object is symmetrical, introduce asymmetry. If already asymmetrical, increase the degree of asymmetry.",
+      "description_ko": "물체가 대칭이라면 비대칭을 도입한다. 이미 비대칭이라면 비대칭 정도를 높인다.",
+      "examples": [
+        "Asymmetric car tires for better handling",
+        "Asymmetric mixing paddles",
+        "Left/right shoes designed differently for ergonomics"
+      ],
+      "examples_ko": [
+        "더 나은 핸들링을 위한 비대칭 자동차 타이어",
+        "비대칭 믹싱 패들",
+        "인체공학적으로 다르게 설계된 왼쪽/오른쪽 신발"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Merging",
+      "name_ko": "통합",
+      "description": "Bring closer in space identical or similar objects or operations; assemble identical or similar parts to perform parallel operations.",
+      "description_ko": "공간적으로 동일하거나 유사한 물체나 작업을 가깝게 한다. 병렬 작업을 수행하기 위해 동일하거나 유사한 부품을 조합한다.",
+      "examples": [
+        "Multi-core processors",
+        "Combine harvester merges harvesting operations",
+        "Bifocal eyeglasses"
+      ],
+      "examples_ko": [
+        "멀티코어 프로세서",
+        "수확 작업을 통합하는 콤바인 수확기",
+        "이중 초점 안경"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Universality",
+      "name_ko": "다기능성",
+      "description": "Make a part or object perform multiple functions; eliminate the need for other parts.",
+      "description_ko": "부품이나 물체가 여러 기능을 수행하게 한다. 다른 부품의 필요성을 제거한다.",
+      "examples": [
+        "Swiss Army knife",
+        "Smartphone replacing camera, GPS, music player",
+        "Sofa bed"
+      ],
+      "examples_ko": [
+        "스위스 아미 나이프",
+        "카메라, GPS, 음악 플레이어를 대체하는 스마트폰",
+        "소파 베드"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Nested Doll",
+      "name_ko": "포개기",
+      "description": "Place one object inside another. Pass one object through a cavity in another.",
+      "description_ko": "하나의 물체를 다른 물체 안에 넣는다. 하나의 물체를 다른 물체의 공동을 통해 통과시킨다.",
+      "examples": [
+        "Telescoping antenna",
+        "Retractable ballpoint pen",
+        "Nesting measuring cups"
+      ],
+      "examples_ko": [
+        "신축식 안테나",
+        "수납식 볼펜",
+        "겹쳐 쌓이는 계량컵"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Anti-Weight (Counterweight)",
+      "name_ko": "평형추",
+      "description": "Compensate for the weight of an object by merging it with another object that provides a lifting force.",
+      "description_ko": "들어올리는 힘을 제공하는 다른 물체와 결합하여 물체의 무게를 보상한다.",
+      "examples": [
+        "Counterweight in elevators",
+        "Helium balloons to lift advertising banners",
+        "Counterweighted crane arms"
+      ],
+      "examples_ko": [
+        "엘리베이터의 평형추",
+        "광고 현수막을 들어올리는 헬륨 풍선",
+        "무게 균형 잡힌 크레인 암"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Preliminary Anti-Action",
+      "name_ko": "사전 반대 조치",
+      "description": "Pre-stress an object contrary to known undesirable working stress.",
+      "description_ko": "알려진 바람직하지 않은 작동 응력에 반하는 사전 응력을 가한다.",
+      "examples": [
+        "Pre-stressed concrete",
+        "Anti-rust coating before painting",
+        "Pre-vaccination before exposure to disease"
+      ],
+      "examples_ko": [
+        "프리스트레스트 콘크리트",
+        "도장 전 방청 코팅",
+        "질병 노출 전 예방 접종"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Preliminary Action",
+      "name_ko": "사전 조치",
+      "description": "Perform the required change of an object completely or partially in advance. Pre-arrange objects so they can come into action from the most convenient position.",
+      "description_ko": "물체의 필요한 변화를 미리 완전히 또는 부분적으로 수행한다. 가장 편리한 위치에서 작동할 수 있도록 물체를 미리 배치한다.",
+      "examples": [
+        "Pre-mixed concrete delivered to construction sites",
+        "Prefabricated building components",
+        "Pre-addressed envelopes"
+      ],
+      "examples_ko": [
+        "건설 현장에 배달되는 레미콘",
+        "조립식 건물 구성 요소",
+        "미리 주소가 적힌 봉투"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Beforehand Cushioning",
+      "name_ko": "사전 대비",
+      "description": "Prepare emergency means in advance to compensate for the relatively low reliability of an object.",
+      "description_ko": "물체의 상대적으로 낮은 신뢰성을 보상하기 위해 비상 수단을 미리 준비한다.",
+      "examples": [
+        "Airbags in cars",
+        "Backup parachute",
+        "Redundant computer systems in aircraft"
+      ],
+      "examples_ko": [
+        "자동차의 에어백",
+        "예비 낙하산",
+        "항공기의 이중 컴퓨터 시스템"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Equipotentiality",
+      "name_ko": "등퍼텐셜",
+      "description": "Change the operating conditions so that an object need not be raised or lowered.",
+      "description_ko": "물체를 올리거나 내릴 필요가 없도록 작동 조건을 변경한다.",
+      "examples": [
+        "Pit for car maintenance (no need to lift car)",
+        "Canal locks maintaining water level",
+        "Spring-loaded tool holders at work height"
+      ],
+      "examples_ko": [
+        "자동차를 들어올릴 필요 없는 정비용 구덩이",
+        "수위를 유지하는 운하 갑문",
+        "작업 높이에서의 스프링 장착 공구 홀더"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "The Other Way Round (Inversion)",
+      "name_ko": "역발상",
+      "description": "Invert the action used to solve the problem. Make moving parts fixed and fixed parts movable. Turn the object upside down.",
+      "description_ko": "문제 해결에 사용되는 작업을 역으로 한다. 움직이는 부품을 고정하고 고정된 부품을 움직이게 한다. 물체를 뒤집는다.",
+      "examples": [
+        "Treadmill (person stationary, ground moves)",
+        "Wind tunnel (object stationary, air moves)",
+        "Inverted microscope"
+      ],
+      "examples_ko": [
+        "런닝머신 (사람은 고정, 바닥이 움직임)",
+        "풍동 (물체는 고정, 공기가 움직임)",
+        "역상 현미경"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Spheroidality (Curvature)",
+      "name_ko": "구면화",
+      "description": "Move from flat surfaces to spherical ones, from linear parts to curvilinear. Use rollers, balls, spirals. Transition from linear to rotational motion.",
+      "description_ko": "평면에서 구면으로, 선형 부품에서 곡선형으로 이동한다. 롤러, 볼, 나선을 사용한다. 선형에서 회전 운동으로 전환한다.",
+      "examples": [
+        "Computer mouse using ball/laser tracking",
+        "Arched bridges distributing load",
+        "Screw conveyor"
+      ],
+      "examples_ko": [
+        "볼/레이저 추적을 사용하는 컴퓨터 마우스",
+        "하중을 분산하는 아치형 다리",
+        "나사형 컨베이어"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Dynamics",
+      "name_ko": "역동성",
+      "description": "Allow characteristics of an object, external environment, or process to change to be optimal at each stage. Divide an object into parts capable of moving relative to each other.",
+      "description_ko": "물체, 외부 환경 또는 프로세스의 특성이 각 단계에서 최적이 되도록 변경할 수 있게 한다. 서로 상대적으로 이동할 수 있는 부분으로 물체를 나눈다.",
+      "examples": [
+        "Adjustable car seat",
+        "Flexible manufacturing systems",
+        "Articulated buses"
+      ],
+      "examples_ko": [
+        "조절 가능한 자동차 시트",
+        "유연한 제조 시스템",
+        "굴절 버스"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Partial or Excessive Action",
+      "name_ko": "과부족 조치",
+      "description": "If 100 percent of an objective is hard to achieve, use slightly more or slightly less of the same method.",
+      "description_ko": "목표의 100%를 달성하기 어렵다면, 동일한 방법을 약간 더 또는 약간 덜 사용한다.",
+      "examples": [
+        "Overspray then remove excess in painting",
+        "Grind slightly more than needed, then measure",
+        "Fill a container slightly over, then level off"
+      ],
+      "examples_ko": [
+        "도장 시 과도하게 분사 후 초과분 제거",
+        "필요량보다 약간 더 연마한 후 측정",
+        "용기를 약간 넘치게 채운 후 수평 맞추기"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Another Dimension",
+      "name_ko": "다른 차원으로",
+      "description": "Move an object into a two- or three-dimensional space. Use multi-layered arrangement. Tilt or reorient the object.",
+      "description_ko": "물체를 2차원 또는 3차원 공간으로 이동한다. 다층 배열을 사용한다. 물체를 기울이거나 방향을 바꾼다.",
+      "examples": [
+        "Multi-story parking garage",
+        "Spiral staircase saving floor space",
+        "3D printing adding the Z dimension"
+      ],
+      "examples_ko": [
+        "다층 주차장",
+        "바닥 공간을 절약하는 나선형 계단",
+        "Z 차원을 추가하는 3D 프린팅"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Mechanical Vibration",
+      "name_ko": "기계적 진동",
+      "description": "Cause an object to oscillate or vibrate. If oscillation exists, increase its frequency. Use resonance frequency.",
+      "description_ko": "물체를 진동하거나 떨리게 한다. 진동이 있으면 주파수를 높인다. 공진 주파수를 사용한다.",
+      "examples": [
+        "Ultrasonic cleaning",
+        "Vibrating concrete for better settling",
+        "Ultrasonic welding"
+      ],
+      "examples_ko": [
+        "초음파 세척",
+        "더 나은 침강을 위한 콘크리트 진동",
+        "초음파 용접"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Periodic Action",
+      "name_ko": "주기적 조치",
+      "description": "Replace a continuous action with a periodic (impulse) one. If action is already periodic, change frequency. Use pauses between impulses.",
+      "description_ko": "연속적인 동작을 주기적(임펄스) 동작으로 대체한다. 이미 주기적이라면 주파수를 변경한다. 임펄스 사이의 휴지를 이용한다.",
+      "examples": [
+        "Intermittent windshield wipers",
+        "Pulsed laser instead of continuous beam",
+        "Strobe light for inspection"
+      ],
+      "examples_ko": [
+        "간헐식 와이퍼",
+        "연속 빔 대신 펄스 레이저",
+        "검사용 스트로보 조명"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Continuity of Useful Action",
+      "name_ko": "유용한 작동의 지속",
+      "description": "Carry on work continuously. Make all parts of an object work at full load all the time. Eliminate idle and intermediate motions.",
+      "description_ko": "작업을 지속적으로 수행한다. 물체의 모든 부분이 항상 최대 부하로 작동하게 한다. 유휴 및 중간 동작을 제거한다.",
+      "examples": [
+        "Flywheel storing energy during idle",
+        "Continuous casting in steel manufacturing",
+        "Background task processing in computers"
+      ],
+      "examples_ko": [
+        "유휴 시 에너지를 저장하는 플라이휠",
+        "철강 제조에서의 연속 주조",
+        "컴퓨터의 백그라운드 작업 처리"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Skipping (Rushing Through)",
+      "name_ko": "고속 처리",
+      "description": "Conduct a process or certain stages at high speed.",
+      "description_ko": "프로세스 또는 특정 단계를 고속으로 수행한다.",
+      "examples": [
+        "High-speed cutting to avoid heat buildup",
+        "Flash photography to freeze motion",
+        "Microwave cooking"
+      ],
+      "examples_ko": [
+        "열 축적을 피하기 위한 고속 절삭",
+        "동작을 정지시키는 플래시 사진",
+        "전자레인지 조리"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Blessing in Disguise",
+      "name_ko": "전화위복",
+      "description": "Use harmful factors to obtain a positive effect. Eliminate the primary harmful action by adding it to another harmful action.",
+      "description_ko": "유해한 요인을 사용하여 긍정적인 효과를 얻는다. 다른 유해한 작용에 더함으로써 주요 유해한 작용을 제거한다.",
+      "examples": [
+        "Using waste heat for space heating",
+        "Composting organic waste into fertilizer",
+        "Recycling plastic waste into new products"
+      ],
+      "examples_ko": [
+        "공간 난방을 위한 폐열 사용",
+        "유기 폐기물을 비료로 퇴비화",
+        "플라스틱 폐기물을 새 제품으로 재활용"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Feedback",
+      "name_ko": "피드백",
+      "description": "Introduce feedback. If feedback already exists, change its magnitude or influence.",
+      "description_ko": "피드백을 도입한다. 피드백이 이미 있으면 크기나 영향을 변경한다.",
+      "examples": [
+        "Thermostat temperature control",
+        "Automatic gain control in amplifiers",
+        "Quality control loops in manufacturing"
+      ],
+      "examples_ko": [
+        "온도 조절기 온도 제어",
+        "증폭기의 자동 이득 제어",
+        "제조에서의 품질 관리 루프"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Intermediary",
+      "name_ko": "매개물",
+      "description": "Use an intermediary carrier article or intermediary process.",
+      "description_ko": "중간 매개체나 중간 프로세스를 사용한다.",
+      "examples": [
+        "Catalyst in chemical reactions",
+        "Cutting fluid in machining",
+        "Transformer in electrical systems"
+      ],
+      "examples_ko": [
+        "화학 반응에서의 촉매",
+        "기계 가공에서의 절삭유",
+        "전기 시스템에서의 변압기"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Self-Service",
+      "name_ko": "셀프서비스",
+      "description": "Make an object serve itself by performing auxiliary and repair functions. Use waste resources, energy, or substances.",
+      "description_ko": "보조 및 수리 기능을 수행함으로써 물체가 스스로를 서비스하게 한다. 낭비되는 자원, 에너지 또는 물질을 사용한다.",
+      "examples": [
+        "Self-sharpening cutting tools",
+        "Self-cleaning oven",
+        "Self-healing materials"
+      ],
+      "examples_ko": [
+        "자가 연마 절삭 공구",
+        "자가 청소 오븐",
+        "자가 치유 소재"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Copying",
+      "name_ko": "복사",
+      "description": "Instead of an unavailable, expensive, or fragile object, use simpler and inexpensive copies. Replace a physical object with an optical copy (image).",
+      "description_ko": "이용할 수 없거나 비싸거나 취약한 물체 대신 더 간단하고 저렴한 복사본을 사용한다. 물리적 물체를 광학적 복사본(이미지)으로 대체한다.",
+      "examples": [
+        "Virtual reality simulation instead of real environment",
+        "Crash test dummies instead of real people",
+        "Digital X-ray instead of film"
+      ],
+      "examples_ko": [
+        "실제 환경 대신 가상 현실 시뮬레이션",
+        "실제 사람 대신 충돌 테스트 더미",
+        "필름 대신 디지털 X선"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Cheap Short-Living",
+      "name_ko": "저가 단수명",
+      "description": "Replace an inexpensive short-living object for an expensive durable one, compromising certain qualities.",
+      "description_ko": "특정 품질을 타협하여 비싸고 내구성 있는 것을 저렴하고 수명이 짧은 것으로 대체한다.",
+      "examples": [
+        "Disposable syringes instead of sterilizable ones",
+        "Paper cups instead of glass",
+        "Cheap disposable cameras"
+      ],
+      "examples_ko": [
+        "멸균 가능한 것 대신 일회용 주사기",
+        "유리 대신 종이컵",
+        "저렴한 일회용 카메라"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Mechanics Substitution",
+      "name_ko": "역학 대체",
+      "description": "Replace a mechanical means with a sensory (optical, acoustic, thermal, olfactory) means.",
+      "description_ko": "기계적 수단을 감각적(광학, 음향, 열, 후각) 수단으로 대체한다.",
+      "examples": [
+        "Optical fiber instead of wire",
+        "Ultrasound instead of mechanical probe",
+        "Laser cutting instead of mechanical cutting"
+      ],
+      "examples_ko": [
+        "전선 대신 광섬유",
+        "기계적 탐침 대신 초음파",
+        "기계적 절삭 대신 레이저 절삭"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Pneumatics and Hydraulics",
+      "name_ko": "공압 및 수압",
+      "description": "Use gas and liquid parts of an object instead of solid parts. Use air or water cushions, hydrostatic and hydro-reactive principles.",
+      "description_ko": "고체 부품 대신 물체의 기체 및 액체 부품을 사용한다. 공기 또는 수막, 유압 및 수력 반응 원리를 사용한다.",
+      "examples": [
+        "Air-filled tires",
+        "Hydraulic brakes",
+        "Pneumatic packaging materials"
+      ],
+      "examples_ko": [
+        "공기 주입 타이어",
+        "유압 브레이크",
+        "공압 포장재"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Flexible Shells and Thin Films",
+      "name_ko": "유연한 껍질과 박막",
+      "description": "Use flexible shells and thin films instead of three-dimensional structures. Isolate the object from the external environment using flexible shells and thin films.",
+      "description_ko": "3차원 구조 대신 유연한 껍질과 박막을 사용한다. 유연한 껍질과 박막을 사용하여 물체를 외부 환경으로부터 격리한다.",
+      "examples": [
+        "Bubble wrap for packaging",
+        "Plastic food wrap",
+        "Inflatable structures"
+      ],
+      "examples_ko": [
+        "포장용 에어캡",
+        "플라스틱 식품 랩",
+        "공기 주입식 구조물"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Porous Materials",
+      "name_ko": "다공성 소재",
+      "description": "Make an object porous or use supplementary porous elements. If an object is already porous, use the pores to introduce a useful substance or function.",
+      "description_ko": "물체를 다공성으로 만들거나 보완적인 다공성 요소를 사용한다. 이미 다공성이라면 기공을 사용하여 유용한 물질이나 기능을 도입한다.",
+      "examples": [
+        "Aerogel insulation material",
+        "Porous bearing with lubricant",
+        "Gore-Tex fabric (waterproof but breathable)"
+      ],
+      "examples_ko": [
+        "에어로겔 단열재",
+        "윤활제가 있는 다공성 베어링",
+        "고어텍스 원단 (방수이지만 통기성)"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Color Changes",
+      "name_ko": "색상 변화",
+      "description": "Change the color of an object or its environment. Change the transparency of an object. Use colored additives to observe otherwise invisible objects or processes.",
+      "description_ko": "물체 또는 그 환경의 색상을 변경한다. 물체의 투명도를 변경한다. 색상 첨가제를 사용하여 그렇지 않으면 보이지 않는 물체나 프로세스를 관찰한다.",
+      "examples": [
+        "UV-reactive dyes to detect leaks",
+        "Photochromic lenses in sunglasses",
+        "Color-coded pipes in industrial settings"
+      ],
+      "examples_ko": [
+        "누출 감지를 위한 UV 반응 염료",
+        "선글라스의 포토크로믹 렌즈",
+        "산업 환경에서의 색상 코드 파이프"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Homogeneity",
+      "name_ko": "동질성",
+      "description": "Make objects interacting with a given object of the same material.",
+      "description_ko": "주어진 물체와 상호 작용하는 물체를 동일한 재료로 만든다.",
+      "examples": [
+        "Ice tray made of ice (same material as ice)",
+        "Biodegradable packaging made from food materials",
+        "Dissolving surgical sutures"
+      ],
+      "examples_ko": [
+        "얼음으로 만든 얼음 트레이(얼음과 같은 재료)",
+        "식품 재료로 만든 생분해성 포장",
+        "용해되는 수술용 봉합사"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Discarding and Recovering",
+      "name_ko": "폐기 및 회수",
+      "description": "Make portions of an object that have fulfilled their functions disappear or allow them to restore themselves directly during operation.",
+      "description_ko": "기능을 완수한 물체 부분을 사라지게 하거나 작동 중에 직접 스스로 복원할 수 있게 한다.",
+      "examples": [
+        "Dissolving stitches in surgery",
+        "Rocket stages that separate and fall away",
+        "Sacrificial anode in corrosion protection"
+      ],
+      "examples_ko": [
+        "수술의 용해되는 봉합사",
+        "분리되어 떨어지는 로켓 단계",
+        "부식 방지의 희생 양극"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Parameter Changes",
+      "name_ko": "매개변수 변화",
+      "description": "Change an object's physical state. Change concentration or consistency. Change the degree of flexibility. Change the temperature.",
+      "description_ko": "물체의 물리적 상태를 변경한다. 농도나 일관성을 변경한다. 유연성 정도를 변경한다. 온도를 변경한다.",
+      "examples": [
+        "Liquid crystal displays changing state",
+        "Shape memory alloys",
+        "Powdered milk (concentrated form)"
+      ],
+      "examples_ko": [
+        "상태를 변경하는 액정 디스플레이",
+        "형상 기억 합금",
+        "분말 우유 (농축 형태)"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Phase Transitions",
+      "name_ko": "상전이",
+      "description": "Use phenomena occurring during phase transitions such as volume changes and the absorption or liberation of heat.",
+      "description_ko": "부피 변화 및 열의 흡수 또는 방출과 같은 상전이 중에 발생하는 현상을 사용한다.",
+      "examples": [
+        "Heat pipe using liquid-vapor phase change",
+        "Cooling via evaporation",
+        "Steam engine using water-steam transition"
+      ],
+      "examples_ko": [
+        "액체-증기 상변화를 이용한 열 파이프",
+        "증발을 통한 냉각",
+        "물-증기 전환을 사용하는 증기 기관"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Thermal Expansion",
+      "name_ko": "열팽창",
+      "description": "Use thermal expansion or contraction of materials. If thermal expansion is used, use multiple materials with different coefficients of thermal expansion.",
+      "description_ko": "재료의 열팽창 또는 수축을 사용한다. 열팽창을 사용하는 경우 열팽창 계수가 다른 여러 재료를 사용한다.",
+      "examples": [
+        "Bimetallic thermostat strip",
+        "Shrink-fit assembly",
+        "Thermal-expansion compensators in pipelines"
+      ],
+      "examples_ko": [
+        "바이메탈 온도 조절기 스트립",
+        "수축 끼워 맞춤",
+        "파이프라인의 열팽창 보상기"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Strong Oxidants",
+      "name_ko": "강한 산화제",
+      "description": "Replace ordinary air with oxygen-enriched air. Replace enriched air with pure oxygen. Expose air or oxygen to ionizing radiation. Use ionized oxygen.",
+      "description_ko": "일반 공기를 산소가 풍부한 공기로 대체한다. 농축 공기를 순수 산소로 대체한다. 이온화 방사선에 공기 또는 산소를 노출한다. 이온화 산소를 사용한다.",
+      "examples": [
+        "Oxygen-enriched cutting torches",
+        "Ozone treatment for water purification",
+        "Hyperbaric oxygen therapy"
+      ],
+      "examples_ko": [
+        "산소 농축 절단 토치",
+        "수질 정화를 위한 오존 처리",
+        "고압 산소 요법"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Inert Atmosphere",
+      "name_ko": "불활성 분위기",
+      "description": "Replace a normal environment with an inert one. Carry out the process in a vacuum.",
+      "description_ko": "정상 환경을 비활성 환경으로 교체한다. 진공에서 프로세스를 수행한다.",
+      "examples": [
+        "Argon welding to prevent oxidation",
+        "Nitrogen-flushed food packaging",
+        "Vacuum-sealed storage"
+      ],
+      "examples_ko": [
+        "산화 방지를 위한 아르곤 용접",
+        "질소 충전 식품 포장",
+        "진공 밀봉 저장"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Composite Materials",
+      "name_ko": "복합 재료",
+      "description": "Transition from homogeneous to composite materials.",
+      "description_ko": "균질 재료에서 복합 재료로 전환한다.",
+      "examples": [
+        "Carbon fiber reinforced polymers",
+        "Reinforced concrete",
+        "Fiberglass"
+      ],
+      "examples_ko": [
+        "탄소 섬유 강화 폴리머",
+        "철근 콘크리트",
+        "유리 섬유"
+      ]
+    }
+  ]
+}
