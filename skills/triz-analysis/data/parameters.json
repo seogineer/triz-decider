@@ -1,0 +1,474 @@
+{
+  "version": "0.1.0",
+  "source": "Altshuller 39 engineering parameters (names carried over from legacy data; definitions/keywords TODO)",
+  "parameters": [
+    {
+      "id": 1,
+      "name": {
+        "en": "Weight of moving object",
+        "ko": "움직이는 물체의 무게"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 2,
+      "name": {
+        "en": "Weight of stationary object",
+        "ko": "정지된 물체의 무게"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 3,
+      "name": {
+        "en": "Length of moving object",
+        "ko": "움직이는 물체의 길이"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 4,
+      "name": {
+        "en": "Length of stationary object",
+        "ko": "정지된 물체의 길이"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 5,
+      "name": {
+        "en": "Area of moving object",
+        "ko": "움직이는 물체의 면적"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 6,
+      "name": {
+        "en": "Area of stationary object",
+        "ko": "정지된 물체의 면적"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 7,
+      "name": {
+        "en": "Volume of moving object",
+        "ko": "움직이는 물체의 부피"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 8,
+      "name": {
+        "en": "Volume of stationary object",
+        "ko": "정지된 물체의 부피"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 9,
+      "name": {
+        "en": "Speed",
+        "ko": "속도"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 10,
+      "name": {
+        "en": "Force",
+        "ko": "힘"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 11,
+      "name": {
+        "en": "Stress or pressure",
+        "ko": "응력 또는 압력"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 12,
+      "name": {
+        "en": "Shape",
+        "ko": "형상"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 13,
+      "name": {
+        "en": "Stability of composition",
+        "ko": "구성의 안정성"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 14,
+      "name": {
+        "en": "Strength",
+        "ko": "강도"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 15,
+      "name": {
+        "en": "Duration of action (moving)",
+        "ko": "작동 지속 시간 (움직임)"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 16,
+      "name": {
+        "en": "Duration of action (stationary)",
+        "ko": "작동 지속 시간 (정지)"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 17,
+      "name": {
+        "en": "Temperature",
+        "ko": "온도"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 18,
+      "name": {
+        "en": "Illumination intensity",
+        "ko": "조명 강도"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 19,
+      "name": {
+        "en": "Use of energy (moving object)",
+        "ko": "에너지 사용 (움직이는 물체)"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 20,
+      "name": {
+        "en": "Use of energy (stationary)",
+        "ko": "에너지 사용 (정지)"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 21,
+      "name": {
+        "en": "Power",
+        "ko": "동력"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 22,
+      "name": {
+        "en": "Loss of energy",
+        "ko": "에너지 손실"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 23,
+      "name": {
+        "en": "Loss of substance",
+        "ko": "물질 손실"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 24,
+      "name": {
+        "en": "Loss of information",
+        "ko": "정보 손실"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 25,
+      "name": {
+        "en": "Loss of time",
+        "ko": "시간 손실"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 26,
+      "name": {
+        "en": "Quantity of substance/matter",
+        "ko": "물질/물체의 양"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 27,
+      "name": {
+        "en": "Reliability",
+        "ko": "신뢰성"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 28,
+      "name": {
+        "en": "Measurement accuracy",
+        "ko": "측정 정확도"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 29,
+      "name": {
+        "en": "Manufacturing precision",
+        "ko": "제조 정밀도"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 30,
+      "name": {
+        "en": "Object-generated harmful effects",
+        "ko": "물체 발생 유해 효과"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 31,
+      "name": {
+        "en": "Harmful side effects",
+        "ko": "유해한 부작용"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 32,
+      "name": {
+        "en": "Ease of manufacture",
+        "ko": "제조 용이성"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 33,
+      "name": {
+        "en": "Ease of operation",
+        "ko": "작동 용이성"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 34,
+      "name": {
+        "en": "Ease of repair",
+        "ko": "수리 용이성"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 35,
+      "name": {
+        "en": "Adaptability or versatility",
+        "ko": "적응성 또는 다용도성"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 36,
+      "name": {
+        "en": "Device complexity",
+        "ko": "장치 복잡성"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 37,
+      "name": {
+        "en": "Difficulty of detecting/measuring",
+        "ko": "감지/측정의 어려움"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 38,
+      "name": {
+        "en": "Extent of automation",
+        "ko": "자동화 정도"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    },
+    {
+      "id": 39,
+      "name": {
+        "en": "Productivity",
+        "ko": "생산성"
+      },
+      "definition": {
+        "en": "TODO",
+        "ko": "TODO"
+      },
+      "keywords": []
+    }
+  ]
+}

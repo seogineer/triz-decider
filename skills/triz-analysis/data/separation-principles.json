@@ -1,13 +1,30 @@
 {
-  "principles": [
+  "version": "0.1.0",
+  "source": "UNVERIFIED legacy data; related_principles list source unconfirmed (v0.2), see DATA_SOURCES.md",
+  "separations": [
     {
-      "id": "SP1",
-      "name": "Separation in Time",
-      "name_ko": "시간에 의한 분리",
-      "description": "The contradictory properties are separated by assigning them to different time periods. The object has property A at time T1 and property B at time T2.",
-      "description_ko": "모순된 특성을 서로 다른 시간대에 할당하여 분리한다. 물체는 시간 T1에는 특성 A를, 시간 T2에는 특성 B를 가진다.",
-      "when_to_use": "When the contradictory requirements exist at different times or phases of operation.",
-      "when_to_use_ko": "모순된 요구사항이 서로 다른 시간이나 작동 단계에 존재할 때 사용한다.",
+      "id": "time",
+      "name": {
+        "en": "Separation in Time",
+        "ko": "시간에 의한 분리"
+      },
+      "question": {
+        "ko": "TODO"
+      },
+      "when_to_use": {
+        "en": "When the contradictory requirements exist at different times or phases of operation.",
+        "ko": "모순된 요구사항이 서로 다른 시간이나 작동 단계에 존재할 때 사용한다."
+      },
+      "related_principles": [
+        9,
+        10,
+        11,
+        15,
+        16,
+        19,
+        20,
+        21
+      ],
       "examples": [
         {
           "problem": "A bridge needs to be strong (for vehicles) but also allow ships to pass (needs to open)",
@@ -27,17 +44,33 @@
           "problem_ko": "커피는 서빙 시 뜨거워야 하지만 즉시 마실 수 있을 만큼 시원해야 함",
           "solution_ko": "뜨겁게 서빙하되, 마시기 전에 몇 분간 식힘"
         }
-      ],
-      "related_inventive_principles": [9, 10, 11, 15, 16, 19, 20, 21]
+      ]
     },
     {
-      "id": "SP2",
-      "name": "Separation in Space",
-      "name_ko": "공간에 의한 분리",
-      "description": "The contradictory properties are separated by assigning them to different parts of the system. Different zones have different properties.",
-      "description_ko": "모순된 특성을 시스템의 서로 다른 부분에 할당하여 분리한다. 서로 다른 구역은 서로 다른 특성을 가진다.",
-      "when_to_use": "When the contradictory requirements are needed in different locations or zones.",
-      "when_to_use_ko": "모순된 요구사항이 서로 다른 위치나 구역에서 필요할 때 사용한다.",
+      "id": "space",
+      "name": {
+        "en": "Separation in Space",
+        "ko": "공간에 의한 분리"
+      },
+      "question": {
+        "ko": "TODO"
+      },
+      "when_to_use": {
+        "en": "When the contradictory requirements are needed in different locations or zones.",
+        "ko": "모순된 요구사항이 서로 다른 위치나 구역에서 필요할 때 사용한다."
+      },
+      "related_principles": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        13,
+        17,
+        24,
+        26,
+        30
+      ],
       "examples": [
         {
           "problem": "A bicycle wheel needs to be rigid (for strength) and flexible (for shock absorption)",
@@ -57,17 +90,29 @@
           "problem_ko": "보온병은 안은 뜨겁고 밖은 시원해야 함",
           "solution_ko": "뜨거운 내부와 시원한 외부를 분리하는 진공 단열"
         }
-      ],
-      "related_inventive_principles": [1, 2, 3, 4, 7, 13, 17, 24, 26, 30]
+      ]
     },
     {
-      "id": "SP3",
-      "name": "Separation Between the System and its Subsystem",
-      "name_ko": "시스템과 하위 시스템 간의 분리",
-      "description": "The whole has a property and the parts have the opposite property, or vice versa. A property required at the system level is contradicted by the properties of parts.",
-      "description_ko": "전체는 하나의 특성을 가지고 부분은 반대 특성을 가지거나, 그 반대. 시스템 수준에서 요구되는 특성이 부품의 특성과 모순된다.",
-      "when_to_use": "When the whole needs one property but parts need the opposite, or when hierarchy-based separation resolves the contradiction.",
-      "when_to_use_ko": "전체는 하나의 특성이 필요하지만 부품은 반대가 필요할 때, 또는 계층 기반 분리가 모순을 해결할 때 사용한다.",
+      "id": "system",
+      "name": {
+        "en": "Separation Between the System and its Subsystem",
+        "ko": "시스템과 하위 시스템 간의 분리"
+      },
+      "question": {
+        "ko": "TODO"
+      },
+      "when_to_use": {
+        "en": "When the whole needs one property but parts need the opposite, or when hierarchy-based separation resolves the contradiction.",
+        "ko": "전체는 하나의 특성이 필요하지만 부품은 반대가 필요할 때, 또는 계층 기반 분리가 모순을 해결할 때 사용한다."
+      },
+      "related_principles": [
+        1,
+        3,
+        5,
+        12,
+        33,
+        40
+      ],
       "examples": [
         {
           "problem": "A chain needs to be flexible (to bend around sprockets) and rigid (to transmit force)",
@@ -87,17 +132,29 @@
           "problem_ko": "출렁다리는 (이동 가능) 유연하고 (하중을 지지) 강해야 함",
           "solution_ko": "개별 섬유는 약하지만 여러 섬유를 꼬면 강한 로프가 됨"
         }
-      ],
-      "related_inventive_principles": [1, 3, 5, 12, 33, 40]
+      ]
     },
     {
-      "id": "SP4",
-      "name": "Separation Upon Condition",
-      "name_ko": "조건에 의한 분리",
-      "description": "The contradictory properties coexist by introducing conditions under which the system alternates between having one property or the other.",
-      "description_ko": "시스템이 하나 또는 다른 특성을 번갈아 갖는 조건을 도입함으로써 모순된 특성이 공존한다.",
-      "when_to_use": "When neither time, space, nor hierarchy can separate the contradiction, and the property changes based on some condition or parameter.",
-      "when_to_use_ko": "시간, 공간, 계층 구조 중 어느 것도 모순을 분리할 수 없고 특성이 특정 조건이나 매개변수에 따라 변경될 때 사용한다.",
+      "id": "condition",
+      "name": {
+        "en": "Separation Upon Condition",
+        "ko": "조건에 의한 분리"
+      },
+      "question": {
+        "ko": "TODO"
+      },
+      "when_to_use": {
+        "en": "When neither time, space, nor hierarchy can separate the contradiction, and the property changes based on some condition or parameter.",
+        "ko": "시간, 공간, 계층 구조 중 어느 것도 모순을 분리할 수 없고 특성이 특정 조건이나 매개변수에 따라 변경될 때 사용한다."
+      },
+      "related_principles": [
+        15,
+        23,
+        28,
+        35,
+        36,
+        37
+      ],
       "examples": [
         {
           "problem": "A fluid needs to be viscous (for damping) and non-viscous (for easy flow)",
@@ -117,8 +174,7 @@
           "problem_ko": "표면은 (물체를 고정하기 위해) 접착성이 있어야 하고 (물체를 놓기 위해) 비접착성이어야 함",
           "solution_ko": "도마뱀 발바닥 영감 접착제: 한 방향으로 기울이면 붙고 다른 방향으로 기울이면 떨어짐"
         }
-      ],
-      "related_inventive_principles": [15, 23, 28, 35, 36, 37]
+      ]
     }
   ]
 }
