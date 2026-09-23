@@ -11,7 +11,7 @@ No server, database or API key. Claude does the reasoning; a small standard-libr
 ## Install
 
 ```
-/plugin marketplace add <owner>/triz-decider
+/plugin marketplace add seogineer/triz-decider
 /plugin install triz-decider@triz-decider
 ```
 

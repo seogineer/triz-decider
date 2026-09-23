@@ -7,6 +7,6 @@ Text written for this project is licensed under the
 
 **Not covered:** the contradiction-matrix cell values. They follow the classic Altshuller matrix and are attributed to the public sources listed in `DATA_SOURCES.md`. Parameter and principle names are standard terms.
 
-Attribution: "TRIZ Decider" by Do Gyeong Seo, https://github.com/<owner>/triz-decider
+Attribution: "TRIZ Decider" by Do Gyeong Seo, https://github.com/seogineer/triz-decider
 
 This file is a summary, not legal advice; the linked license text governs. Code is licensed separately under MIT (see `LICENSE`).

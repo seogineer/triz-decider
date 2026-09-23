@@ -488,7 +488,7 @@ v0.1은 데이터 확정이 선행 조건이며, 이후 구현은 Claude Code로
 - [x] `lookup.py` + 단위 테스트 (separation 서브커맨드는 v0.2)
 - [x] `SKILL.md`, `parameters-39.md`, `/triz` 커맨드
 - [ ] 평가 케이스 20건 작성 및 실행 (작성·채점 도구 완료, 블라인드 매핑 실행과 기대값 검토는 남음: tests/eval/results-v0.1.md)
-- [ ] README(ko/en), 매니페스트, 로컬 설치 검증, 공개 (README·매니페스트·로컬 설치 검증 완료, 공개는 GitHub 저장소 생성·`<owner>` 치환·태그 필요)
+- [ ] README(ko/en), 매니페스트, 로컬 설치 검증, 공개 (README·매니페스트·로컬 설치 검증 완료, `main` 푸시 완료, `v0.1.0` 태그는 평가 통과 후)
 
 ### 11.2 미결 사항
 

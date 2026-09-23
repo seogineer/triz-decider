@@ -11,7 +11,7 @@
 ## 설치
 
 ```
-/plugin marketplace add <owner>/triz-decider
+/plugin marketplace add seogineer/triz-decider
 /plugin install triz-decider@triz-decider
 ```
 
