@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "source": "UNVERIFIED legacy data converted to schema; en text needs originality review, see DATA_SOURCES.md",
+  "version": "0.2.0",
+  "source": "Principle numbers and names cross-checked against independent public lists; sub-principle and example text written for this project (see DATA_SOURCES.md)",
   "principles": [
     {
       "id": 1,
@@ -10,28 +10,26 @@
       },
       "sub_principles": {
         "ko": [
-          "물체를 독립적인 부분으로 나눈다",
-          "물체를 분리형으로 만든다",
-          "세분화 정도를 높인다"
+          "대상을 서로 독립적으로 움직이는 부분으로 나눈다",
+          "쉽게 조립하고 분해할 수 있는 구조로 만든다",
+          "나누는 정도를 더 높여 조각을 더 잘게 한다"
         ],
         "en": [
-          "Divide an object into independent parts",
-          "make an object sectional",
-          "increase the degree of fragmentation"
+          "Split the object into parts that can work independently",
+          "Build it so it is easy to assemble and take apart",
+          "Push the division further into finer pieces"
         ]
       },
       "examples": {
         "ko": [
-          "재구성 가능한 조립식 가구",
-          "모듈식 컴퓨터 시스템",
-          "쉽게 찢을 수 있는 종이의 천공선",
-          "커튼 대신 블라인드"
+          "조립식 모듈 가구",
+          "여러 구역으로 나뉜 배터리 팩",
+          "조각 단위로 교체하는 타일 카펫"
         ],
         "en": [
-          "Sectional furniture that can be reconfigured",
-          "Modular computer systems",
-          "Perforated lines on paper for easy tearing",
-          "Blinds instead of curtains"
+          "Modular furniture",
+          "A battery pack divided into cells",
+          "Carpet tiles replaced one square at a time"
         ]
       }
     },
@@ -43,22 +41,24 @@
       },
       "sub_principles": {
         "ko": [
-          "물체에서 방해되는 부분이나 특성을 분리하거나, 필요한 부분/특성만 추출한다"
+          "방해가 되는 부분이나 성질을 대상에서 떼어낸다",
+          "꼭 필요한 부분이나 성질만 골라내 따로 쓴다"
         ],
         "en": [
-          "Separate an interfering part or property from an object, or extract only the necessary part/property"
+          "Pull the disturbing part or property out of the object",
+          "Keep only the part or property that is truly needed and use it on its own"
         ]
       },
       "examples": {
         "ko": [
-          "노이즈 캔슬링 헤드폰이 원치 않는 소리를 제거",
-          "에어컨 압축기를 외부로 이동",
-          "자동차 알람을 차체와 분리"
+          "소음원을 방음 부스로 옮긴 컴프레서",
+          "필터로 먼지만 분리해 내는 공기청정기",
+          "필요한 대역만 통과시키는 스피커 크로스오버"
         ],
         "en": [
-          "Noise-canceling headphones extract unwanted sound",
-          "Air conditioner compressor moved outside",
-          "Separate car alarm from the car body"
+          "A compressor moved into a soundproof booth",
+          "An air purifier that filters out only the dust",
+          "A speaker crossover passing only the needed frequency band"
         ]
       }
     },
@@ -70,24 +70,26 @@
       },
       "sub_principles": {
         "ko": [
-          "균일한 구조에서 불균일한 구조로 전환한다",
-          "각 부분이 최적 조건에서 기능하도록 만든다"
+          "균일한 구조를 부분마다 다른 구조로 바꾼다",
+          "대상의 각 부분이 서로 다른 기능을 맡게 한다",
+          "각 부분을 그 역할에 가장 알맞은 조건에 둔다"
         ],
         "en": [
-          "Transition from homogeneous structure to heterogeneous",
-          "Make each part function in conditions most suitable for its operation"
+          "Replace a uniform structure with one that differs from region to region",
+          "Let each region of the object take a different function",
+          "Place each region in the conditions best suited to its role"
         ]
       },
       "examples": {
         "ko": [
-          "끝에 지우개가 달린 연필",
-          "냉장고의 온도 구역 분리",
-          "신체 부위별 다층 의복"
+          "손잡이만 미끄럼 방지 고무로 처리한 공구",
+          "부위마다 쿠션 밀도가 다른 러닝화 밑창",
+          "칸마다 온도를 달리 유지하는 냉장고"
         ],
         "en": [
-          "Pencil with eraser at the end",
-          "Graduated temperature zones in a refrigerator",
-          "Multi-layer clothing for different body parts"
+          "A tool with a non-slip rubber grip only where the hand goes",
+          "A running-shoe sole whose cushioning density varies by zone",
+          "A refrigerator that keeps each compartment at its own temperature"
         ]
       }
     },
@@ -99,24 +101,24 @@
       },
       "sub_principles": {
         "ko": [
-          "물체가 대칭이라면 비대칭을 도입한다",
-          "이미 비대칭이라면 비대칭 정도를 높인다"
+          "대칭인 형태를 비대칭으로 바꾼다",
+          "이미 비대칭이면 비대칭의 정도를 더 키운다"
         ],
         "en": [
-          "If an object is symmetrical, introduce asymmetry",
-          "If already asymmetrical, increase the degree of asymmetry"
+          "Change a symmetrical shape into an asymmetrical one",
+          "If it is already asymmetrical, increase the asymmetry"
         ]
       },
       "examples": {
         "ko": [
-          "더 나은 핸들링을 위한 비대칭 자동차 타이어",
-          "비대칭 믹싱 패들",
-          "인체공학적으로 다르게 설계된 왼쪽/오른쪽 신발"
+          "한쪽이 더 두꺼운 타이어 옆면",
+          "좌우 배열이 다른 전원 플러그",
+          "한쪽으로만 꽂히도록 만든 커넥터"
         ],
         "en": [
-          "Asymmetric car tires for better handling",
-          "Asymmetric mixing paddles",
-          "Left/right shoes designed differently for ergonomics"
+          "A tire with a thicker outer sidewall",
+          "A power plug whose two pins differ in shape",
+          "A connector that only fits one way"
         ]
       }
     },
@@ -128,24 +130,24 @@
       },
       "sub_principles": {
         "ko": [
-          "공간적으로 동일하거나 유사한 물체나 작업을 가깝게 한다",
-          "병렬 작업을 수행하기 위해 동일하거나 유사한 부품을 조합한다"
+          "같거나 비슷한 대상을 공간적으로 가깝게 합친다",
+          "같거나 이어지는 작업을 시간적으로 함께 수행하게 합친다"
         ],
         "en": [
-          "Bring closer in space identical or similar objects or operations",
-          "assemble identical or similar parts to perform parallel operations"
+          "Bring identical or similar objects together in space",
+          "Bring identical or consecutive operations together in time"
         ]
       },
       "examples": {
         "ko": [
-          "멀티코어 프로세서",
-          "수확 작업을 통합하는 콤바인 수확기",
-          "이중 초점 안경"
+          "여러 센서를 한 패키지에 넣은 관성 측정 장치",
+          "한 번에 여러 방향을 동시에 가공하는 다축 공작기계",
+          "한 열차에 연결한 여러 차량"
         ],
         "en": [
-          "Multi-core processors",
-          "Combine harvester merges harvesting operations",
-          "Bifocal eyeglasses"
+          "An inertial unit packing several sensors in one package",
+          "A multi-axis machine tool that cuts in several directions at once",
+          "Several cars coupled into a single train"
         ]
       }
     },
@@ -157,24 +159,24 @@
       },
       "sub_principles": {
         "ko": [
-          "부품이나 물체가 여러 기능을 수행하게 한다",
-          "다른 부품의 필요성을 제거한다"
+          "한 대상이 여러 기능을 맡게 해서 다른 대상을 없앤다",
+          "필요한 기능을 한 대상에 모은다"
         ],
         "en": [
-          "Make a part or object perform multiple functions",
-          "eliminate the need for other parts"
+          "Let one object perform several functions so other objects are no longer needed",
+          "Gather the needed functions into a single object"
         ]
       },
       "examples": {
         "ko": [
-          "스위스 아미 나이프",
-          "카메라, GPS, 음악 플레이어를 대체하는 스마트폰",
-          "소파 베드"
+          "칫솔 손잡이에 치약을 넣은 여행용 칫솔",
+          "지팡이 겸 의자",
+          "카메라·전화·지도를 한데 모은 스마트폰"
         ],
         "en": [
-          "Swiss Army knife",
-          "Smartphone replacing camera, GPS, music player",
-          "Sofa bed"
+          "A travel toothbrush whose handle stores toothpaste",
+          "A walking stick that doubles as a seat",
+          "A smartphone that replaces a camera, phone and map"
         ]
       }
     },
@@ -186,24 +188,26 @@
       },
       "sub_principles": {
         "ko": [
-          "하나의 물체를 다른 물체 안에 넣는다",
-          "하나의 물체를 다른 물체의 공동을 통해 통과시킨다"
+          "한 대상을 다른 대상 안에 넣는다",
+          "그 대상을 다시 또 다른 대상 안에 넣는 식으로 겹쳐 넣는다",
+          "한 대상이 다른 대상의 빈 공간을 지나가게 한다"
         ],
         "en": [
           "Place one object inside another",
-          "Pass one object through a cavity in another"
+          "Repeat the nesting: put that object inside yet another",
+          "Let an object pass through the cavity of another"
         ]
       },
       "examples": {
         "ko": [
-          "신축식 안테나",
-          "수납식 볼펜",
-          "겹쳐 쌓이는 계량컵"
+          "마트료시카 인형",
+          "접었다 펴는 텔레스코픽 안테나",
+          "겹쳐서 쌓아 보관하는 계량컵"
         ],
         "en": [
-          "Telescoping antenna",
-          "Retractable ballpoint pen",
-          "Nesting measuring cups"
+          "Russian nesting dolls",
+          "A telescopic antenna that collapses into itself",
+          "Stackable measuring cups"
         ]
       }
     },
@@ -215,22 +219,26 @@
       },
       "sub_principles": {
         "ko": [
-          "들어올리는 힘을 제공하는 다른 물체와 결합하여 물체의 무게를 보상한다"
+          "대상의 무게를 부력이 있는 다른 대상과 결합해 덜어낸다",
+          "공기나 물 같은 환경과 상호작용해 생기는 힘으로 무게를 덜어낸다",
+          "자기력 같은 다른 장의 힘으로 무게를 덜어낸다"
         ],
         "en": [
-          "Compensate for the weight of an object by merging it with another object that provides a lifting force"
+          "Offset an object's weight by joining it to another object that provides lift",
+          "Offset weight with forces generated by interaction with air or water",
+          "Offset weight with the force of another field, such as magnetism"
         ]
       },
       "examples": {
         "ko": [
-          "엘리베이터의 평형추",
-          "광고 현수막을 들어올리는 헬륨 풍선",
-          "무게 균형 잡힌 크레인 암"
+          "엘리베이터의 균형추",
+          "수중익으로 선체를 띄우는 고속선",
+          "자기부상 열차"
         ],
         "en": [
-          "Counterweight in elevators",
-          "Helium balloons to lift advertising banners",
-          "Counterweighted crane arms"
+          "An elevator counterweight",
+          "A hydrofoil boat lifted by underwater wings",
+          "A maglev train"
         ]
       }
     },
@@ -242,22 +250,24 @@
       },
       "sub_principles": {
         "ko": [
-          "알려진 바람직하지 않은 작동 응력에 반하는 사전 응력을 가한다"
+          "나중에 생길 해로운 작용을 미리 반대 방향의 작용으로 상쇄해 둔다",
+          "이미 걸리게 될 응력이 있으면 반대 응력을 미리 준다"
         ],
         "en": [
-          "Pre-stress an object contrary to known undesirable working stress"
+          "Apply in advance an opposite action that cancels a harmful one to come",
+          "If a stress is going to appear, load the part with the opposite stress beforehand"
         ]
       },
       "examples": {
         "ko": [
-          "프리스트레스트 콘크리트",
-          "도장 전 방청 코팅",
-          "질병 노출 전 예방 접종"
+          "프리스트레스트 콘크리트 보",
+          "용접 전에 반대로 살짝 휘게 해 둔 판",
+          "페인트칠 전에 붙이는 마스킹 테이프"
         ],
         "en": [
-          "Pre-stressed concrete",
-          "Anti-rust coating before painting",
-          "Pre-vaccination before exposure to disease"
+          "A prestressed concrete beam",
+          "A plate bent slightly the opposite way before welding",
+          "Masking tape applied before painting"
         ]
       }
     },
@@ -269,24 +279,24 @@
       },
       "sub_principles": {
         "ko": [
-          "물체의 필요한 변화를 미리 완전히 또는 부분적으로 수행한다",
-          "가장 편리한 위치에서 작동할 수 있도록 물체를 미리 배치한다"
+          "필요한 변화를 필요한 때보다 먼저 전부 또는 일부 수행해 둔다",
+          "필요한 순간 지체 없이 작동하도록 대상을 미리 가장 편한 자리에 둔다"
         ],
         "en": [
-          "Perform the required change of an object completely or partially in advance",
-          "Pre-arrange objects so they can come into action from the most convenient position"
+          "Carry out the needed change fully or partly before it is required",
+          "Position objects ahead of time so they act instantly from the most convenient place"
         ]
       },
       "examples": {
         "ko": [
-          "건설 현장에 배달되는 레미콘",
-          "조립식 건물 구성 요소",
-          "미리 주소가 적힌 봉투"
+          "미리 절취선을 넣은 포장지",
+          "수술 도구를 사용 순서대로 미리 배열한 트레이",
+          "약이 미리 채워진 일회용 주사기"
         ],
         "en": [
-          "Pre-mixed concrete delivered to construction sites",
-          "Prefabricated building components",
-          "Pre-addressed envelopes"
+          "Wrapping paper with a pre-cut tear line",
+          "A surgical tray with instruments laid out in order of use",
+          "A pre-filled disposable syringe"
         ]
       }
     },
@@ -298,22 +308,22 @@
       },
       "sub_principles": {
         "ko": [
-          "물체의 상대적으로 낮은 신뢰성을 보상하기 위해 비상 수단을 미리 준비한다"
+          "신뢰성이 낮은 대상에는 사고에 대비한 보호 수단을 미리 마련해 둔다"
         ],
         "en": [
-          "Prepare emergency means in advance to compensate for the relatively low reliability of an object"
+          "Prepare protective measures beforehand to make up for an object's low reliability"
         ]
       },
       "examples": {
         "ko": [
-          "자동차의 에어백",
-          "예비 낙하산",
-          "항공기의 이중 컴퓨터 시스템"
+          "자동차 에어백",
+          "중요 데이터의 자동 백업",
+          "비상 낙하산"
         ],
         "en": [
-          "Airbags in cars",
-          "Backup parachute",
-          "Redundant computer systems in aircraft"
+          "A car airbag",
+          "Automatic backup of important data",
+          "A reserve parachute"
         ]
       }
     },
@@ -325,22 +335,22 @@
       },
       "sub_principles": {
         "ko": [
-          "물체를 올리거나 내릴 필요가 없도록 작동 조건을 변경한다"
+          "위치 에너지 차이가 생기지 않게 작업 조건을 바꿔 들어 올리거나 내릴 일을 없앤다"
         ],
         "en": [
-          "Change the operating conditions so that an object need not be raised or lowered"
+          "Change the working conditions so no lifting or lowering is needed, keeping everything at one energy level"
         ]
       },
       "examples": {
         "ko": [
-          "자동차를 들어올릴 필요 없는 정비용 구덩이",
-          "수위를 유지하는 운하 갑문",
-          "작업 높이에서의 스프링 장착 공구 홀더"
+          "수위 차이를 갑문으로 올리고 내리는 운하",
+          "컨베이어 높이에 맞춘 작업대",
+          "차 밑을 작업하기 위한 정비용 피트"
         ],
         "en": [
-          "Pit for car maintenance (no need to lift car)",
-          "Canal locks maintaining water level",
-          "Spring-loaded tool holders at work height"
+          "A canal that raises and lowers boats with locks",
+          "A workbench set to the conveyor's height",
+          "A service pit that lets mechanics work beneath a car"
         ]
       }
     },
@@ -352,26 +362,26 @@
       },
       "sub_principles": {
         "ko": [
-          "문제 해결에 사용되는 작업을 역으로 한다",
-          "움직이는 부품을 고정하고 고정된 부품을 움직이게 한다",
-          "물체를 뒤집는다"
+          "문제에서 요구하는 동작 대신 그 반대의 동작을 한다",
+          "움직이던 부분을 고정하고 고정돼 있던 부분을 움직이게 한다",
+          "대상을 뒤집는다"
         ],
         "en": [
-          "Invert the action used to solve the problem",
-          "Make moving parts fixed and fixed parts movable",
+          "Do the opposite of the action the problem calls for",
+          "Fix the part that used to move and move the part that used to be fixed",
           "Turn the object upside down"
         ]
       },
       "examples": {
         "ko": [
-          "런닝머신 (사람은 고정, 바닥이 움직임)",
-          "풍동 (물체는 고정, 공기가 움직임)",
-          "역상 현미경"
+          "사람이 걷는 대신 바닥이 움직이는 러닝머신",
+          "부품을 고정하고 공구가 도는 대신 부품을 회전시키는 선반",
+          "그릇을 엎어서 말리는 식기 건조대"
         ],
         "en": [
-          "Treadmill (person stationary, ground moves)",
-          "Wind tunnel (object stationary, air moves)",
-          "Inverted microscope"
+          "A treadmill where the belt moves instead of the person",
+          "A lathe that spins the part instead of the tool",
+          "A dish rack that dries plates upside down"
         ]
       }
     },
@@ -383,26 +393,26 @@
       },
       "sub_principles": {
         "ko": [
-          "평면에서 구면으로, 선형 부품에서 곡선형으로 이동한다",
-          "롤러, 볼, 나선을 사용한다",
-          "선형에서 회전 운동으로 전환한다"
+          "직선·평면인 부분을 곡선·곡면으로 바꾼다",
+          "롤러, 공, 나선 같은 둥근 요소를 쓴다",
+          "직선 운동을 회전 운동으로 바꾼다"
         ],
         "en": [
-          "Move from flat surfaces to spherical ones, from linear parts to curvilinear",
-          "Use rollers, balls, spirals",
-          "Transition from linear to rotational motion"
+          "Replace straight lines and flat surfaces with curves and curved surfaces",
+          "Use round elements such as rollers, balls and spirals",
+          "Convert linear motion to rotary motion"
         ]
       },
       "examples": {
         "ko": [
-          "볼/레이저 추적을 사용하는 컴퓨터 마우스",
-          "하중을 분산하는 아치형 다리",
-          "나사형 컨베이어"
+          "하중을 고르게 나누는 아치형 다리",
+          "볼펜의 회전하는 볼",
+          "나사식 압착 프레스"
         ],
         "en": [
-          "Computer mouse using ball/laser tracking",
-          "Arched bridges distributing load",
-          "Screw conveyor"
+          "An arch bridge that spreads the load",
+          "The rolling ball in a ballpoint pen",
+          "A screw press"
         ]
       }
     },
@@ -414,24 +424,28 @@
       },
       "sub_principles": {
         "ko": [
-          "물체, 외부 환경 또는 프로세스의 특성이 각 단계에서 최적이 되도록 변경할 수 있게 한다",
-          "서로 상대적으로 이동할 수 있는 부분으로 물체를 나눈다"
+          "작동 단계마다 대상이나 환경이 최적이 되도록 스스로 바뀌게 한다",
+          "대상을 서로 움직일 수 있는 여러 부분으로 나눈다",
+          "고정돼 있던 것을 움직이거나 바꿀 수 있게 한다",
+          "경직된 대상을 유연하게 만든다"
         ],
         "en": [
-          "Allow characteristics of an object, external environment, or process to change to be optimal at each stage",
-          "Divide an object into parts capable of moving relative to each other"
+          "Let the object or its surroundings adjust at each stage so it is always at its best",
+          "Divide the object into parts that can move relative to each other",
+          "Make something that was fixed movable or adjustable",
+          "Turn a rigid object into a flexible one"
         ]
       },
       "examples": {
         "ko": [
-          "조절 가능한 자동차 시트",
-          "유연한 제조 시스템",
-          "굴절 버스"
+          "높이·각도를 조절하는 사무용 의자",
+          "접이식 자전거",
+          "각도를 바꿀 수 있는 가변 노즐"
         ],
         "en": [
-          "Adjustable car seat",
-          "Flexible manufacturing systems",
-          "Articulated buses"
+          "An office chair with adjustable height and angle",
+          "A folding bicycle",
+          "A nozzle with an adjustable angle"
         ]
       }
     },
@@ -443,22 +457,22 @@
       },
       "sub_principles": {
         "ko": [
-          "목표의 100%를 달성하기 어렵다면, 동일한 방법을 약간 더 또는 약간 덜 사용한다"
+          "목표를 100% 달성하기 어려우면 조금 덜 하거나 조금 더 하는 쪽을 택한다"
         ],
         "en": [
-          "If 100 percent of an objective is hard to achieve, use slightly more or slightly less of the same method"
+          "If the full result is hard to reach, aim slightly under or slightly over and fix the remainder afterwards"
         ]
       },
       "examples": {
         "ko": [
-          "도장 시 과도하게 분사 후 초과분 제거",
-          "필요량보다 약간 더 연마한 후 측정",
-          "용기를 약간 넘치게 채운 후 수평 맞추기"
+          "일단 과하게 칠한 뒤 남는 부분을 닦아내는 도장 작업",
+          "과량으로 분사한 뒤 원심력으로 털어내는 스핀 코팅",
+          "조금 크게 잘라 두었다가 다듬는 목재 가공"
         ],
         "en": [
-          "Overspray then remove excess in painting",
-          "Grind slightly more than needed, then measure",
-          "Fill a container slightly over, then level off"
+          "Painting too much and wiping off the excess",
+          "Spin coating: over-dispense, then spin off the surplus",
+          "Cutting a board slightly oversize and trimming to fit"
         ]
       }
     },
@@ -470,26 +484,26 @@
       },
       "sub_principles": {
         "ko": [
-          "물체를 2차원 또는 3차원 공간으로 이동한다",
-          "다층 배열을 사용한다",
-          "물체를 기울이거나 방향을 바꾼다"
+          "한 줄 배열 대신 여러 층으로 쌓거나 2·3차원으로 움직이게 한다",
+          "대상을 기울이거나 옆으로 눕힌다",
+          "대상의 반대편이나 이웃한 면을 활용한다"
         ],
         "en": [
-          "Move an object into a two- or three-dimensional space",
-          "Use multi-layered arrangement",
-          "Tilt or reorient the object"
+          "Move from a single line to layers, or from 1-D to 2-D or 3-D movement",
+          "Tilt the object or lay it on its side",
+          "Use the reverse side or a neighbouring face of the object"
         ]
       },
       "examples": {
         "ko": [
           "다층 주차장",
-          "바닥 공간을 절약하는 나선형 계단",
-          "Z 차원을 추가하는 3D 프린팅"
+          "여러 층으로 만든 회로 기판",
+          "기울여서 내용물을 쏟는 손수레"
         ],
         "en": [
-          "Multi-story parking garage",
-          "Spiral staircase saving floor space",
-          "3D printing adding the Z dimension"
+          "A multi-storey car park",
+          "A multilayer circuit board",
+          "A wheelbarrow tipped to dump its load"
         ]
       }
     },
@@ -501,26 +515,28 @@
       },
       "sub_principles": {
         "ko": [
-          "물체를 진동하거나 떨리게 한다",
-          "진동이 있으면 주파수를 높인다",
-          "공진 주파수를 사용한다"
+          "대상을 진동시킨다",
+          "이미 진동하면 진동수를 높여 초음파 영역까지 올린다",
+          "대상의 공진 진동수를 이용한다",
+          "기계식 진동자 대신 압전 소자를 쓴다"
         ],
         "en": [
-          "Cause an object to oscillate or vibrate",
-          "If oscillation exists, increase its frequency",
-          "Use resonance frequency"
+          "Make the object vibrate",
+          "If it already vibrates, raise the frequency, even into the ultrasonic range",
+          "Exploit the object's resonant frequency",
+          "Replace mechanical vibrators with piezoelectric ones"
         ]
       },
       "examples": {
         "ko": [
-          "초음파 세척",
-          "더 나은 침강을 위한 콘크리트 진동",
-          "초음파 용접"
+          "초음파 세척기",
+          "진동으로 입자를 고르게 다지는 콘크리트 진동기",
+          "진동으로 오물을 털어내는 전동칫솔"
         ],
         "en": [
-          "Ultrasonic cleaning",
-          "Vibrating concrete for better settling",
-          "Ultrasonic welding"
+          "An ultrasonic cleaner",
+          "A concrete vibrator that settles the mix",
+          "An electric toothbrush that shakes plaque loose"
         ]
       }
     },
@@ -532,26 +548,26 @@
       },
       "sub_principles": {
         "ko": [
-          "연속적인 동작을 주기적(임펄스) 동작으로 대체한다",
-          "이미 주기적이라면 주파수를 변경한다",
-          "임펄스 사이의 휴지를 이용한다"
+          "연속적인 작용을 주기적인 펄스 작용으로 바꾼다",
+          "이미 주기적이면 주기(주파수)를 바꾼다",
+          "펄스 사이의 쉬는 시간에 다른 작용을 수행한다"
         ],
         "en": [
-          "Replace a continuous action with a periodic (impulse) one",
-          "If action is already periodic, change frequency",
-          "Use pauses between impulses"
+          "Replace a continuous action with a periodic pulsed action",
+          "If it is already periodic, change its frequency",
+          "Use the pauses between pulses to do something else"
         ]
       },
       "examples": {
         "ko": [
-          "간헐식 와이퍼",
-          "연속 빔 대신 펄스 레이저",
-          "검사용 스트로보 조명"
+          "간헐 와이퍼",
+          "펄스폭 변조로 밝기를 조절하는 LED 조명",
+          "점멸하는 경고등"
         ],
         "en": [
-          "Intermittent windshield wipers",
-          "Pulsed laser instead of continuous beam",
-          "Strobe light for inspection"
+          "An intermittent windshield wiper",
+          "An LED lamp dimmed with pulse-width modulation",
+          "A flashing warning light"
         ]
       }
     },
@@ -563,26 +579,26 @@
       },
       "sub_principles": {
         "ko": [
-          "작업을 지속적으로 수행한다",
-          "물체의 모든 부분이 항상 최대 부하로 작동하게 한다",
-          "유휴 및 중간 동작을 제거한다"
+          "대상의 모든 부분이 늘 최대 부하로 쉬지 않고 일하게 한다",
+          "공회전·대기·중간 동작을 없앤다",
+          "왕복 운동을 회전 운동으로 바꾼다"
         ],
         "en": [
-          "Carry on work continuously",
-          "Make all parts of an object work at full load all the time",
-          "Eliminate idle and intermediate motions"
+          "Keep every part of the object working at full load without interruption",
+          "Remove idle time, waiting and intermediate motions",
+          "Convert back-and-forth motion into rotary motion"
         ]
       },
       "examples": {
         "ko": [
-          "유휴 시 에너지를 저장하는 플라이휠",
-          "철강 제조에서의 연속 주조",
-          "컴퓨터의 백그라운드 작업 처리"
+          "오갈 때 모두 인쇄하는 양방향 프린터 헤드",
+          "항상 효율 좋은 회전수를 유지하는 하이브리드 엔진",
+          "24시간 순환하는 연속 공정 설비"
         ],
         "en": [
-          "Flywheel storing energy during idle",
-          "Continuous casting in steel manufacturing",
-          "Background task processing in computers"
+          "A printer head that prints in both directions",
+          "A hybrid engine kept in its efficient rpm range",
+          "A continuous process line that never stops"
         ]
       }
     },
@@ -594,22 +610,22 @@
       },
       "sub_principles": {
         "ko": [
-          "프로세스 또는 특정 단계를 고속으로 수행한다"
+          "해롭거나 위험한 단계를 매우 빠르게 지나가게 한다"
         ],
         "en": [
-          "Conduct a process or certain stages at high speed"
+          "Rush through a harmful or hazardous stage at very high speed"
         ]
       },
       "examples": {
         "ko": [
-          "열 축적을 피하기 위한 고속 절삭",
-          "동작을 정지시키는 플래시 사진",
-          "전자레인지 조리"
+          "치과용 고속 드릴",
+          "순간 고온 살균(HTST) 우유",
+          "열이 번지기 전에 끝내는 고속 플라스틱 절단"
         ],
         "en": [
-          "High-speed cutting to avoid heat buildup",
-          "Flash photography to freeze motion",
-          "Microwave cooking"
+          "A high-speed dental drill",
+          "High-temperature short-time pasteurised milk",
+          "Cutting plastic so fast that heat does not spread"
         ]
       }
     },
@@ -621,24 +637,26 @@
       },
       "sub_principles": {
         "ko": [
-          "유해한 요인을 사용하여 긍정적인 효과를 얻는다",
-          "다른 유해한 작용에 더함으로써 주요 유해한 작용을 제거한다"
+          "해로운 요인을 이용해 좋은 효과를 만든다",
+          "해로운 요인을 다른 해로운 요인과 합쳐 서로 상쇄시킨다",
+          "해로운 요인의 세기를 해가 되지 않을 정도까지 키운다"
         ],
         "en": [
-          "Use harmful factors to obtain a positive effect",
-          "Eliminate the primary harmful action by adding it to another harmful action"
+          "Use a harmful factor to produce a useful effect",
+          "Combine one harmful factor with another so they cancel",
+          "Amplify a harmful factor until it stops being harmful"
         ]
       },
       "examples": {
         "ko": [
-          "공간 난방을 위한 폐열 사용",
-          "유기 폐기물을 비료로 퇴비화",
-          "플라스틱 폐기물을 새 제품으로 재활용"
+          "폐열로 전기를 만드는 열병합 발전",
+          "폐기물을 연료로 쓰는 소각 발전",
+          "산불 확산을 막기 위한 맞불"
         ],
         "en": [
-          "Using waste heat for space heating",
-          "Composting organic waste into fertilizer",
-          "Recycling plastic waste into new products"
+          "Cogeneration that turns waste heat into electricity",
+          "A plant that burns waste as fuel",
+          "A backfire set to stop a wildfire"
         ]
       }
     },
@@ -651,23 +669,23 @@
       "sub_principles": {
         "ko": [
           "피드백을 도입한다",
-          "피드백이 이미 있으면 크기나 영향을 변경한다"
+          "이미 피드백이 있다면 그 크기나 영향을 바꾼다"
         ],
         "en": [
           "Introduce feedback",
-          "If feedback already exists, change its magnitude or influence"
+          "If feedback already exists, change its size or influence"
         ]
       },
       "examples": {
         "ko": [
-          "온도 조절기 온도 제어",
-          "증폭기의 자동 이득 제어",
-          "제조에서의 품질 관리 루프"
+          "온도조절기",
+          "주변 밝기에 맞춰 화면 밝기를 바꾸는 자동 조광",
+          "속도를 유지하는 크루즈 컨트롤"
         ],
         "en": [
-          "Thermostat temperature control",
-          "Automatic gain control in amplifiers",
-          "Quality control loops in manufacturing"
+          "A thermostat",
+          "Auto-brightness that follows ambient light",
+          "Cruise control holding a set speed"
         ]
       }
     },
@@ -679,22 +697,24 @@
       },
       "sub_principles": {
         "ko": [
-          "중간 매개체나 중간 프로세스를 사용한다"
+          "두 대상 사이에서 전달이나 작용을 매개하는 대상을 둔다",
+          "매개체를 임시로 붙여 쓰고 나중에 뗀다"
         ],
         "en": [
-          "Use an intermediary carrier article or intermediary process"
+          "Insert an intermediary object that carries or mediates the action",
+          "Attach an intermediary temporarily and remove it later"
         ]
       },
       "examples": {
         "ko": [
-          "화학 반응에서의 촉매",
-          "기계 가공에서의 절삭유",
-          "전기 시스템에서의 변압기"
+          "기타 줄을 튕기는 피크",
+          "무거운 물건을 옮기는 팔레트",
+          "반응 속도를 높이는 촉매"
         ],
         "en": [
-          "Catalyst in chemical reactions",
-          "Cutting fluid in machining",
-          "Transformer in electrical systems"
+          "A guitar pick",
+          "A pallet for moving heavy goods",
+          "A catalyst that speeds up a reaction"
         ]
       }
     },
@@ -706,24 +726,24 @@
       },
       "sub_principles": {
         "ko": [
-          "보조 및 수리 기능을 수행함으로써 물체가 스스로를 서비스하게 한다",
-          "낭비되는 자원, 에너지 또는 물질을 사용한다"
+          "대상이 스스로 자신을 돕고 보수하거나 서비스하게 한다",
+          "버려지는 물질이나 에너지를 활용한다"
         ],
         "en": [
-          "Make an object serve itself by performing auxiliary and repair functions",
-          "Use waste resources, energy, or substances"
+          "Make the object serve and maintain itself",
+          "Use waste material or waste energy"
         ]
       },
       "examples": {
         "ko": [
-          "자가 연마 절삭 공구",
-          "자가 청소 오븐",
-          "자가 치유 소재"
+          "긁힘을 스스로 메우는 코팅",
+          "자체 태양광 패널로 켜지는 가로등",
+          "남는 열로 예열하는 열교환기"
         ],
         "en": [
-          "Self-sharpening cutting tools",
-          "Self-cleaning oven",
-          "Self-healing materials"
+          "A coating that heals its own scratches",
+          "A street lamp powered by its own solar panel",
+          "A heat exchanger that preheats with surplus heat"
         ]
       }
     },
@@ -735,24 +755,26 @@
       },
       "sub_principles": {
         "ko": [
-          "이용할 수 없거나 비싸거나 취약한 물체 대신 더 간단하고 저렴한 복사본을 사용한다",
-          "물리적 물체를 광학적 복사본(이미지)으로 대체한다"
+          "복잡하고 비싸고 다루기 어려운 실물 대신 단순하고 싼 복제본을 쓴다",
+          "실물 대신 사진이나 영상 같은 광학적 복제를 쓴다",
+          "가시광 복제로 부족하면 적외선·자외선 복제를 쓴다"
         ],
         "en": [
-          "Instead of an unavailable, expensive, or fragile object, use simpler and inexpensive copies",
-          "Replace a physical object with an optical copy (image)"
+          "Use a simple, cheap copy in place of a complex, costly or awkward original",
+          "Use an optical copy such as a photo or image instead of the object",
+          "If visible light is not enough, use an infrared or ultraviolet copy"
         ]
       },
       "examples": {
         "ko": [
-          "실제 환경 대신 가상 현실 시뮬레이션",
-          "실제 사람 대신 충돌 테스트 더미",
-          "필름 대신 디지털 X선"
+          "축소 모형으로 하는 건축 검토",
+          "위성 사진으로 하는 지형 측량",
+          "열화상 카메라로 하는 설비 점검"
         ],
         "en": [
-          "Virtual reality simulation instead of real environment",
-          "Crash test dummies instead of real people",
-          "Digital X-ray instead of film"
+          "Reviewing a building with a scale model",
+          "Surveying terrain from satellite images",
+          "Inspecting equipment with a thermal camera"
         ]
       }
     },
@@ -764,22 +786,22 @@
       },
       "sub_principles": {
         "ko": [
-          "특정 품질을 타협하여 비싸고 내구성 있는 것을 저렴하고 수명이 짧은 것으로 대체한다"
+          "비싼 대상 하나를 값싸고 수명이 짧은 여러 개로 바꾼다"
         ],
         "en": [
-          "Replace an inexpensive short-living object for an expensive durable one, compromising certain qualities"
+          "Replace one expensive object with several cheap ones that do not last long"
         ]
       },
       "examples": {
         "ko": [
-          "멸균 가능한 것 대신 일회용 주사기",
-          "유리 대신 종이컵",
-          "저렴한 일회용 카메라"
+          "일회용 주사기",
+          "종이컵",
+          "일회용 방진복"
         ],
         "en": [
-          "Disposable syringes instead of sterilizable ones",
-          "Paper cups instead of glass",
-          "Cheap disposable cameras"
+          "A disposable syringe",
+          "A paper cup",
+          "A disposable cleanroom suit"
         ]
       }
     },
@@ -791,22 +813,28 @@
       },
       "sub_principles": {
         "ko": [
-          "기계적 수단을 감각적(광학, 음향, 열, 후각) 수단으로 대체한다"
+          "기계적 수단을 광학·음향·열·후각 수단으로 바꾼다",
+          "대상과 상호작용하는 데 전기·자기·전자기장을 쓴다",
+          "고정된 장은 움직이는 장으로, 시간에 따라 변하지 않는 장은 변하는 장으로 바꾼다",
+          "장과 강자성 입자를 함께 쓴다"
         ],
         "en": [
-          "Replace a mechanical means with a sensory (optical, acoustic, thermal, olfactory) means"
+          "Replace a mechanical means with an optical, acoustic, thermal or olfactory one",
+          "Use electric, magnetic or electromagnetic fields to interact with the object",
+          "Turn a fixed field into a moving one, or a constant field into a changing one",
+          "Combine a field with ferromagnetic particles"
         ]
       },
       "examples": {
         "ko": [
-          "전선 대신 광섬유",
-          "기계적 탐침 대신 초음파",
-          "기계적 절삭 대신 레이저 절삭"
+          "열쇠 대신 무선 신호로 여는 스마트 도어락",
+          "접촉 없이 충전하는 무선 충전기",
+          "냄새를 넣어 누출을 알리는 도시가스"
         ],
         "en": [
-          "Optical fiber instead of wire",
-          "Ultrasound instead of mechanical probe",
-          "Laser cutting instead of mechanical cutting"
+          "A smart door lock opened by a radio signal instead of a key",
+          "A wireless charger with no contact",
+          "Town gas odorised so leaks can be smelled"
         ]
       }
     },
@@ -818,24 +846,22 @@
       },
       "sub_principles": {
         "ko": [
-          "고체 부품 대신 물체의 기체 및 액체 부품을 사용한다",
-          "공기 또는 수막, 유압 및 수력 반응 원리를 사용한다"
+          "고체 부분 대신 기체나 액체를 사용해 작동시킨다"
         ],
         "en": [
-          "Use gas and liquid parts of an object instead of solid parts",
-          "Use air or water cushions, hydrostatic and hydro-reactive principles"
+          "Use a gas or liquid in place of solid parts to do the work"
         ]
       },
       "examples": {
         "ko": [
-          "공기 주입 타이어",
+          "공기 쿠션 밑창",
           "유압 브레이크",
-          "공압 포장재"
+          "공기 부양 컨베이어"
         ],
         "en": [
-          "Air-filled tires",
-          "Hydraulic brakes",
-          "Pneumatic packaging materials"
+          "An air-cushioned sole",
+          "A hydraulic brake",
+          "An air-flotation conveyor"
         ]
       }
     },
@@ -847,24 +873,24 @@
       },
       "sub_principles": {
         "ko": [
-          "3차원 구조 대신 유연한 껍질과 박막을 사용한다",
-          "유연한 껍질과 박막을 사용하여 물체를 외부 환경으로부터 격리한다"
+          "입체적인 구조 대신 유연한 막이나 얇은 필름을 쓴다",
+          "유연한 막으로 대상을 주변 환경과 격리한다"
         ],
         "en": [
-          "Use flexible shells and thin films instead of three-dimensional structures",
-          "Isolate the object from the external environment using flexible shells and thin films"
+          "Use flexible shells or thin films in place of bulky structures",
+          "Isolate the object from its environment with a flexible membrane"
         ]
       },
       "examples": {
         "ko": [
-          "포장용 에어캡",
-          "플라스틱 식품 랩",
-          "공기 주입식 구조물"
+          "비닐 온실",
+          "식품을 감싸는 랩 필름",
+          "방수 투습 멤브레인"
         ],
         "en": [
-          "Bubble wrap for packaging",
-          "Plastic food wrap",
-          "Inflatable structures"
+          "A plastic-film greenhouse",
+          "Cling film around food",
+          "A waterproof breathable membrane"
         ]
       }
     },
@@ -876,24 +902,24 @@
       },
       "sub_principles": {
         "ko": [
-          "물체를 다공성으로 만들거나 보완적인 다공성 요소를 사용한다",
-          "이미 다공성이라면 기공을 사용하여 유용한 물질이나 기능을 도입한다"
+          "대상을 다공질로 만들거나 다공질 요소를 추가한다",
+          "이미 다공질이라면 그 기공에 유용한 물질을 채운다"
         ],
         "en": [
-          "Make an object porous or use supplementary porous elements",
-          "If an object is already porous, use the pores to introduce a useful substance or function"
+          "Make the object porous or add porous elements",
+          "If it is already porous, fill the pores with something useful"
         ]
       },
       "examples": {
         "ko": [
-          "에어로겔 단열재",
-          "윤활제가 있는 다공성 베어링",
-          "고어텍스 원단 (방수이지만 통기성)"
+          "가볍고 단단한 금속 폼",
+          "기공에 냄새 분자를 잡아 두는 활성탄 필터",
+          "약물을 채운 다공성 임플란트"
         ],
         "en": [
-          "Aerogel insulation material",
-          "Porous bearing with lubricant",
-          "Gore-Tex fabric (waterproof but breathable)"
+          "Lightweight, stiff metal foam",
+          "An activated-carbon filter trapping odour in its pores",
+          "A porous implant filled with medication"
         ]
       }
     },
@@ -905,26 +931,28 @@
       },
       "sub_principles": {
         "ko": [
-          "물체 또는 그 환경의 색상을 변경한다",
-          "물체의 투명도를 변경한다",
-          "색상 첨가제를 사용하여 그렇지 않으면 보이지 않는 물체나 프로세스를 관찰한다"
+          "대상이나 주변의 색을 바꾼다",
+          "대상의 투명도를 바꾼다",
+          "색소나 첨가제로 관찰하기 어려운 대상을 잘 보이게 한다",
+          "형광 표지 등으로 대상에 표시를 남긴다"
         ],
         "en": [
-          "Change the color of an object or its environment",
-          "Change the transparency of an object",
-          "Use colored additives to observe otherwise invisible objects or processes"
+          "Change the colour of the object or its surroundings",
+          "Change how transparent the object is",
+          "Add dyes or additives to make a hard-to-see object visible",
+          "Mark the object with luminescent or fluorescent tags"
         ]
       },
       "examples": {
         "ko": [
-          "누출 감지를 위한 UV 반응 염료",
-          "선글라스의 포토크로믹 렌즈",
-          "산업 환경에서의 색상 코드 파이프"
+          "뜨거우면 색이 변하는 젖병",
+          "햇빛에 따라 어두워지는 렌즈",
+          "누출 위치를 찾기 위한 형광 염료"
         ],
         "en": [
-          "UV-reactive dyes to detect leaks",
-          "Photochromic lenses in sunglasses",
-          "Color-coded pipes in industrial settings"
+          "A baby bottle that changes colour when too hot",
+          "Lenses that darken in sunlight",
+          "Fluorescent dye for locating a leak"
         ]
       }
     },
@@ -936,22 +964,22 @@
       },
       "sub_principles": {
         "ko": [
-          "주어진 물체와 상호 작용하는 물체를 동일한 재료로 만든다"
+          "서로 상호작용하는 대상들을 같은 재료나 성질이 가까운 재료로 만든다"
         ],
         "en": [
-          "Make objects interacting with a given object of the same material"
+          "Make objects that interact from the same material, or one with very similar properties"
         ]
       },
       "examples": {
         "ko": [
-          "얼음으로 만든 얼음 트레이(얼음과 같은 재료)",
-          "식품 재료로 만든 생분해성 포장",
-          "용해되는 수술용 봉합사"
+          "같은 금속끼리 용접하는 접합",
+          "먹을 수 있는 아이스크림 콘 컵",
+          "같은 소재로 만든 병과 병뚜껑"
         ],
         "en": [
-          "Ice tray made of ice (same material as ice)",
-          "Biodegradable packaging made from food materials",
-          "Dissolving surgical sutures"
+          "Welding two parts of the same metal",
+          "An edible ice-cream cone cup",
+          "A bottle and cap made from the same plastic"
         ]
       }
     },
@@ -963,22 +991,24 @@
       },
       "sub_principles": {
         "ko": [
-          "기능을 완수한 물체 부분을 사라지게 하거나 작동 중에 직접 스스로 복원할 수 있게 한다"
+          "역할을 다한 부분은 작동 중에 없애거나 다른 형태로 바꾼다",
+          "소모된 부분은 작동 중에 바로 채우거나 복원한다"
         ],
         "en": [
-          "Make portions of an object that have fulfilled their functions disappear or allow them to restore themselves directly during operation"
+          "Discard or transform a part once it has done its job, during operation",
+          "Restore consumed parts on the spot while the system runs"
         ]
       },
       "examples": {
         "ko": [
-          "수술의 용해되는 봉합사",
-          "분리되어 떨어지는 로켓 단계",
-          "부식 방지의 희생 양극"
+          "연료를 다 쓴 뒤 분리하는 다단 로켓",
+          "시간이 지나면 녹는 캡슐 약",
+          "쓴 만큼 심이 밀려 나오는 샤프펜슬"
         ],
         "en": [
-          "Dissolving stitches in surgery",
-          "Rocket stages that separate and fall away",
-          "Sacrificial anode in corrosion protection"
+          "A multistage rocket dropping empty stages",
+          "A capsule that dissolves once the drug is released",
+          "A mechanical pencil that feeds fresh lead as it wears"
         ]
       }
     },
@@ -990,28 +1020,28 @@
       },
       "sub_principles": {
         "ko": [
-          "물체의 물리적 상태를 변경한다",
-          "농도나 일관성을 변경한다",
-          "유연성 정도를 변경한다",
-          "온도를 변경한다"
+          "대상의 물리적 상태(고체·액체·기체)를 바꾼다",
+          "농도나 점도를 바꾼다",
+          "유연성의 정도를 바꾼다",
+          "온도를 바꾼다"
         ],
         "en": [
-          "Change an object's physical state",
-          "Change concentration or consistency",
-          "Change the degree of flexibility",
-          "Change the temperature"
+          "Change the physical state of the object (solid, liquid, gas)",
+          "Change its concentration or viscosity",
+          "Change its degree of flexibility",
+          "Change its temperature"
         ]
       },
       "examples": {
         "ko": [
-          "상태를 변경하는 액정 디스플레이",
-          "형상 기억 합금",
-          "분말 우유 (농축 형태)"
+          "액체 비누(고형 비누 대신)",
+          "저장을 위해 액화한 가스",
+          "조건에 따라 강성이 바뀌는 서스펜션"
         ],
         "en": [
-          "Liquid crystal displays changing state",
-          "Shape memory alloys",
-          "Powdered milk (concentrated form)"
+          "Liquid soap instead of a bar",
+          "Gas liquefied for storage",
+          "A suspension whose stiffness varies with conditions"
         ]
       }
     },
@@ -1023,22 +1053,22 @@
       },
       "sub_principles": {
         "ko": [
-          "부피 변화 및 열의 흡수 또는 방출과 같은 상전이 중에 발생하는 현상을 사용한다"
+          "상 변화가 일어날 때의 부피 변화나 열의 방출·흡수를 이용한다"
         ],
         "en": [
-          "Use phenomena occurring during phase transitions such as volume changes and the absorption or liberation of heat"
+          "Exploit the volume change or heat release and absorption that accompany a phase change"
         ]
       },
       "examples": {
         "ko": [
-          "액체-증기 상변화를 이용한 열 파이프",
-          "증발을 통한 냉각",
-          "물-증기 전환을 사용하는 증기 기관"
+          "얼음팩의 냉각",
+          "땀이 증발하며 몸을 식히는 원리를 쓴 냉각 조끼",
+          "물이 얼 때의 팽창을 이용한 암석 분쇄"
         ],
         "en": [
-          "Heat pipe using liquid-vapor phase change",
-          "Cooling via evaporation",
-          "Steam engine using water-steam transition"
+          "The cooling of an ice pack",
+          "A cooling vest that works like evaporating sweat",
+          "Splitting rock with the expansion of freezing water"
         ]
       }
     },
@@ -1050,24 +1080,24 @@
       },
       "sub_principles": {
         "ko": [
-          "재료의 열팽창 또는 수축을 사용한다",
-          "열팽창을 사용하는 경우 열팽창 계수가 다른 여러 재료를 사용한다"
+          "재료의 열팽창이나 열수축을 이용한다",
+          "팽창률이 서로 다른 재료를 조합해 쓴다"
         ],
         "en": [
-          "Use thermal expansion or contraction of materials",
-          "If thermal expansion is used, use multiple materials with different coefficients of thermal expansion"
+          "Use the thermal expansion or contraction of a material",
+          "Combine materials with different expansion rates"
         ]
       },
       "examples": {
         "ko": [
-          "바이메탈 온도 조절기 스트립",
-          "수축 끼워 맞춤",
-          "파이프라인의 열팽창 보상기"
+          "온도에 따라 휘어 스위치가 되는 바이메탈",
+          "가열해서 끼우는 열박음 조립",
+          "기온에 따라 여닫히는 온실 환기창"
         ],
         "en": [
-          "Bimetallic thermostat strip",
-          "Shrink-fit assembly",
-          "Thermal-expansion compensators in pipelines"
+          "A bimetal strip that bends to act as a switch",
+          "Shrink-fit assembly by heating the outer part",
+          "A greenhouse vent that opens with temperature"
         ]
       }
     },
@@ -1079,28 +1109,26 @@
       },
       "sub_principles": {
         "ko": [
-          "일반 공기를 산소가 풍부한 공기로 대체한다",
-          "농축 공기를 순수 산소로 대체한다",
-          "이온화 방사선에 공기 또는 산소를 노출한다",
-          "이온화 산소를 사용한다"
+          "일반 공기를 산소가 많은 공기로 바꾼다",
+          "산소 농도를 더 올려 순수 산소를 쓴다",
+          "이온화하거나 활성화한 산소를 쓴다"
         ],
         "en": [
           "Replace ordinary air with oxygen-enriched air",
-          "Replace enriched air with pure oxygen",
-          "Expose air or oxygen to ionizing radiation",
-          "Use ionized oxygen"
+          "Go further and use pure oxygen",
+          "Use ionised or otherwise activated oxygen"
         ]
       },
       "examples": {
         "ko": [
-          "산소 농축 절단 토치",
-          "수질 정화를 위한 오존 처리",
-          "고압 산소 요법"
+          "산소 절단 토치",
+          "병원의 산소 공급 치료",
+          "오존으로 하는 살균"
         ],
         "en": [
-          "Oxygen-enriched cutting torches",
-          "Ozone treatment for water purification",
-          "Hyperbaric oxygen therapy"
+          "An oxygen cutting torch",
+          "Oxygen therapy in a hospital",
+          "Ozone sterilisation"
         ]
       }
     },
@@ -1112,24 +1140,24 @@
       },
       "sub_principles": {
         "ko": [
-          "정상 환경을 비활성 환경으로 교체한다",
-          "진공에서 프로세스를 수행한다"
+          "일반 환경을 불활성 환경으로 바꾼다",
+          "진공 상태에서 작업한다"
         ],
         "en": [
-          "Replace a normal environment with an inert one",
+          "Replace the normal environment with an inert one",
           "Carry out the process in a vacuum"
         ]
       },
       "examples": {
         "ko": [
-          "산화 방지를 위한 아르곤 용접",
-          "질소 충전 식품 포장",
-          "진공 밀봉 저장"
+          "아르곤으로 감싸는 용접",
+          "질소를 채운 식품 포장",
+          "진공 상태의 백열전구"
         ],
         "en": [
-          "Argon welding to prevent oxidation",
+          "Argon-shielded welding",
           "Nitrogen-flushed food packaging",
-          "Vacuum-sealed storage"
+          "A vacuum inside an incandescent bulb"
         ]
       }
     },
@@ -1141,22 +1169,22 @@
       },
       "sub_principles": {
         "ko": [
-          "균질 재료에서 복합 재료로 전환한다"
+          "한 가지 재료로 된 대상을 여러 재료를 합친 복합 재료로 바꾼다"
         ],
         "en": [
-          "Transition from homogeneous to composite materials"
+          "Replace a single-material object with a composite of several materials"
         ]
       },
       "examples": {
         "ko": [
-          "탄소 섬유 강화 폴리머",
+          "탄소섬유 강화 플라스틱",
           "철근 콘크리트",
-          "유리 섬유"
+          "여러 겹을 붙인 합판"
         ],
         "en": [
-          "Carbon fiber reinforced polymers",
+          "Carbon-fibre reinforced plastic",
           "Reinforced concrete",
-          "Fiberglass"
+          "Plywood made of glued layers"
         ]
       }
     }

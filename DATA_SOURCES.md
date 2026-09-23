@@ -8,7 +8,7 @@
 | --- | --- |
 | `contradiction-matrix.json` | **교차 검증 완료** (1239셀 확정, 9셀 미확정). 아래 2장 |
 | `parameters.json` | 번호·명칭은 독립 자료와 대조 완료, 정의·키워드는 직접 작성 |
-| `inventive-principles.json` | 번호·명칭은 대조 완료, **본문(하위 원리·예시)은 재작성 대상** (3장) |
+| `inventive-principles.json` | 번호·명칭은 대조 완료, 본문은 직접 재작성 (3장) |
 | `separation-principles.json` | v0.2 범위, 미검증 (5장) |
 
 ## 2. contradiction-matrix.json
@@ -63,8 +63,11 @@
 - 라이선스 판단은 법률 자문이 아니다. 행렬 셀 값은 알츠슐러가 공개한 사실 데이터이며 위 MIT 전사본과 출처를 명시해 채택했다. 공식 디렉토리 제출 전 재확인한다.
 
 ## 3. inventive-principles.json
-- 번호 1~40과 원리 명칭은 F·H(`inventive_principles_bilingual.json`, TRIZ Consulting)와 위치별로 대조했다. 개념은 전부 일치하고 표기 차이만 있다(예: #2 Taking out / Separation, #15 Dynamics / Dynamization)
-- **본문 재작성 필요**: 하위 원리 개수가 독립 자료와 다른 원리가 21개이고, 레거시 영문 본문은 널리 쓰이는 표준 영어 표현과 매우 유사한 문장이 있다. CLAUDE.md의 "서적·번역본 문장 복제 금지"에 따라 하위 원리와 예시를 직접 다시 쓴다 → 다음 작업
+- 번호 1~40과 원리 명칭은 F·H(\`inventive_principles_bilingual.json\`, TRIZ Consulting)와 위치별로 대조했다. 개념은 전부 일치하고 표기 차이만 있다(예: #2 Taking out / Separation, #15 Dynamics / Dynamization)
+- **본문 재작성 완료**: 레거시 영문 본문은 널리 쓰이는 표준 영어 표현과 매우 유사해 서적 문장 복제 금지 원칙에 어긋날 수 있었다. 하위 원리와 예시(ko/en)를 이 프로젝트에서 처음부터 다시 썼다(독립 자료는 개수·범위 확인에만 참고)
+- 하위 원리 개수는 독립 자료와 16개 원리에서 다르다. 판본에 따라 하위 원리를 나누는 방식이 달라서이며, 이 프로젝트의 본문은 핵심 항목 위주로 전부를 망라하지는 않는다
+- [ ] 한국어 표현·예시의 어색함 리뷰 (원어민 검수)
+- [ ] 정식 번역본 대조가 가능하면 하위 원리 누락 여부 확인
 
 ## 4. parameters.json
 - 39개 번호·영문명을 G의 파라미터 목록과 위치별로 대조했다. 표기 차이만 있다(예: #10 Force / Force (Intensity), #37 Difficulty of detecting/measuring / Difficulty of detection)
