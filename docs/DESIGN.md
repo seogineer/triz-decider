@@ -485,7 +485,7 @@ v0.1은 데이터 확정이 선행 조건이며, 이후 구현은 Claude Code로
 
 - [ ] 기존 JSON 3종 검토 후 5장 스키마로 변환, `parameters.json` 신규 작성
 - [ ] 행렬 셀 값 교차 검증 및 `DATA_SOURCES.md` 작성
-- [ ] `lookup.py` + 단위 테스트
+- [x] `lookup.py` + 단위 테스트 (separation 서브커맨드는 v0.2)
 - [ ] `SKILL.md`, `parameters-39.md`, `/triz` 커맨드
 - [ ] 평가 케이스 20건 작성 및 실행
 - [ ] README(ko/en), 매니페스트, 로컬 설치 검증, 공개
