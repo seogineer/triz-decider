@@ -76,3 +76,95 @@ def test_score_reports_missing_cases():
     out = score_mod.score(CASES_2, {"A": {"improve": [14], "worsen": [1]}}, matrix=fake_matrix)
     assert out["cases_missing"] == ["B"]
     assert out["cases_scored"] == 1
+
+
+# ------------------------------------------------------- blind-run parser ---
+
+spec2 = importlib.util.spec_from_file_location("run_blind", EVAL / "run_blind.py")
+run_blind = importlib.util.module_from_spec(spec2)
+spec2.loader.exec_module(run_blind)
+
+ANSWER_KO = """## 파라미터 매핑
+| 구분 | 파라미터 | 근거 |
+| --- | --- | --- |
+| 개선 | #9 속도 | 빠르기 |
+| 개선 | #39 생산성 | 산출량 |
+| 악화 | #29 제조 정밀도 | 자국 |
+| 악화 | #9 속도 | 중복은 무시 |
+
+## 추천 원리 (행렬 조회 결과)
+| 1 | #10 사전 조치 | 2 |
+
+## 적용 아이디어
+### 원리 #10 사전 조치
+- 아이디어
+### 원리 #35 매개변수 변화
+- 아이디어
+### 원리 #10 사전 조치
+"""
+
+ANSWER_EN = """| Improve | #9 Speed | x |
+| Worsen | #23 Loss of substance | y |
+### Principle #35 Parameter changes
+"""
+
+
+def test_parse_answer_korean():
+    r = run_blind.parse_answer(ANSWER_KO)
+    assert r["improve"] == [9, 39]
+    assert r["worsen"] == [29, 9]
+    assert r["principles_cited"] == [10, 35]  # ranking-table rows are not "cited"
+
+
+def test_parse_answer_english():
+    r = run_blind.parse_answer(ANSWER_EN)
+    assert r == {"improve": [9], "worsen": [23], "principles_cited": [35]}
+
+
+def test_parse_stream_extracts_tool_calls_and_result():
+    lines = [
+        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-decider"}], "slash_commands": []}),
+        json.dumps({"type": "assistant", "message": {"content": [
+            {"type": "tool_use", "name": "Skill", "input": {"skill": "triz-decider:triz-analysis"}},
+            {"type": "tool_use", "name": "Bash", "input": {"command": "python3 x/lookup.py matrix --improve 1 --worsen 2"}},
+            {"type": "tool_use", "name": "Bash", "input": {"command": "ls"}}]}}),
+        "not json",
+        json.dumps({"type": "result", "result": "final text"}),
+    ]
+    info = run_blind.parse_stream(lines)
+    assert info["plugin_loaded"] and info["skill_used"]
+    assert info["lookup_calls"] == 1
+    assert info["text"] == "final text"
+
+
+def test_parse_stream_command_alone_is_not_skill_use():
+    """Invoking the /triz command without loading triz-analysis must not count."""
+    lines = [json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-decider"}], "slash_commands": []}),
+             json.dumps({"type": "assistant", "message": {"content": [
+                 {"type": "tool_use", "name": "Skill", "input": {"skill": "triz-decider:triz"}}]}}),
+             json.dumps({"type": "result", "result": "x"})]
+    assert run_blind.parse_stream(lines)["skill_used"] is False
+
+
+def test_parse_stream_detects_missing_plugin_and_skill():
+    lines = [json.dumps({"type": "system", "subtype": "init", "plugins": [], "slash_commands": ["help"]}),
+             json.dumps({"type": "result", "result": "answer from memory"})]
+    info = run_blind.parse_stream(lines)
+    assert not info["plugin_loaded"] and not info["skill_used"] and info["lookup_calls"] == 0
+
+
+def test_build_prompt_modes():
+    case = {"problem": "P", "lang": "en"}
+    assert run_blind.build_prompt(case, "command").startswith("/triz-decider:triz P")
+    assert run_blind.build_prompt(case, "natural").startswith("P")
+
+
+def test_parse_answer_empty():
+    assert run_blind.parse_answer("") == {"improve": [], "worsen": [], "principles_cited": []}
+
+
+def test_plugin_copy_excludes_expected_values(tmp_path):
+    run_blind.make_plugin_copy(tmp_path)
+    assert (tmp_path / "skills" / "triz-analysis" / "SKILL.md").exists()
+    assert not (tmp_path / "tests").exists()
+    assert not any(tmp_path.rglob("cases.yaml"))
