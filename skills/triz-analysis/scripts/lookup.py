@@ -128,13 +128,18 @@ def cmd_matrix(args):
     try:
         cells = matrix["cells"]
         missing_rows = set(matrix.get("missing_rows", []))
+        unverified = set(matrix.get("unverified_cells", []))
         names = {p["id"]: pick(p["name"], args.lang) for p in principles["principles"]}
     except (KeyError, TypeError) as exc:
         raise data_error(f"malformed data file: {exc!r}")
 
-    pairs, empty_pairs, order, counts = [], [], [], {}
+    pairs, empty_pairs, order, counts, unverified_pairs = [], [], [], {}, []
     for i in improve:
         for w in worsen:
+            if f"{i}-{w}" in unverified:  # never answer from a disputed cell
+                empty_pairs.append({"improve": i, "worsen": w})
+                unverified_pairs.append({"code": "unverified_cell", "improve": i, "worsen": w})
+                continue
             cell = cells.get(f"{i}-{w}")
             if not cell:
                 empty_pairs.append({"improve": i, "worsen": w})
@@ -154,6 +159,7 @@ def cmd_matrix(args):
         raise data_error(f"matrix references unknown principle id {exc}")
 
     warnings = [{"code": "missing_row", "improve": i} for i in improve if i in missing_rows]
+    warnings += unverified_pairs
     return {"pairs": pairs, "empty_pairs": empty_pairs, "ranking": ranking, "warnings": warnings}
 
 
@@ -294,6 +300,16 @@ def cmd_validate(_args):
             errors.append(f"row {row} is declared in missing_rows but has cells")
         else:
             warnings.append({"code": "missing_row", "improve": row})
+
+    for key in matrix.get("unverified_cells", []):
+        m = _CELL_KEY_RE.match(key) if isinstance(key, str) else None
+        i, w = (int(m.group(1)), int(m.group(2))) if m else (0, 0)
+        if not m or not (1 <= i <= N_PARAMS and 1 <= w <= N_PARAMS) or i == w:
+            errors.append(f"unverified_cells: malformed or out-of-range key {key!r}")
+        elif key in cells:
+            errors.append(f"unverified_cells: {key} is listed but also has a value in cells")
+        else:
+            warnings.append({"code": "unverified_cell", "improve": i, "worsen": w})
 
     seps = files["separation-principles.json"].get("separations", [])
     if [s.get("id") for s in seps] != ["time", "space", "system", "condition"]:

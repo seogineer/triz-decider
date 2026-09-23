@@ -104,3 +104,10 @@ def test_parameters_reference_md_in_sync(params):
         assert row is not None, f"parameter {p['id']} missing from parameters-39.md"
         for text in (p["name"]["ko"], p["name"]["en"], p["definition"]["ko"]):
             assert text in row, f"parameter {p['id']}: '{text}' out of sync with parameters.json"
+
+
+def test_matrix_unverified_cells_are_valid_and_have_no_value(matrix):
+    for key in matrix["unverified_cells"]:
+        i, w = (int(x) for x in key.split("-"))
+        assert 1 <= i <= 39 and 1 <= w <= 39 and i != w, key
+        assert key not in matrix["cells"], f"{key} is unverified but has a value"

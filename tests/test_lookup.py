@@ -41,7 +41,7 @@ def default_cells():
     return {**filler, **named}
 
 
-def make_env(tmp_path, cells=None, missing_rows=None):
+def make_env(tmp_path, cells=None, missing_rows=None, unverified=None):
     """Copy the script into tmp_path/scripts and create tmp_path/data."""
     (tmp_path / "scripts").mkdir()
     (tmp_path / "data").mkdir()
@@ -59,6 +59,7 @@ def make_env(tmp_path, cells=None, missing_rows=None):
     write(tmp_path / "data" / "contradiction-matrix.json", {
         "version": "t", "source": "t", "size": 39,
         "missing_rows": [16] if missing_rows is None else missing_rows,
+        "unverified_cells": [] if unverified is None else unverified,
         "cells": cells if cells is not None else default_cells(),
     })
     write(tmp_path / "data" / "inventive-principles.json", {
@@ -372,6 +373,46 @@ def test_validate_missing_file_exit_5(tmp_path):
     assert err["error"]["code"] == "data_error"
 
 
+# ------------------------------------------------------ unverified cells ---
+
+def test_matrix_unverified_cell_reported_as_empty_with_warning(tmp_path):
+    script = make_env(tmp_path, unverified=["1-17"])
+    code, out, _ = run(script, "matrix", "--improve", "1", "--worsen", "17")
+    assert code == 0
+    assert out["pairs"] == []
+    assert out["empty_pairs"] == [{"improve": 1, "worsen": 17}]
+    assert out["warnings"] == [{"code": "unverified_cell", "improve": 1, "worsen": 17}]
+
+
+def test_matrix_unverified_cell_does_not_affect_other_pairs(tmp_path):
+    script = make_env(tmp_path, unverified=["1-17"])
+    _, out, _ = run(script, "matrix", "--improve", "1", "--worsen", "2,17")
+    assert [p["worsen"] for p in out["pairs"]] == [2]
+    assert out["warnings"] == [{"code": "unverified_cell", "improve": 1, "worsen": 17}]
+
+
+def test_validate_warns_about_unverified_cells(tmp_path):
+    script = make_env(tmp_path, unverified=["1-17"])
+    code, out, _ = run(script, "validate")
+    assert code == 0
+    assert {"code": "unverified_cell", "improve": 1, "worsen": 17} in out["warnings"]
+
+
+def test_validate_rejects_unverified_cell_that_also_has_a_value(tmp_path):
+    script = make_env(tmp_path, unverified=["1-2"])  # 1-2 exists in default cells
+    code, _, err = run(script, "validate")
+    assert code == 5
+    assert "unverified_cells" in json.dumps(err, ensure_ascii=False)
+
+
+@pytest.mark.parametrize("bad", ["x", "5-5", "0-3", "1-40"])
+def test_validate_rejects_malformed_unverified_key(tmp_path, bad):
+    script = make_env(tmp_path, unverified=[bad])
+    code, _, err = run(script, "validate")
+    assert code == 5
+    assert "unverified_cells" in json.dumps(err, ensure_ascii=False)
+
+
 # ------------------------------------------------ real data (smoke tests) ---
 
 def _real_cells():
@@ -402,13 +443,18 @@ def test_real_matrix_matches_data_file_exactly():
             assert in_pairs == (f"{i}-{w}" in cells)
 
 
-def test_real_matrix_flags_declared_missing_rows():
-    missing = json.loads((REAL_DATA / "contradiction-matrix.json").read_text(encoding="utf-8"))["missing_rows"]
-    for row in missing:
-        worsen = 1
-        code, out, _ = run(REAL_SCRIPT, "matrix", "--improve", str(row), "--worsen", str(worsen))
+def test_real_matrix_flags_declared_gaps():
+    data = json.loads((REAL_DATA / "contradiction-matrix.json").read_text(encoding="utf-8"))
+    for row in data["missing_rows"]:
+        code, out, _ = run(REAL_SCRIPT, "matrix", "--improve", str(row), "--worsen", "1")
         assert code == 0
         assert {"code": "missing_row", "improve": row} in out["warnings"]
+    for key in data["unverified_cells"]:
+        i, w = key.split("-")
+        code, out, _ = run(REAL_SCRIPT, "matrix", "--improve", i, "--worsen", w)
+        assert code == 0
+        assert out["pairs"] == [] and out["empty_pairs"] == [{"improve": int(i), "worsen": int(w)}]
+        assert {"code": "unverified_cell", "improve": int(i), "worsen": int(w)} in out["warnings"]
 
 
 def test_real_principle_all_40_resolve():
