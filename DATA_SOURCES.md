@@ -45,9 +45,12 @@
 - [ ] 원리 명칭 40개: 표준 명칭과 대조
 
 ## 4. parameters.json
-- 39개 ID·영문/한글 명칭은 레거시 행렬 파일의 `parameters` 배열에서 가져옴 (표준 명칭 대조 필요)
-- [ ] `definition` (ko/en) 39개 전부 `TODO`
-- [ ] `keywords` 39개 전부 비어 있음 (한·영 매핑 키워드)
+- 39개 ID·영문/한글 명칭은 레거시 행렬 파일의 `parameters` 배열에서 가져왔다.
+- **명칭 수정 2건 (검증 대기)**: 레거시의 #30 `Object-generated harmful effects`, #31 `Harmful side effects`는 의미가 겹쳐 널리 쓰이는 표준 목록과 다르다. 표준 목록 기준으로 #30 `Object-affected harmful factors`(물체가 받는 유해 요인), #31 `Object-generated harmful factors`(물체가 발생시키는 유해 요인)로 바꿨다. 행렬은 번호 위치로 조회하므로 열 의미가 어긋나면 결과가 틀어진다. 이 수정은 작성자 지식에 근거한 것이며 공개 자료로 확인해야 한다.
+- 정의(ko/en)·키워드 39개는 이 프로젝트에서 직접 작성했다(문헌 문장 미사용). 저작권 검토 대상은 아니나 내용 정확성은 리뷰가 필요하다.
+- [ ] 나머지 명칭 37개를 표준 목록과 대조
+- [ ] 정의·키워드 리뷰, 평가 케이스(10.1) 결과에 따라 키워드 보강
+- `references/parameters-39.md`는 `parameters.json`에서 생성한 파일이며 동기화는 `tests/test_data_integrity.py`가 검사한다.
 
 ## 5. separation-principles.json (v0.2 범위)
 - ID를 `SP1~4` → `time/space/system/condition`으로 변환

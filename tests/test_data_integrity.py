@@ -94,3 +94,13 @@ def test_separations_reference_valid_principles(separations):
     for s in separations["separations"]:
         assert s["name"]["en"] and s["name"]["ko"]
         assert all(1 <= x <= 40 for x in s["related_principles"])
+
+
+def test_parameters_reference_md_in_sync(params):
+    """references/parameters-39.md must list every parameter from parameters.json."""
+    md = (DATA.parent / "references" / "parameters-39.md").read_text(encoding="utf-8")
+    for p in params["parameters"]:
+        row = next((l for l in md.splitlines() if l.startswith(f"| {p['id']} |")), None)
+        assert row is not None, f"parameter {p['id']} missing from parameters-39.md"
+        for text in (p["name"]["ko"], p["name"]["en"], p["definition"]["ko"]):
+            assert text in row, f"parameter {p['id']}: '{text}' out of sync with parameters.json"
