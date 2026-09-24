@@ -73,16 +73,39 @@ def make_plugin_copy(dest):
                         ignore=shutil.ignore_patterns("__pycache__"))
 
 
-def _returned_principles(payload):
-    """Principle ids a lookup.py result carries (matrix pairs or principle records)."""
+def _recommended_principles(payload):
+    """Principle ids a matrix or separation result recommends (not principle records)."""
     ids = set()
     if isinstance(payload, dict):
         for pair in payload.get("pairs", []) or []:
             ids.update(x for x in pair.get("principles", []) if isinstance(x, int))
+        for sep in payload.get("separations", []) or []:
+            for rec in (sep.get("related_principles", []) if isinstance(sep, dict) else []):
+                if isinstance(rec, dict) and isinstance(rec.get("id"), int):
+                    ids.add(rec["id"])
+        for rec in payload.get("ranking", []) or []:
+            if isinstance(rec, dict) and isinstance(rec.get("id"), int):
+                ids.add(rec["id"])
+    return ids
+
+
+def _returned_principles(payload):
+    """Principle ids a lookup.py result carries (recommendations or principle records)."""
+    ids = _recommended_principles(payload)
+    if isinstance(payload, dict):
         for rec in payload.get("principles", []) or []:
             if isinstance(rec, dict) and isinstance(rec.get("id"), int):
                 ids.add(rec["id"])
     return ids
+
+
+_SEP_TYPE_ARG = re.compile(r"lookup\.py\s+separation\b[^|;&\n]*?--type[ =]+([A-Za-z,]+)")
+
+
+def separation_types(command):
+    """Separation types a `lookup.py separation --type ...` command asks for."""
+    m = _SEP_TYPE_ARG.search(command)
+    return [t for t in m.group(1).split(",") if t] if m else []
 
 
 def _tool_result_payloads(block):
@@ -99,8 +122,8 @@ def _tool_result_payloads(block):
 def parse_stream(lines):
     """Read claude stream-json lines: final text, skills used, lookup.py calls."""
     info = {"text": "", "model": "", "plugin_loaded": False, "skills": [], "lookup_calls": 0,
-            "saw_unverified": False}
-    returned = set()
+            "saw_unverified": False, "separation_types": []}
+    returned, recommended = set(), set()
     for line in lines:
         try:
             ev = json.loads(line)
@@ -121,6 +144,9 @@ def parse_stream(lines):
                     info["skills"].append(str(inp.get("skill", "")))
                 if block.get("name") == "Bash" and "lookup.py" in str(inp.get("command", "")):
                     info["lookup_calls"] += 1
+                    for t in separation_types(str(inp.get("command", ""))):
+                        if t not in info["separation_types"]:
+                            info["separation_types"].append(t)
         elif kind == "user":
             content = ev.get("message", {}).get("content", [])
             for block in content if isinstance(content, list) else []:
@@ -129,9 +155,11 @@ def parse_stream(lines):
                 if block.get("type") == "tool_result":
                     for payload in _tool_result_payloads(block):
                         returned |= _returned_principles(payload)
+                        recommended |= _recommended_principles(payload)
         elif kind == "result":
             info["text"] = ev.get("result", "") or ""
     info["returned_principles"] = sorted(returned)
+    info["recommended_principles"] = sorted(recommended)
     info["skill_used"] = any("triz-analysis" in x for x in info["skills"])
     return info
 
@@ -172,6 +200,8 @@ def run_case(case, mode, plugin_dir, workdir, raw_dir, attempts=3):
                 "plugin_loaded": info["plugin_loaded"], "model": info["model"], "attempts": attempt, "exit_code": code,
                 "saw_unverified": info["saw_unverified"],
                 "returned_principles": info["returned_principles"],
+                "recommended_principles": info["recommended_principles"],
+                "separation_types": info["separation_types"],
                 "disclosed": discloses_unverified(info["text"])})
     return case["id"], res
 
@@ -182,8 +212,9 @@ def main():
     ap.add_argument("--jobs", type=int, default=3)
     ap.add_argument("--out", default=None)
     ap.add_argument("--only", help="comma-separated case ids (default: all)")
+    ap.add_argument("--cases", default=str(HERE / "cases.yaml"), help="case file (JSON/YAML 1.2)")
     args = ap.parse_args()
-    cases = json.loads((HERE / "cases.yaml").read_text(encoding="utf-8"))["cases"]
+    cases = json.loads(Path(args.cases).read_text(encoding="utf-8"))["cases"]
     if args.only:
         wanted = set(args.only.split(","))
         cases = [c for c in cases if c["id"] in wanted]
@@ -198,8 +229,11 @@ def main():
         with ThreadPoolExecutor(args.jobs) as ex:
             done = list(ex.map(lambda c: run_case(c, args.mode, plugin, work, raw), cases))
     results = dict(done)
+    c_by_id = {c["id"]: c for c in cases}
     (out / "results.json").write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
-    bad = [cid for cid, r in done if not r["plugin_loaded"] or not r["improve"] or not r["worsen"]]
+    bad = [cid for cid, r in done if not r["plugin_loaded"]
+           or not (r["separation_types"] if "expected_separation" in c_by_id[cid]
+                   else r["improve"] and r["worsen"])]
     print(json.dumps({"mode": args.mode, "ran": len(done), "skill_used": sum(r["skill_used"] for _, r in done),
                       "infra_or_unparsed": bad}, ensure_ascii=False))
     return 0

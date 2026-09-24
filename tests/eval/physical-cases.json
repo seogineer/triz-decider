@@ -1,0 +1,65 @@
+{
+  "_note": "Physical-contradiction eval cases (DESIGN 11.3, v0.2). JSON is valid YAML 1.2. Problem statements are written for this project. expected_separation lists the separation types (lookup.py separation ids) the author judges acceptable; any one of them counts as a hit. The author's judgement needs independent review, as for cases.yaml.",
+  "cases": [
+    {
+      "id": "P01",
+      "lang": "ko",
+      "problem": "여객기의 착륙 바퀴는 이착륙할 때는 동체 밖으로 나와 있어야 하고, 순항할 때는 공기 저항을 줄이기 위해 밖에 없어야 한다.",
+      "expected_separation": ["time"]
+    },
+    {
+      "id": "P02",
+      "lang": "ko",
+      "problem": "물류 창고 바닥은 지게차가 다니려면 단단해야 하고, 작업자가 하루 종일 서 있으려면 푹신해야 한다.",
+      "expected_separation": ["space", "condition"]
+    },
+    {
+      "id": "P03",
+      "lang": "ko",
+      "problem": "수술 봉합실은 상처가 아무는 동안에는 튼튼해야 하고, 다 아문 뒤에는 몸속에 남아 있지 않아야 한다.",
+      "expected_separation": ["time"]
+    },
+    {
+      "id": "P04",
+      "lang": "ko",
+      "problem": "휴대폰 사생활 보호 필름은 정면에 있는 사용자에게는 화면이 보여야 하고, 옆에 있는 사람에게는 보이지 않아야 한다.",
+      "expected_separation": ["direction", "condition"]
+    },
+    {
+      "id": "P05",
+      "lang": "ko",
+      "problem": "소방관 장갑은 뜨거운 열을 막으려면 두꺼워야 하고, 장비를 섬세하게 다루려면 얇아야 한다.",
+      "expected_separation": ["space", "system"]
+    },
+    {
+      "id": "P06",
+      "lang": "ko",
+      "problem": "공항 보안 검색은 승객이 빨리 지나가도록 짧아야 하고, 위험물을 놓치지 않도록 길고 꼼꼼해야 한다.",
+      "expected_separation": ["condition", "time"]
+    },
+    {
+      "id": "P07",
+      "lang": "ko",
+      "problem": "텐트 천은 빗물이 들어오지 않게 구멍이 없어야 하고, 안에 찬 습기가 빠져나가도록 구멍이 있어야 한다.",
+      "expected_separation": ["condition", "space"]
+    },
+    {
+      "id": "P08",
+      "lang": "en",
+      "problem": "A drill bit must be very hard so its edge can cut steel, but it must also be tough so it does not shatter under impact.",
+      "expected_separation": ["space", "system"]
+    },
+    {
+      "id": "P09",
+      "lang": "en",
+      "problem": "A single-lane mountain road has to carry traffic both uphill and downhill, but it is only wide enough for one direction at a time.",
+      "expected_separation": ["time", "space"]
+    },
+    {
+      "id": "P10",
+      "lang": "en",
+      "problem": "The guard around a delivery drone's propellers must be closed so fingers cannot reach the blades, and open so air can pass through freely.",
+      "expected_separation": ["condition", "space", "system"]
+    }
+  ]
+}

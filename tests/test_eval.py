@@ -204,7 +204,7 @@ def test_plugin_copy_excludes_expected_values(tmp_path):
     run_blind.make_plugin_copy(tmp_path)
     assert (tmp_path / "skills" / "triz-analysis" / "SKILL.md").exists()
     assert not (tmp_path / "tests").exists()
-    assert not any(tmp_path.rglob("cases.yaml"))
+    assert not any(tmp_path.rglob("cases.yaml")) and not any(tmp_path.rglob("physical-cases.json"))
 
 
 # ------------------------------------------- unverified-cell disclosure ---
@@ -276,3 +276,64 @@ def test_safe_name_handles_patent_ids_with_slashes():
     assert run_blind.safe_name("WO01/13760") == "WO01_13760"
     assert run_blind.safe_name("US4966257") == "US4966257"
     assert "/" not in run_blind.safe_name("../../etc/passwd")
+
+
+# ------------------------------------------------------- physical cases ---
+
+PHYSICAL = json.loads((EVAL / "physical-cases.json").read_text(encoding="utf-8"))["cases"]
+SEPARATION_IDS = {"space", "time", "condition", "direction", "system"}
+
+
+def test_physical_cases_are_well_formed():
+    ids = [c["id"] for c in PHYSICAL]
+    assert len(PHYSICAL) >= 10 and len(set(ids)) == len(ids)
+    assert not set(ids) & {c["id"] for c in CASES}
+    for c in PHYSICAL:
+        assert c["lang"] in ("ko", "en") and c["problem"].strip()
+        assert c["expected_separation"] and set(c["expected_separation"]) <= SEPARATION_IDS
+
+
+@pytest.mark.parametrize("command, types", [
+    ("python3 /x/scripts/lookup.py separation --type time,space --lang ko", ["time", "space"]),
+    ("cd /x && python3 scripts/lookup.py separation --type=system", ["system"]),
+    ("python3 lookup.py separation --lang en", []),
+    ("python3 lookup.py matrix --improve 1 --worsen 2", []),
+])
+def test_separation_types_from_command(command, types):
+    assert run_blind.separation_types(command) == types
+
+
+def test_parse_stream_collects_separation_calls_and_recommendations():
+    lines = [
+        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-solver"}], "slash_commands": []}),
+        json.dumps({"type": "assistant", "message": {"content": [
+            {"type": "tool_use", "name": "Bash", "input": {"command": "python3 l/lookup.py separation"}},
+            {"type": "tool_use", "name": "Bash", "input": {"command": "python3 l/lookup.py separation --type time,system"}},
+            {"type": "tool_use", "name": "Bash", "input": {"command": "python3 l/lookup.py separation --type time"}}]}}),
+        _tool_result({"separations": [{"id": "time", "related_principles": [{"id": 10, "name": "a"}]}],
+                      "ranking": [{"id": 10, "count": 1, "name": "a"}, {"id": 1, "count": 1, "name": "b"}]}),
+        _tool_result({"principles": [{"id": 35, "name": "y"}]}),
+    ]
+    info = run_blind.parse_stream(lines)
+    assert info["separation_types"] == ["time", "system"]
+    assert info["recommended_principles"] == [1, 10]
+    assert info["returned_principles"] == [1, 10, 35]
+
+
+def test_score_physical():
+    cases = [{"id": "P1", "expected_separation": ["time"]},
+             {"id": "P2", "expected_separation": ["space", "system"]},
+             {"id": "P3", "expected_separation": ["direction"]},
+             {"id": "P4", "expected_separation": ["time"]}]
+    results = {
+        "P1": {"separation_types": ["time"], "principles_cited": [10], "recommended_principles": [9, 10]},
+        "P2": {"separation_types": ["condition", "system"], "principles_cited": [1, 99],
+               "recommended_principles": [1, 5]},
+        "P3": {"separation_types": [], "principles_cited": [4], "recommended_principles": []},
+    }
+    out = score_mod.score_physical(cases, results)
+    assert out["cases_scored"] == 3 and out["cases_missing"] == ["P4"]
+    assert [r["hit"] for r in out["rows"]] == [True, True, False]
+    assert [r["first_hit"] for r in out["rows"]] == [True, False, False]
+    assert out["hallucinated_principles"] == 2   # 99 in P2, 4 in P3 (nothing looked up)
+    assert out["used_separation_rate"] == 2 / 3

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Score an eval run (DESIGN 10.1). Stdlib only.
 
-Usage: python tests/eval/score.py results.json
+Usage: python tests/eval/score.py results.json [--cases physical-cases.json]
 
 results.json maps case id -> {"improve": [ids ranked best-first],
 "worsen": [ids ranked best-first], "principles_cited": [ids]}.
@@ -13,6 +13,12 @@ results.json maps case id -> {"improve": [ids ranked best-first],
 - A cited principle is a hallucination if lookup.py did not return it in that
   run (observed in the tool results; older result files without that field
   fall back to recomputing from the reported candidate pairs).
+
+Physical-contradiction cases (they carry "expected_separation") are scored on
+the separation types the run passed to `lookup.py separation --type`
+(observed in the tool calls): a case hits if any of them is expected. A cited
+principle is a hallucination unless a matrix or separation result of that run
+recommended it.
 """
 import json
 import subprocess
@@ -74,13 +80,51 @@ def _summary(rows, n, hits, imp_hits, wor_hits, halluc, missing):
             "hallucinated_principles": halluc, "rows": rows}
 
 
+def score_physical(cases, results):
+    rows, missing = [], []
+    for c in cases:
+        r = results.get(c["id"])
+        if r is None:
+            missing.append(c["id"])
+            continue
+        types = list(r.get("separation_types", []))
+        expected = set(c["expected_separation"])
+        recommended = set(r.get("recommended_principles", []))
+        bad = [p for p in r.get("principles_cited", []) if p not in recommended]
+        rows.append({"id": c["id"], "separation_types": types,
+                     "hit": bool(set(types) & expected),
+                     "first_hit": bool(types) and types[0] in expected,
+                     "used_separation": bool(types),
+                     "hallucinated_principles": bad})
+    n = len(rows)
+
+    def rate(key):
+        return sum(r[key] for r in rows) / n if n else 0.0
+    return {"cases_scored": n, "cases_missing": missing,
+            "separation_hit_rate": rate("hit"), "first_choice_hit_rate": rate("first_hit"),
+            "used_separation_rate": rate("used_separation"),
+            "hallucinated_principles": sum(len(r["hallucinated_principles"]) for r in rows),
+            "rows": rows}
+
+
 def main(argv):
-    if len(argv) != 2:
+    args = argv[1:]
+    cases_path = HERE / "cases.yaml"
+    if "--cases" in args:
+        i = args.index("--cases")
+        if i + 1 >= len(args):
+            print(__doc__)
+            return 2
+        cases_path = Path(args[i + 1])
+        del args[i:i + 2]
+    if len(args) != 1:
         print(__doc__)
         return 2
-    cases = json.loads((HERE / "cases.yaml").read_text(encoding="utf-8"))["cases"]
-    results = json.loads(Path(argv[1]).read_text(encoding="utf-8"))
-    print(json.dumps(score(cases, results), ensure_ascii=False, indent=2))
+    cases = json.loads(Path(cases_path).read_text(encoding="utf-8"))["cases"]
+    results = json.loads(Path(args[0]).read_text(encoding="utf-8"))
+    physical = [c for c in cases if "expected_separation" in c]
+    out = score_physical(physical, results) if physical else score(cases, results)
+    print(json.dumps(out, ensure_ascii=False, indent=2))
     return 0
 
 
