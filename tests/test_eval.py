@@ -226,6 +226,13 @@ def test_parse_stream_sees_unverified_warning_in_tool_result():
     assert run_blind.parse_stream(lines[:1] + lines[2:])["saw_unverified"] is False
 
 
+def test_parse_stream_ignores_the_word_in_file_text():
+    """Reading SKILL.md shows 'unverified_cell' in prose; that is not a lookup warning."""
+    lines = [json.dumps({"type": "user", "message": {"content": [
+        {"type": "tool_result", "content": "143\t- `unverified_cell`: 그 조합의 셀은 ..."}]}})]
+    assert run_blind.parse_stream(lines)["saw_unverified"] is False
+
+
 @pytest.mark.parametrize("text, expected", [
     ("이 조합은 검증된 데이터가 없어 조회할 수 없습니다.", True),
     ("Cell is unverified in the dataset, so I cannot look it up.", True),

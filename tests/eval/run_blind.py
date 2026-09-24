@@ -175,10 +175,13 @@ def parse_stream(lines):
         elif kind == "user":
             content = ev.get("message", {}).get("content", [])
             for block in content if isinstance(content, list) else []:
-                if block.get("type") == "tool_result" and "unverified_cell" in json.dumps(block.get("content", "")):
-                    info["saw_unverified"] = True
                 if block.get("type") == "tool_result":
                     for payload in _tool_result_payloads(block):
+                        # only a lookup.py JSON warning counts; reading SKILL.md also shows the word
+                        if isinstance(payload, dict) and any(
+                                isinstance(w, dict) and w.get("code") == "unverified_cell"
+                                for w in payload.get("warnings", []) or []):
+                            info["saw_unverified"] = True
                         returned |= _returned_principles(payload)
                         recommended |= _recommended_principles(payload)
         elif kind == "result":
