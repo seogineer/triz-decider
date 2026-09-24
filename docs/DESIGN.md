@@ -503,7 +503,7 @@ v0.1은 데이터 확정이 선행 조건이며, 이후 구현은 Claude Code로
 
 - [x] `separation-principles.json` 교차 검증·재작성 (MATRIZ 지식베이스 5종 채택, 질문·예시 직접 작성. MATRIZ 원문 직접 대조는 네트워크 정책으로 남음: `DATA_SOURCES.md` 5.4)
 - [x] `lookup.py separation` + 단위 테스트, `validate`·무결성 테스트 확장
-- [ ] `SKILL.md` 물리적 모순 흐름(4.3)과 `references/` 분리 원리 가이드
+- [x] `SKILL.md` 물리적 모순 흐름(4.3)과 `references/physical-contradiction.md`
 - [ ] 구조화 인터뷰(4.4)와 해법 설명 입력 처리 (질문 1개씩 최대 5개)
 - [ ] Markdown 보고서 저장 (FR-08)
 - [ ] 물리적 모순 평가 케이스 10건 작성 및 블라인드 실행, 인터뷰 흐름 스모크 확인

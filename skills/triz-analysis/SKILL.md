@@ -2,18 +2,19 @@
 name: triz-analysis
 description: Analyze engineering or product problems with TRIZ. Use when the user
   describes a trade-off (improving one property worsens another), a conflicting
-  requirement, or asks for TRIZ, contradiction matrix, or inventive principles.
-  Also triggers on Korean: 트리즈, 모순, 기술적 모순, 물리적 모순, 모순 행렬,
-  트레이드오프, 발명 원리, 발명원리.
+  requirement (one property must be both high and low), or asks for TRIZ, the
+  contradiction matrix, inventive principles, physical contradictions or separation
+  principles. Also triggers on Korean: 트리즈, 모순, 기술적 모순, 물리적 모순,
+  모순 행렬, 트레이드오프, 발명 원리, 발명원리, 분리 원리.
 ---
 
-# TRIZ 분석 (기술적 모순)
+# TRIZ 분석
 
-모순 행렬과 40 발명 원리로 트레이드오프를 푸는 아이디어를 도출한다. 이 버전(v0.1)은 **기술적 모순**만 다룬다.
+모순을 풀어 해결 아이디어를 도출한다. **기술적 모순**(두 특성의 상충)은 모순 행렬과 40 발명 원리로, **물리적 모순**(한 특성에 상반된 요구)은 분리 원리로 푼다.
 
 ## 원칙 (반드시 지킨다)
 
-- **판단은 당신(LLM), 조회는 스크립트.** 행렬 셀 값, 원리 번호, 원리 이름·하위 원리, 파라미터 정의는 **오직 `lookup.py` 출력이나 `references/`에서만** 가져온다. 기억으로 만들거나 고치거나 보간하지 않는다.
+- **판단은 당신(LLM), 조회는 스크립트.** 행렬 셀 값, 원리 번호, 원리 이름·하위 원리, 파라미터 정의, 분리 유형과 연계 원리는 **오직 `lookup.py` 출력이나 `references/`에서만** 가져온다. 기억으로 만들거나 고치거나 보간하지 않는다.
 - 스크립트 출력의 번호·이름·횟수는 그대로 인용한다. 순위를 바꾸거나 원리를 추가·삭제하지 않는다.
 - 출력 언어는 사용자 입력 언어를 따른다. 스크립트에는 같은 언어를 `--lang ko|en`으로 넘긴다.
 - 아이디어는 사용자의 실제 시스템에 맞춰 구체적으로 쓴다. 원리 문장을 되풀이하지 않는다.
@@ -27,16 +28,17 @@ python3 <skill-dir>/scripts/lookup.py matrix --improve 9 --worsen 19,22 [--lang 
 python3 <skill-dir>/scripts/lookup.py principle --id 10,13,28
 python3 <skill-dir>/scripts/lookup.py param --id 9        # 정의 확인
 python3 <skill-dir>/scripts/lookup.py param --search 소음  # 키워드 검색
+python3 <skill-dir>/scripts/lookup.py separation --type time,space   # 분리 원리 (생략하면 5종 전부)
 ```
 
 출력은 stdout의 JSON. 오류는 stderr의 JSON(`error.code`)과 종료 코드로 온다.
 
 ## 1. 유형 판별
 
-| 유형 | 판별 기준 | v0.1 처리 |
+| 유형 | 판별 기준 | 처리 |
 | --- | --- | --- |
 | 기술적 모순 | 서로 다른 두 특성이 상충 ("A를 개선하면 B가 악화") | 아래 절차대로 진행 |
-| 물리적 모순 | 하나의 특성에 상반된 요구 (커야 하고 작아야 함) | "물리적 모순 흐름은 v0.2에서 지원한다"고 알린 뒤, 두 요구를 서로 다른 특성으로 나눠 기술적 모순으로 재진술을 시도 |
+| 물리적 모순 | 하나의 특성에 상반된 요구 (커야 하고 작아야 함) | 3장 절차대로 진행 |
 | 모호한 입력 | 목표·제약이 불명확 | 질문 **1개**로 "무엇을 개선하려 하고, 그 결과 무엇이 나빠지는가"를 묻는다. 답을 받으면 기술적 모순으로 재진술 |
 
 ## 2. 기술적 모순 절차
@@ -47,9 +49,21 @@ python3 <skill-dir>/scripts/lookup.py param --search 소음  # 키워드 검색
 4. **원리 집계** — 출력의 `ranking`(빈도 내림차순)에서 상위 3~5개를 고른다. 동률이면 출력 순서를 따른다.
 5. **원리 정의 조회** — 고른 원리 ID로 `principle`을 호출해 이름과 하위 원리를 얻는다.
 6. **아이디어 생성** — 원리마다 사용자 시스템에 맞춘 적용안 1~3개를 쓴다. 하위 원리 중 어느 것을 적용했는지 드러나게 한다.
-7. **출력** — 아래 포맷으로 정리한다. 예시는 `references/workflow-examples.md`.
+7. **출력** — 4장 포맷으로 정리한다. 예시는 `references/workflow-examples.md`.
 
-## 3. 출력 포맷
+## 3. 물리적 모순 절차
+
+이 절차를 시작할 때 `references/physical-contradiction.md`를 읽는다.
+
+1. **모순 문장화** — "[대상]의 [특성]은 [이유 A] 때문에 [P]여야 하고, [이유 B] 때문에 [반대 P]여야 한다"로 쓰고 사용자에게 확인받는다. 대상은 모순이 걸린 구체적 요소로 좁힌다. 두 특성이 서로 다르면 물리적 모순이 아니므로 2장으로 간다.
+2. **분리 축 확인** — `separation`(유형 생략)을 한 번 호출해 5종의 `question`을 얻는다. 각 요구가 **어디서, 언제, 누구·무엇에 대해, 어느 방향으로, 어느 수준에서** 필요한지 확인한다. 입력에 답이 없으면 사용자에게 **한 번에 하나씩** 묻는다(가장 결정적인 축부터, 최대 3개).
+3. **분리 유형 선택** — 두 요구가 겹치지 않는 유형을 1~2개 고르고 근거를 한 줄씩 쓴다. 어느 축에서도 겹치면 `system`(시스템 수준)을 고른다.
+4. **원리 조회** — 고른 유형을 한 번에 `separation --type`으로 조회한다. 여러 유형이면 `ranking`(빈도 내림차순)에서, 하나면 `related_principles` 순서대로 상위 3~5개를 고른다.
+5. **원리 정의 조회** — 고른 원리 ID로 `principle`을 호출한다.
+6. **아이디어 생성** — 원리마다 적용안 1~3개. 어떤 분리(예: "비가 올 때만 크게")를 구현하는지 드러나게 쓴다.
+7. **출력** — 4장의 물리적 모순 포맷.
+
+## 4. 출력 포맷
 
 ```markdown
 ## 모순 정의
@@ -73,9 +87,21 @@ python3 <skill-dir>/scripts/lookup.py param --search 소음  # 키워드 검색
 - 매핑 재검토가 필요한 지점, 검증 방법
 ```
 
+물리적 모순이면 "모순 정의"와 "파라미터 매핑" 대신 아래 두 절을 쓰고, "추천 원리"의 제목은 "(분리 원리 조회 결과)"로 바꾼다.
+
+```markdown
+## 모순 정의 (물리적 모순)
+[대상]의 [특성]은 [이유 A] 때문에 [P]여야 하고, [이유 B] 때문에 [반대 P]여야 한다.
+
+## 분리 유형
+| 유형 | [P]가 필요한 경우 | [반대 P]가 필요한 경우 | 판단 |
+| --- | --- | --- | --- |
+| 시간에 의한 분리 | 비가 올 때 | 보관할 때 | 겹치지 않음 → 선택 |
+```
+
 "추천 원리" 표는 스크립트 출력에서 그대로 옮기고, "적용 아이디어"만 직접 작성한다.
 
-## 4. 예외 처리
+## 5. 예외 처리
 
 **`empty_pairs`가 있을 때** — 오류가 아니다. 그 조합에는 행렬에 원리가 없다는 뜻이다. 일부만 비었으면 나머지 `pairs`로 진행하고, 어떤 조합이 비었는지 한 줄로 알린다. `pairs`가 전부 비면 파라미터 재매핑을 **1회** 제안한다(다른 후보 또는 더 넓은/좁은 특성). 그래도 비면 원리를 지어내지 말고 결과가 없다고 말한다.
 
@@ -88,7 +114,7 @@ python3 <skill-dir>/scripts/lookup.py param --search 소음  # 키워드 검색
 
 | 코드 | `error.code` | 대응 |
 | --- | --- | --- |
-| 2 | `invalid_argument` | 인자 형식(쉼표로 구분된 정수)을 고쳐 다시 호출 |
+| 2 | `invalid_argument` | 인자 형식(쉼표로 구분된 정수, `--type`은 space·time·condition·direction·system)을 고쳐 다시 호출 |
 | 3 | `out_of_range` | 파라미터는 1~39, 원리는 1~40. 번호를 다시 확인 |
 | 4 | `same_parameter` | 개선·악화 후보에서 겹치는 번호를 제거하거나 매핑을 재검토 |
 | 5 | `data_error` | 데이터 파일 문제. 원리 번호를 기억으로 대신 답하지 말고, 조회할 수 없다고 사용자에게 알린다 |
