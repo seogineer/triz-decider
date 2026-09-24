@@ -371,3 +371,19 @@ def test_score_physical_accepts_stated_choice_as_secondary():
                       "principles_cited": [], "recommended_principles": [9]}}
     out = score_mod.score_physical(cases, results)
     assert out["separation_hit_rate"] == 0 and out["hit_rate_stated_or_observed"] == 1
+
+
+def test_json_objects_found_inside_chained_command_output():
+    guide = "# guide\nsome {braces} in text\n"
+    sep = {"separations": [{"id": "time", "related_principles": [{"id": 15}, {"id": 10}]}], "ranking": []}
+    text = guide + json.dumps(sep, indent=2) + "\n"
+    objs = list(run_blind._json_objects(text))
+    assert objs == [sep]
+    assert run_blind._recommended_principles(objs[0]) == {15, 10}
+
+
+def test_json_objects_pure_and_multiple():
+    a, b = {"pairs": []}, {"principles": [{"id": 1}]}
+    assert list(run_blind._json_objects(json.dumps(a))) == [a]
+    assert list(run_blind._json_objects(json.dumps(a) + "\n" + json.dumps(b))) == [a, b]
+    assert list(run_blind._json_objects("no json here")) == []

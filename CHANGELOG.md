@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+- Physical flow: with one separation type, the skill may reuse the full `separation` lookup from step 2 and must say so; answers name only commands that were actually run.
+- Eval: the scorer now reads lookup JSON inside chained command output (e.g. `cat guide.md && lookup.py separation`). Before, such runs had every cited principle counted as a hallucination.
+
 ## 0.2.1 — 2026-09-25
 - **Tie rule for principle rankings.** `matrix` and `separation` rank by count as before; ties now go round-robin: every cell's (or separation type's) 1st principle, then every 2nd, and so on, in pair order or `--type` order. Before, ties kept first appearance, so the first pair or type filled the top of the list and the model skipped ranks to include the others. The skill now says to pass the best-fitting separation type first and take the ranking in order. Worked examples updated to the new output.
 

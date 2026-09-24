@@ -138,10 +138,35 @@ def _tool_result_payloads(block):
     texts = [content] if isinstance(content, str) else [
         c.get("text", "") for c in content if isinstance(c, dict)]
     for text in texts:
+        yield from _json_objects(text)
+
+
+def _json_objects(text):
+    """JSON objects in a tool result, also when other output surrounds them.
+
+    Runs often chain commands (`cat guide.md && lookup.py separation`), so the
+    result is not pure JSON. lookup.py prints each object starting at a line.
+    """
+    try:
+        yield json.loads(text)
+        return
+    except ValueError:
+        pass
+    dec = json.JSONDecoder()
+    pos = 0
+    while True:
+        start = text.find("\n{", pos) if pos or not text.startswith("{") else 0
+        if start < 0:
+            return
+        start += text[start] == "\n"
         try:
-            yield json.loads(text)
+            obj, end = dec.raw_decode(text, start)
         except ValueError:
+            pos = start + 1
             continue
+        if isinstance(obj, dict):
+            yield obj
+        pos = end
 
 
 def parse_stream(lines):
@@ -260,7 +285,7 @@ def main():
     c_by_id = {c["id"]: c for c in cases}
     (out / "results.json").write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     bad = [cid for cid, r in done if not r["plugin_loaded"]
-           or not (r["separation_types"] if "expected_separation" in c_by_id[cid]
+           or not ((r["separation_types"] or r["stated_separations"]) if "expected_separation" in c_by_id[cid]
                    else r["improve"] and r["worsen"])]
     print(json.dumps({"mode": args.mode, "ran": len(done), "skill_used": sum(r["skill_used"] for _, r in done),
                       "infra_or_unparsed": bad}, ensure_ascii=False))
