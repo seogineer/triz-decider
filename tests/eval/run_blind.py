@@ -7,7 +7,7 @@ session cannot read the expected parameters. Only the problem text is sent,
 plus one fixed suffix (the same for every case) that skips the confirmation
 question. Raw answers are saved; parsing and scoring are done by scripts.
 
-Modes: "command" sends `/triz-decider:triz <problem>` (measures mapping
+Modes: "command" sends `/triz-solver:triz <problem>` (measures mapping
 accuracy; the skill is forced); "natural" sends the problem alone (measures
 whether the skill activates by itself, FR-05). Tool calls are read from
 stream-json, so "did it run lookup.py" is observed, not inferred from prose.
@@ -100,7 +100,8 @@ def parse_stream(lines):
         kind = ev.get("type")
         if kind == "system" and ev.get("subtype") == "init":
             plugins = json.dumps(ev.get("plugins", []) + ev.get("slash_commands", []))
-            info["plugin_loaded"] = "triz-decider" in plugins
+            # "triz-decider" is the slug before 2026-09-24; keeps old recorded runs scorable
+            info["plugin_loaded"] = "triz-solver" in plugins or "triz-decider" in plugins
         elif kind == "assistant":
             for block in ev.get("message", {}).get("content", []):
                 if block.get("type") != "tool_use":
@@ -132,7 +133,7 @@ def safe_name(case_id):
 
 def build_prompt(case, mode):
     if mode == "command":
-        return "/triz-decider:triz " + case["problem"] + SUFFIX[case["lang"]]
+        return "/triz-solver:triz " + case["problem"] + SUFFIX[case["lang"]]
     return case["problem"] + SUFFIX[case["lang"]]
 
 

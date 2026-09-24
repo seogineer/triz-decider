@@ -139,9 +139,9 @@ def test_parse_answer_english():
 
 def test_parse_stream_extracts_tool_calls_and_result():
     lines = [
-        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-decider"}], "slash_commands": []}),
+        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-solver"}], "slash_commands": []}),
         json.dumps({"type": "assistant", "message": {"content": [
-            {"type": "tool_use", "name": "Skill", "input": {"skill": "triz-decider:triz-analysis"}},
+            {"type": "tool_use", "name": "Skill", "input": {"skill": "triz-solver:triz-analysis"}},
             {"type": "tool_use", "name": "Bash", "input": {"command": "python3 x/lookup.py matrix --improve 1 --worsen 2"}},
             {"type": "tool_use", "name": "Bash", "input": {"command": "ls"}}]}}),
         "not json",
@@ -155,9 +155,9 @@ def test_parse_stream_extracts_tool_calls_and_result():
 
 def test_parse_stream_command_alone_is_not_skill_use():
     """Invoking the /triz command without loading triz-analysis must not count."""
-    lines = [json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-decider"}], "slash_commands": []}),
+    lines = [json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-solver"}], "slash_commands": []}),
              json.dumps({"type": "assistant", "message": {"content": [
-                 {"type": "tool_use", "name": "Skill", "input": {"skill": "triz-decider:triz"}}]}}),
+                 {"type": "tool_use", "name": "Skill", "input": {"skill": "triz-solver:triz"}}]}}),
              json.dumps({"type": "result", "result": "x"})]
     assert run_blind.parse_stream(lines)["skill_used"] is False
 
@@ -171,7 +171,7 @@ def test_parse_stream_detects_missing_plugin_and_skill():
 
 def test_build_prompt_modes():
     case = {"problem": "P", "lang": "en"}
-    assert run_blind.build_prompt(case, "command").startswith("/triz-decider:triz P")
+    assert run_blind.build_prompt(case, "command").startswith("/triz-solver:triz P")
     assert run_blind.build_prompt(case, "natural").startswith("P")
 
 
@@ -190,7 +190,7 @@ def test_plugin_copy_excludes_expected_values(tmp_path):
 
 def test_parse_stream_sees_unverified_warning_in_tool_result():
     lines = [
-        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-decider"}], "slash_commands": []}),
+        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-solver"}], "slash_commands": []}),
         json.dumps({"type": "user", "message": {"content": [
             {"type": "tool_result", "content": '{"warnings": [{"code": "unverified_cell", "improve": 1, "worsen": 28}]}'}]}}),
         json.dumps({"type": "result", "result": "ok"}),
@@ -232,7 +232,7 @@ def _tool_result(payload):
 
 def test_parse_stream_collects_principles_returned_by_lookup():
     lines = [
-        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-decider"}], "slash_commands": []}),
+        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-solver"}], "slash_commands": []}),
         _tool_result({"pairs": [{"improve": 34, "worsen": 26, "principles": [2, 28, 10, 25]}],
                       "ranking": [{"id": 2, "count": 1, "name": "x"}], "warnings": []}),
         _tool_result({"principles": [{"id": 35, "name": "y"}]}),

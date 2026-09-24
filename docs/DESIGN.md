@@ -1,10 +1,10 @@
-# TRIZ Decider 플러그인 설계서
+# TRIZ Solver 플러그인 설계서
 
 2026-09-23 · 서도경
 
 ## 1. 개요
 
-TRIZ Decider는 기술적·물리적 모순을 TRIZ 방법론으로 분석해 해결 아이디어를 도출하는 **오픈소스 Claude Code 플러그인**이다. 서버·DB·API 키 없이 동작하며, 추론은 사용자의 Claude가, 행렬 조회는 결정적 스크립트가 담당한다.
+TRIZ Solver는 기술적·물리적 모순을 TRIZ 방법론으로 분석해 해결 아이디어를 도출하는 **오픈소스 Claude Code 플러그인**이다. 서버·DB·API 키 없이 동작하며, 추론은 사용자의 Claude가, 행렬 조회는 결정적 스크립트가 담당한다.
 
 ### 1.1 목적
 
@@ -340,7 +340,7 @@ Use the triz-analysis skill to analyze: $ARGUMENTS
 ### 8.1 디렉토리
 
 ```
-triz-decider/
+triz-solver/
 ├── .claude-plugin/
 │   ├── plugin.json
 │   └── marketplace.json
@@ -376,8 +376,8 @@ triz-decider/
 
 ```json
 {
-  "name": "triz-decider",
-  "displayName": "TRIZ Decider",
+  "name": "triz-solver",
+  "displayName": "TRIZ Solver",
   "version": "0.1.0",
   "description": "Resolve engineering contradictions with the TRIZ contradiction matrix and 40 inventive principles",
   "author": { "name": "DoGyeong Seo" },
@@ -392,10 +392,10 @@ triz-decider/
 
 ```json
 {
-  "name": "triz-decider",
+  "name": "triz-solver",
   "owner": { "name": "DoGyeong Seo" },
   "plugins": [
-    { "name": "triz-decider", "source": "./", "description": "TRIZ contradiction analysis" }
+    { "name": "triz-solver", "source": "./", "description": "TRIZ contradiction analysis" }
   ]
 }
 ```
@@ -405,7 +405,7 @@ triz-decider/
 1. `claude plugin validate .`로 매니페스트·frontmatter 검증
 2. `claude --plugin-dir .`로 로컬 설치 테스트
 3. 플러그인 전용 신규 GitHub 공개 저장소 생성(기존 Next.js 저장소와 분리), `v0.1.0` 태그
-4. 설치 안내: `/plugin marketplace add <owner>/triz-decider` → `/plugin install triz-decider@triz-decider`
+4. 설치 안내: `/plugin marketplace add <owner>/triz-solver` → `/plugin install triz-solver@triz-solver`
 5. v0.2 안정화 후 Console 조직으로 공식 Plugin Directory 제출
 
 매니페스트 필드는 제출 시점의 공식 스키마로 재확인한다.
@@ -492,7 +492,7 @@ v0.1은 데이터 확정이 선행 조건이며, 이후 구현은 Claude Code로
 
 ### 11.2 미결 사항
 
-- [x] 플러그인 슬러그 확정: `triz-decider` 유지 (저장소명·설치 안내·태그가 이미 이 이름을 쓰고, 변경 비용에 비해 이점이 작음)
+- [x] 플러그인 슬러그 확정: `triz-solver` (2026-09-24 `triz-decider`에서 변경. 이 플러그인은 결정을 내리지 않고 해결 아이디어를 도출하므로 역할이 이름에 드러나게 함. 등재 전이라 변경 가능)
 - [x] 기존 Next.js 저장소를 재활용할지, 플러그인 전용 신규 저장소로 분리할지
 - [x] 행렬 셀 값 교차 검증에 사용할 공개 자료 선정 (DATA_SOURCES.md 2.2)
 - [x] 원리 설명의 기본 언어: 한국어 우선 작성 후 영어 번역 (표준 영문 표현 복제 위험을 줄이고 작성자가 직접 검수 가능). 원리·파라미터 명칭은 영어 표준 명칭 기준. 영문은 공식 디렉토리 제출 전 검토

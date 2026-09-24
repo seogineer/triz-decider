@@ -1,4 +1,4 @@
-# TRIZ Decider
+# TRIZ Solver
 
 [한국어](README.ko.md)
 
@@ -11,8 +11,8 @@ No server, database or API key. Claude does the reasoning; a small standard-libr
 ## Install
 
 ```
-/plugin marketplace add seogineer/triz-decider
-/plugin install triz-decider@triz-decider
+/plugin marketplace add seogineer/triz-solver
+/plugin install triz-solver@triz-solver
 ```
 
 To try it from a local checkout: `claude --plugin-dir .`
@@ -23,7 +23,7 @@ To try it from a local checkout: `claude --plugin-dir .`
 /triz Raising the top speed of my e-scooter drains the battery too fast
 ```
 
-If `/triz` is not recognised in your session, use the full name `/triz-decider:triz`.
+If `/triz` is not recognised in your session, use the full name `/triz-solver:triz`.
 
 You can also just describe a trade-off in plain language (English or Korean); the `triz-analysis` skill activates on its own. The answer follows the language you write in.
 

@@ -1,4 +1,4 @@
-# TRIZ Decider
+# TRIZ Solver
 
 [English](README.md)
 
@@ -11,8 +11,8 @@
 ## 설치
 
 ```
-/plugin marketplace add seogineer/triz-decider
-/plugin install triz-decider@triz-decider
+/plugin marketplace add seogineer/triz-solver
+/plugin install triz-solver@triz-solver
 ```
 
 로컬에서 시험하려면 `claude --plugin-dir .`
@@ -23,7 +23,7 @@
 /triz 전동 킥보드 최고 속도를 올리면 배터리가 너무 빨리 닳아요
 ```
 
-세션에서 `/triz`가 인식되지 않으면 전체 이름 `/triz-decider:triz`를 쓰세요.
+세션에서 `/triz`가 인식되지 않으면 전체 이름 `/triz-solver:triz`를 쓰세요.
 
 `/triz` 없이 트레이드오프를 자연어(한국어·영어)로 설명해도 `triz-analysis` 스킬이 자동으로 켜집니다. 답변은 입력한 언어를 따릅니다.
 

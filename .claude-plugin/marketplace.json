@@ -1,8 +1,8 @@
 {
-  "name": "triz-decider",
+  "name": "triz-solver",
   "description": "TRIZ contradiction analysis plugin",
   "owner": { "name": "DoGyeong Seo" },
   "plugins": [
-    { "name": "triz-decider", "source": "./", "description": "TRIZ contradiction analysis" }
+    { "name": "triz-solver", "source": "./", "description": "TRIZ contradiction analysis" }
   ]
 }

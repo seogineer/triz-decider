@@ -1,4 +1,4 @@
-# TRIZ Decider — Claude Code 작업 지침
+# TRIZ Solver — Claude Code 작업 지침
 
 ## 프로젝트
 TRIZ(모순 행렬 + 40 발명 원리)로 기술적 모순 해결 아이디어를 도출하는 **오픈소스 Claude Code 플러그인**.
@@ -22,7 +22,7 @@ TRIZ(모순 행렬 + 40 발명 원리)로 기술적 모순 해결 아이디어�
 - 로컬 설치 테스트: `claude --plugin-dir .`
 
 ## 규칙
-- 슬러그 `triz-decider`는 공식 디렉토리 등재 후 변경 불가.
+- 슬러그 `triz-solver`는 공식 디렉토리 등재 후 변경 불가.
 - SKILL.md 본문 500줄 이하, 상세는 `references/`로 분리.
 - 커밋 단위: 체크리스트 항목 1개 = 커밋 1개 이상. Conventional Commits 형식.
 - 작업 완료 시 DESIGN.md 11.1 체크박스 갱신.
