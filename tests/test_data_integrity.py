@@ -90,10 +90,14 @@ def test_principles_complete(principles):
 
 def test_separations_reference_valid_principles(separations):
     ids = [s["id"] for s in separations["separations"]]
-    assert ids == ["time", "space", "system", "condition"]
+    assert ids == ["space", "time", "condition", "direction", "system"]
     for s in separations["separations"]:
         assert s["name"]["en"] and s["name"]["ko"]
-        assert all(1 <= x <= 40 for x in s["related_principles"])
+        assert s["question"]["en"] and s["question"]["ko"]
+        assert s["related_principles"] and all(1 <= x <= 40 for x in s["related_principles"])
+        assert len(set(s["related_principles"])) == len(s["related_principles"])
+        assert all(e["ko"] and e["en"] for e in s["examples"])
+    assert "TODO" not in json.dumps(separations, ensure_ascii=False)
 
 
 def test_parameters_reference_md_in_sync(params):

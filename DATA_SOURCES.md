@@ -9,7 +9,7 @@
 | `contradiction-matrix.json` | **3개 독립 계열 표결로 교차 검증 완료** (1248셀 확정, 보류 0셀). 아래 2장 |
 | `parameters.json` | 번호·명칭은 독립 자료와 대조 완료, 정의·키워드는 직접 작성 |
 | `inventive-principles.json` | 번호·명칭은 대조 완료, 본문은 직접 재작성 (3장) |
-| `separation-principles.json` | v0.2 범위, 미검증 (5장) |
+| `separation-principles.json` | 분리 유형·연계 원리는 MATRIZ 지식베이스(전사본) 채택, 원문 직접 대조는 남음. 질문·예시는 직접 작성 (5장) |
 
 ## 2. contradiction-matrix.json
 
@@ -91,8 +91,38 @@
 - [ ] 정의·키워드 리뷰, 평가 케이스(DESIGN 10.1) 결과에 따라 키워드 보강
 - `references/parameters-39.md`는 `parameters.json`에서 생성하며 `tests/test_data_integrity.py`가 동기화를 검사한다
 
-## 5. separation-principles.json (v0.2 범위)
-- ID를 `SP1~4` → `time/space/system/condition`으로 변환. 나머지는 레거시 그대로이며 **미검증**
-- [ ] `question.ko` 4개 `TODO`
-- [ ] 연계 발명 원리 목록 출처 확인 (DESIGN 5.4)
-- [ ] 예시 문장의 독창성 확인
+## 5. separation-principles.json
+
+현재 버전 1.0.0. 검증일 2026-09-24. **분리 유형과 연계 발명 원리는 MATRIZ 지식베이스를 따르되, 원문과의 직접 대조는 남아 있다.**
+
+### 5.1 레거시 데이터 폐기
+초기 데이터(4종, `source`: UNVERIFIED)는 연계 원리 목록의 출처가 없었고, 판별 질문 4개가 `TODO`였으며, 예시가 교재에 흔한 문장(도개교, 체인 등)이었다. 전량 교체했다(원본은 git 이력에 있음).
+
+### 5.2 채택한 자료
+| 항목 | 출처 |
+| --- | --- |
+| 분리 유형 5종과 순서(공간, 시간, 관계(조건), 방향, 시스템 수준), 유형별 연계 발명 원리와 그 순서 | MATRIZ TRIZ Knowledge Base(국제 TRIZ 협회, https://wiki.matriz.org, CC BY 4.0 약관 §7). mmysior/pytriz `src/pytriz/resources/separations.json`(MIT)의 전사본을 사용 |
+| 판별 질문, 사용 조건, 예시(ko/en) | 이 프로젝트에서 직접 작성. 질문은 MATRIZ의 통제 질문(어디서? 언제? 누구·무엇에 대해? 어느 방향으로? 시스템 수준은 늘 적용 가능)의 취지를 따른다 |
+
+연계 원리(원리 번호, 출처 순서 그대로):
+
+| 유형 | `id` | 연계 원리 |
+| --- | --- | --- |
+| 공간 | `space` | 1, 2, 3, 7, 4, 17 |
+| 시간 | `time` | 9, 10, 11, 15, 34 |
+| 관계(조건) | `condition` | 3, 17, 19, 31, 32, 40 |
+| 방향 | `direction` | 4, 14, 17, 32, 35, 40 |
+| 시스템 수준 | `system` | 1, 5, 12, 33 |
+
+- MATRIZ의 "관계에 의한 분리(separation in relation)"는 영미권 문헌의 "조건에 의한 분리(separation upon condition)"에 해당해 `condition`으로 둔다
+- 영미권 문헌은 보통 4종(시간·공간·조건·부분과 전체)을 쓴다. 이 프로젝트는 출처 구조를 그대로 따라 **방향**을 포함한 5종을 쓴다(DESIGN FR-06)
+
+### 5.3 채택하지 않은 자료 (이유)
+분리 원리와 발명 원리의 연결은 행렬 셀과 달리 문헌마다 목록이 다르며, 정답이 하나로 정해진 데이터가 아니다. 그래서 v0.1 행렬처럼 독립 계열 표결을 하지 않고, 출처가 분명한 한 자료를 채택했다.
+- 레거시 데이터와 The-Leach/triz `index.html`: 공간 목록이 완전히 같아 같은 계열로 보이지만 1차 출처가 표시되어 있지 않다
+- SharathSPhD/triz-engine, Antropocosmist/triz-engineering-solver: 1차 출처 표시가 없고 목록이 서로, 그리고 MATRIZ와 크게 다르다(예: 조건 분리에 28·35·36·37을 넣음)
+- the-trizjournal.com 등 기사: 이 작업 환경의 네트워크 정책으로 접근할 수 없었다
+
+### 5.4 남은 일
+- [ ] **MATRIZ 원문과 직접 대조** (wiki.matriz.org가 작업 환경 네트워크 정책에 막혀 있어 전사본만 확인함. 허용되면 다섯 목록을 원문과 비교)
+- [ ] 예시 문장의 한국어 표현 검수

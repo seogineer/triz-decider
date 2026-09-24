@@ -74,8 +74,13 @@ def make_env(tmp_path, cells=None, missing_rows=None, unverified=None):
     write(tmp_path / "data" / "separation-principles.json", {
         "version": "t", "source": "t",
         "separations": [
-            {"id": k, "name": {"en": k, "ko": k}, "related_principles": [1, 2]}
-            for k in ("time", "space", "system", "condition")
+            {"id": k, "name": {"en": f"Sep {k}", "ko": f"{k} 분리"},
+             "question": {"en": f"q {k}?", "ko": f"{k} 질문?"},
+             "when_to_use": {"en": f"use {k}", "ko": f"{k} 사용"},
+             "related_principles": rel,
+             "examples": [{"en": f"ex {k}", "ko": f"예 {k}"}]}
+            for k, rel in (("space", [1, 2]), ("time", [10, 15]), ("condition", [3, 40]),
+                           ("direction", [4, 14]), ("system", [1, 5]))
         ],
     })
     return script

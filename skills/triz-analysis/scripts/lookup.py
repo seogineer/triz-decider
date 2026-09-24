@@ -18,6 +18,8 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 N_PARAMS = 39
 N_PRINCIPLES = 40
+# order follows the source (MATRIZ): space, time, relation/condition, direction, system level
+SEPARATION_TYPES = ("space", "time", "condition", "direction", "system")
 
 EXIT_INVALID_ARGUMENT = 2
 EXIT_OUT_OF_RANGE = 3
@@ -312,13 +314,24 @@ def cmd_validate(_args):
             warnings.append({"code": "unverified_cell", "improve": i, "worsen": w})
 
     seps = files["separation-principles.json"].get("separations", [])
-    if [s.get("id") for s in seps] != ["time", "space", "system", "condition"]:
-        errors.append("separation-principles.json: ids must be time, space, system, condition")
+    if [s.get("id") for s in seps] != list(SEPARATION_TYPES):
+        errors.append("separation-principles.json: ids must be " + ", ".join(SEPARATION_TYPES))
     for s in seps:
-        _check_names(f"separation {s.get('id')}", s, errors)
-        if any(not isinstance(x, int) or not 1 <= x <= N_PRINCIPLES
-               for x in s.get("related_principles", [])):
-            errors.append(f"separation {s.get('id')}: related principle id out of range")
+        label = f"separation {s.get('id')}"
+        _check_names(label, s, errors)
+        for field in ("question", "when_to_use"):
+            text = s.get(field) or {}
+            if not text.get("ko") or not text.get("en") or "TODO" in (text.get("ko"), text.get("en")):
+                errors.append(f"{label}: missing {field} text")
+        related = s.get("related_principles")
+        if not isinstance(related, list) or not related:
+            errors.append(f"{label}: related_principles must be a non-empty list")
+        elif any(not isinstance(x, int) or not 1 <= x <= N_PRINCIPLES for x in related):
+            errors.append(f"{label}: related principle id out of range")
+        elif len(set(related)) != len(related):
+            errors.append(f"{label}: duplicate related principle id")
+        if not s.get("examples") or any(not e.get("ko") or not e.get("en") for e in s["examples"]):
+            errors.append(f"{label}: examples need ko and en text")
 
     if errors:
         raise data_error(f"{len(errors)} data integrity violation(s)", details=errors)
