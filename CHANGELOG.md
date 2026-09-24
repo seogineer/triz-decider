@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.2 — 2026-09-24
 - **Renamed the plugin slug `triz-decider` → `triz-solver`** (display name TRIZ Solver). Commands are now `/triz-solver:triz`; reinstall with `/plugin install triz-solver@triz-solver`. The plugin derives solution ideas rather than making a decision, and the slug can still change before directory listing.
 - README (en/ko) now states the scope: the plugin expects an input that names the trade-off; it does not dig a contradiction out of a solution description. A "not covered" section lists what is not implemented (physical contradictions, interview flow).
 - Skill description adds Korean trigger keywords (기술적 모순, 물리적 모순, 모순 행렬, 발명원리).
