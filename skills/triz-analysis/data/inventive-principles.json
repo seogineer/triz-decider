@@ -86,7 +86,33 @@
           "An air purifier that filters out only the dust",
           "A speaker crossover passing only the needed frequency band"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "공작기계의 모터와 유압 장치가 내는 열이 가공 부위를 데워 치수가 틀어졌다. 열을 내는 장치를 기계 본체 밖으로 떼어 내 가공 부위의 온도를 일정하게 지킨다.",
+          "en": "Heat from a machine tool's motor and hydraulics warmed the cutting zone and threw dimensions off. Moving the heat sources out of the machine body keeps the cutting zone at a steady temperature."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 2,
+          "ko": "앱 전체를 한 번에 내려받게 하면 첫 실행이 느려 사용자가 떠난다. 첫 화면에 꼭 필요한 기능만 골라 먼저 보내고 나머지는 쓸 때 받게 한다.",
+          "en": "Making users download the whole app up front slows the first launch and drives them away. Only what the first screen needs is sent first; the rest loads when used."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "약초를 통째로 달여 먹으면 쓸모없는 성분까지 함께 먹게 되고 효과가 들쭉날쭉하다. 효과를 내는 성분만 뽑아 정제하면 양을 정확히 맞출 수 있다.",
+          "en": "Taking a whole herb brewed as tea brings along useless compounds and gives uneven effects. Extracting and purifying the active compound alone allows an exact dose."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "조리할 때 생기는 연기와 기름 냄새가 집 안 전체로 퍼진다. 연기가 생기는 자리 바로 위에서 후드로 빨아들여 밖으로 내보낸다.",
+          "en": "Cooking smoke and grease odour spread through the whole home. A hood right above the stove draws them off where they form and sends them outside."
+        }
+      ]
     },
     {
       "id": 3,
@@ -117,7 +143,33 @@
           "A running-shoe sole whose cushioning density varies by zone",
           "A refrigerator that keeps each compartment at its own temperature"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "기어 전체를 단단하게 열처리하면 충격에 깨지기 쉽고, 무르게 두면 이가 빨리 닳는다. 이의 표면만 굳히고 속은 질기게 두면 마모와 충격을 함께 견딘다.",
+          "en": "A gear hardened all through cracks under shock, and a soft one wears its teeth quickly. Hardening only the tooth surface and leaving the core tough resists both wear and shock."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 3,
+          "ko": "휴대전화 전체를 고르게 식히려 하면 무겁고 두꺼워진다. 가장 뜨거운 칩 둘레에만 방열 시트와 금속판을 몰아 두고 나머지는 가볍게 둔다.",
+          "en": "Cooling a whole phone evenly would make it heavy and thick. Heat-spreading sheets and metal plates go only around the hottest chip, and the rest stays light."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 3,
+          "ko": "모든 데이터를 빠른 메모리에 두면 비싸고, 모두 싼 저장장치에 두면 느리다. 자주 쓰는 데이터만 빠른 메모리에 두고 드물게 쓰는 데이터는 싼 저장장치로 옮긴다.",
+          "en": "Keeping all data in fast memory is costly, and keeping it all on cheap storage is slow. Frequently used data stays in fast memory while rarely used data moves to cheap storage."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "붕대 전체가 같은 재질이면 상처에는 달라붙고 가장자리는 쉽게 떨어진다. 상처에 닿는 가운데는 달라붙지 않는 패드로, 가장자리는 접착면으로 만든다.",
+          "en": "A dressing made of one material sticks to the wound and peels off at the edges. A non-stick pad in the middle over the wound and an adhesive border give each region its own job."
+        }
+      ]
     },
     {
       "id": 4,
@@ -146,7 +198,33 @@
           "A power plug whose two pins differ in shape",
           "A connector that only fits one way"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "날개 간격이 고른 팬은 특정 회전수에서 한 가지 음으로 크게 울린다. 날개 간격을 일부러 고르지 않게 배치하면 소음이 여러 주파수로 흩어져 덜 거슬린다.",
+          "en": "A fan with evenly spaced blades hums loudly at one pitch at certain speeds. Spacing the blades unevenly spreads the noise over many frequencies so it is less annoying."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "잠그는 열쇠와 여는 열쇠가 같은 암호는 양쪽이 미리 비밀을 나눠 가져야 해서 처음 만나는 상대와 쓰기 어렵다. 두 열쇠를 다르게 만든 방식을 쓰면 잠그는 열쇠는 공개해도 된다.",
+          "en": "A cipher that locks and unlocks with the same key needs both sides to share a secret first, which is hard with a stranger. Making the two keys different lets the locking key be public."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "주삿바늘 끝을 한 면만 비스듬히 깎으면 피부를 찢듯이 들어가 아프다. 끝을 여러 면으로 더 비대칭하게 깎으면 피부를 덜 찢고 들어가 통증이 준다.",
+          "en": "A needle tip ground on one bevel tears its way into the skin and hurts. Grinding the tip with several asymmetric bevels cuts in more cleanly and reduces pain."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 2,
+          "ko": "손잡이 고리가 비슷한 가위는 오래 쓰면 손이 아프다. 엄지 쪽 고리는 작게, 나머지 손가락 쪽 고리는 크고 길게 만들어 비대칭을 키우면 힘이 고르게 실린다.",
+          "en": "Scissors with similar finger loops tire the hand. A small thumb loop and a larger, longer loop for the other fingers spread the effort more evenly."
+        }
+      ]
     },
     {
       "id": 5,
@@ -175,7 +253,33 @@
           "A multi-axis machine tool that cuts in several directions at once",
           "Several cars coupled into a single train"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 2,
+          "ko": "요청을 하나씩 보내면 매번 연결을 준비하는 시간이 든다. 짧은 시간 동안 모인 요청을 한 번에 묶어 보내면 같은 자원으로 훨씬 많이 처리한다.",
+          "en": "Sending requests one by one pays the connection overhead every time. Batching the requests that arrive within a short window handles far more with the same resources."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "칩을 기판에 따로따로 올리면 배선이 길어져 느리고 자리를 많이 차지한다. 여러 칩을 한 패키지 안에 겹쳐 쌓으면 신호 경로가 짧아지고 기판이 작아진다.",
+          "en": "Mounting chips separately on a board makes long, slow wiring and uses space. Stacking several chips inside one package shortens signal paths and shrinks the board."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "혈액 검사를 항목마다 따로 하면 피를 여러 번 뽑아야 한다. 한 번 뽑은 피로 여러 항목을 동시에 재는 분석기를 쓰면 채혈이 한 번으로 준다.",
+          "en": "Testing blood item by item means drawing blood several times. An analyser that measures many items at once from one sample cuts it to a single draw."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "택배를 집집마다 배달하면 차가 같은 동네를 여러 번 오간다. 한 동네로 가는 물건을 무인 보관함 한곳에 모으면 한 번 들러 끝난다.",
+          "en": "Door-to-door delivery sends vans round the same area again and again. Gathering a neighbourhood's parcels into one set of lockers takes a single stop."
+        }
+      ]
     },
     {
       "id": 6,
@@ -204,7 +308,33 @@
           "A walking stick that doubles as a seat",
           "A smartphone that replaces a camera, phone and map"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "차체 뼈대와 겉판을 따로 만들면 무겁다. 겉판이 하중까지 받게 만든 일체형 차체는 별도 뼈대를 없애 가벼워진다.",
+          "en": "A separate frame plus body panels is heavy. A body whose skin also carries the loads needs no separate frame and weighs less."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "화면과 버튼 자판을 따로 두면 기기가 커진다. 화면이 표시와 터치 입력을 함께 맡게 하면 자판을 없애고 화면을 키울 수 있다.",
+          "en": "A display plus a keypad makes a device bigger. A screen that both shows and takes touch input removes the keypad and leaves room for a larger screen."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "심전도, 산소포화도, 혈압을 기기마다 따로 재면 병상 둘레가 선과 장비로 붐빈다. 필요한 측정을 한 감시 장치에 모으면 한 화면에서 함께 본다.",
+          "en": "Separate devices for ECG, oxygen saturation and blood pressure crowd the bedside with cables. One monitor that gathers these measurements shows them together on one screen."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "좁은 현관에 신발장을 따로 들이면 지나다닐 자리가 줄어든다. 현관 디딤판을 속이 빈 수납장으로 만들면 따로 신발장을 둘 필요가 없다.",
+          "en": "A separate shoe cabinet eats up a small entrance. Making the entrance step a hollow storage box removes the need for one."
+        }
+      ]
     },
     {
       "id": 7,
@@ -235,7 +365,33 @@
           "A telescopic antenna that collapses into itself",
           "Stackable measuring cups"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 3,
+          "ko": "케이블을 기계 바깥으로 돌리면 걸리고 닳는다. 회전축 가운데를 비워 그 속으로 케이블을 지나가게 한다.",
+          "en": "Cables routed outside a machine snag and wear. A hollow rotating shaft lets them run through its centre."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "작은 무선 이어폰은 잃어버리기 쉽고 배터리도 작다. 이어폰을 충전 케이스 안에 넣게 하면 보관과 충전이 한 번에 된다.",
+          "en": "Tiny wireless earbuds are easy to lose and have small batteries. Storing them inside a charging case keeps them and charges them at once."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 3,
+          "ko": "막힌 혈관을 열려면 크게 절개해야 했다. 가는 관을 혈관 속으로 밀어 넣고 그 관 속으로 풍선이나 그물망을 지나가게 해 막힌 곳을 연다.",
+          "en": "Opening a blocked vessel used to need a large incision. A thin tube is pushed along the vessel and a balloon or mesh passes through it to open the blockage."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 2,
+          "ko": "캠핑 조리 도구는 가짓수가 많아 짐이 커진다. 가장 큰 냄비 안에 작은 냄비, 그 안에 컵과 버너를 차례로 넣으면 냄비 하나 부피가 된다.",
+          "en": "Camp cookware has many pieces and bulks up a pack. A smaller pot inside the largest, and cups and a stove inside that, pack down to the size of one pot."
+        }
+      ]
     },
     {
       "id": 8,
@@ -266,7 +422,33 @@
           "A hydrofoil boat lifted by underwater wings",
           "A maglev train"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 2,
+          "ko": "무거운 기계를 옮기려면 크레인이나 레일이 필요하다. 바닥으로 압축 공기를 뿜는 패드 위에 올리면 얇은 공기층 위에 떠서 사람이 밀어 옮길 수 있다.",
+          "en": "Moving a heavy machine usually needs a crane or rails. Set on pads that blow compressed air at the floor, it floats on a thin air film and people can push it."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 3,
+          "ko": "빠르게 도는 축을 받치는 베어링은 마찰로 닳고 열이 난다. 자석의 힘으로 축을 띄워 받치면 닿지 않고 돈다.",
+          "en": "Bearings for a fast shaft wear and heat up from friction. Holding the shaft up with magnetic force lets it spin without contact."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "오래 누운 환자는 몸무게가 몇 곳에 몰려 피부가 상한다. 공기나 물로 채운 매트리스가 몸을 떠받치면 압력이 넓게 퍼진다.",
+          "en": "A bedridden patient's weight presses on a few spots and damages the skin. A mattress filled with air or water supports the body and spreads the pressure."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "물에 빠진 사람은 몸무게 때문에 가라앉는다. 부력이 큰 소재로 만든 조끼를 입히면 몸을 물 위로 받쳐 준다.",
+          "en": "A person in the water sinks under their own weight. A vest made of buoyant material holds them up at the surface."
+        }
+      ]
     },
     {
       "id": 9,
@@ -295,7 +477,33 @@
           "A plate bent slightly the opposite way before welding",
           "Masking tape applied before painting"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 2,
+          "ko": "높은 압력을 받는 두꺼운 관은 안쪽 벽부터 터진다. 만들 때 한 번 더 높은 압력을 걸어 안쪽에 압축 응력을 남겨 두면, 실제 압력이 걸릴 때 그만큼 더 버틴다.",
+          "en": "A thick tube under high pressure fails from the inner wall first. Pressurizing it once beyond its working level during manufacture leaves compressive stress inside, so it holds more in service."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "전원을 켜는 순간 큰 전류가 한꺼번에 흘러 부품이 상한다. 처음에는 저항을 거쳐 천천히 충전되게 했다가 곧 직접 연결로 바꾸면 그 충격을 막는다.",
+          "en": "Switching power on sends a surge of current that stresses components. Charging first through a resistor and then bypassing it prevents the surge."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "병원체에 처음 감염되면 몸이 방어할 준비가 안 돼 크게 앓는다. 약하게 만든 항원을 미리 넣어 면역을 길러 두면 실제 감염 때 빨리 막는다.",
+          "en": "A first infection catches the body unprepared. Giving a weakened antigen beforehand builds immunity so the real infection is stopped quickly."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "눈이 온 뒤 얼어붙은 도로는 녹이기 어렵다. 눈이 오기 전에 제설제를 미리 뿌려 두면 눈이 땅에 얼어붙지 않는다.",
+          "en": "Ice bonded to a road after snowfall is hard to clear. Spreading de-icer before the snow keeps it from freezing to the surface."
+        }
+      ]
     },
     {
       "id": 10,
@@ -324,7 +532,33 @@
           "A surgical tray with instruments laid out in order of use",
           "A pre-filled disposable syringe"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "요청이 올 때마다 페이지를 만들면 응답이 느리다. 자주 보는 페이지를 미리 만들어 두면 요청이 오자마자 보여 줄 수 있다.",
+          "en": "Building a page on every request makes responses slow. Pages that are viewed often are built in advance and served at once."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 2,
+          "ko": "공구를 찾아 바꾸는 동안 기계가 멈춰 있다. 다음 작업에 쓸 공구를 교환 장치에 순서대로 미리 꽂아 두면 바로 바꿔 끼운다.",
+          "en": "A machine sits idle while tools are found and changed. Loading the next jobs' tools into the changer in order lets it swap them at once."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "심장이 멈춘 사람은 몇 분 안에 전기 충격을 받아야 한다. 사람이 많이 오가는 곳에 자동 제세동기를 미리 두어 바로 쓸 수 있게 한다.",
+          "en": "Someone in cardiac arrest needs a shock within minutes. Placing automatic defibrillators in busy public places in advance puts one within reach."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 1,
+          "ko": "붙일 때마다 접착제를 바르면 번거롭고 양이 들쭉날쭉하다. 테이프에 접착제를 미리 발라 두고 떼는 종이로 덮으면 떼어 붙이기만 하면 된다.",
+          "en": "Applying glue at every use is fiddly and uneven. Tape with adhesive already applied and covered by a release liner just needs peeling and pressing."
+        }
+      ]
     },
     {
       "id": 11,
@@ -351,7 +585,33 @@
           "Automatic backup of important data",
           "A reserve parachute"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "서버 한 대가 고장 나면 서비스 전체가 멈춘다. 같은 서버를 다른 곳에 대기시켜 두고 문제가 생기면 자동으로 넘긴다.",
+          "en": "If the one server fails, the whole service stops. A standby copy elsewhere takes over automatically when trouble starts."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "승강기 줄이 끊어지면 칸이 떨어진다. 속도가 일정 이상 빨라지면 레일을 붙잡는 비상 제동 장치를 미리 달아 둔다.",
+          "en": "If a lift's ropes break, the car falls. An emergency brake that grips the rails once the car overspeeds is fitted in advance."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "회로에 전류가 지나치게 흐르면 부품과 배선이 탄다. 전류가 넘치면 가장 먼저 끊어지는 퓨즈를 넣어 둔다.",
+          "en": "Too much current burns out parts and wiring. A fuse that breaks first on overcurrent is built in beforehand."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "수술 중 피를 많이 흘릴 수 있다. 수술 전에 환자 자신의 피를 미리 받아 보관해 두면 필요할 때 바로 되돌려 넣는다.",
+          "en": "An operation may bring heavy bleeding. Collecting and storing the patient's own blood beforehand means it can be returned when needed."
+        }
+      ]
     },
     {
       "id": 12,
@@ -378,7 +638,33 @@
           "A workbench set to the conveyor's height",
           "A service pit that lets mechanics work beneath a car"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "무거운 금형을 기계에 올리고 내리려면 크레인이 필요하다. 기계 작업대와 같은 높이의 롤러 대차에 실어 옆으로 밀어 넣는다.",
+          "en": "Lifting a heavy die into a press needs a crane. A roller cart at the same height as the press bed lets it slide straight across."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "장비마다 접지 전위가 조금씩 다르면 그 차이로 잡음 전류가 흐른다. 모든 장비를 한 점에 묶어 같은 전위로 맞추면 잡음이 사라진다.",
+          "en": "Small differences in ground potential between devices drive noise currents. Bonding all devices to one point puts them at the same potential and the noise goes."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "환자를 침대에서 수술대로 옮기려고 들어 올리면 환자도 옮기는 사람도 다칠 수 있다. 두 침대 높이를 맞추고 미끄럼판을 깔아 옆으로 밀어 옮긴다.",
+          "en": "Lifting a patient from bed to operating table risks injury to everyone. Matching the heights and sliding the patient across on a transfer board avoids the lift."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "휠체어나 유모차는 버스 계단을 오르기 어렵다. 차체 바닥을 정류장 턱 높이까지 낮춘 버스면 그대로 굴러 들어간다.",
+          "en": "Wheelchairs and pushchairs struggle with bus steps. A bus whose floor sits at kerb height lets them roll straight in."
+        }
+      ]
     },
     {
       "id": 13,
