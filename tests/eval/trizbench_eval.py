@@ -5,8 +5,13 @@ The dataset is used locally only and is never stored in this repo: pass its
 `patent_task1_classical.jsonl` with --data. Metric follows the paper's Hit@3:
 the gold (improving, worsening) pair must be among the first three ranked pairs.
 
+Splits: "dev" is the seeded sample of --n records (the first 30-record run, used
+to study failures). "heldout" is every record whose patent is not in dev; it is
+only scored, never read, so changes made on dev can be checked on it.
+
 Usage:
   python tests/eval/trizbench_eval.py --data PATH --n 30 --seed 20260924 --run
+  python tests/eval/trizbench_eval.py --data PATH --split heldout --suffix en_neutral --run --out DIR
   python tests/eval/trizbench_eval.py --data PATH --score OUTDIR/results.json
 """
 import argparse
@@ -15,6 +20,7 @@ import itertools
 import json
 import random
 import sys
+from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -44,15 +50,31 @@ def sample(records, n, seed):
     return random.Random(seed).sample(records, n)
 
 
-def to_cases(records, max_chars=3000):
+def split(records, name, n, seed):
+    """dev = the seeded sample; heldout = records of every patent not in dev."""
+    dev = sample(records, n, seed)
+    if name == "dev":
+        return dev
+    dev_ids = {r["patent_id"] for r in dev}
+    return [r for r in records if r["patent_id"] not in dev_ids]
+
+
+def to_cases(records, max_chars=3000, suffix="en"):
     """One case per patent id (the dataset repeats some patents)."""
     seen, cases = set(), []
     for r in records:
         if r["patent_id"] in seen:
             continue
         seen.add(r["patent_id"])
-        cases.append({"id": r["patent_id"], "lang": "en", "problem": r["text"][:max_chars]})
+        cases.append({"id": r["patent_id"], "lang": "en", "suffix": suffix,
+                      "problem": r["text"][:max_chars]})
     return cases
+
+
+def constant_baseline(records, top=TOP_N):
+    """Hit@3 of always answering the `top` most common gold pairs of `records`."""
+    common = [g for g, _ in Counter(r["gold"] for r in records).most_common(top)]
+    return sum(r["gold"] in common for r in records) / len(records) if records else 0.0
 
 
 def _valid(res):
@@ -99,12 +121,16 @@ def main(argv=None):
     ap.add_argument("--data", required=True)
     ap.add_argument("--n", type=int, default=30)
     ap.add_argument("--seed", type=int, default=20260924)
+    ap.add_argument("--split", choices=["dev", "heldout"], default="dev")
+    ap.add_argument("--suffix", choices=["en", "en_neutral"], default="en",
+                    help="fixed prompt suffix; en_neutral does not claim the contradiction is confirmed")
     ap.add_argument("--run", action="store_true", help="run the plugin blind on the sample")
     ap.add_argument("--score", help="results.json from a run")
     ap.add_argument("--out", default=str(HERE / "trizbench-run"))
     ap.add_argument("--jobs", type=int, default=3)
     a = ap.parse_args(argv)
-    records = sample(load_records(a.data), a.n, a.seed)
+    everything = load_records(a.data)
+    records = split(everything, a.split, a.n, a.seed)
     if a.run:
         import tempfile
         from concurrent.futures import ThreadPoolExecutor
@@ -113,7 +139,7 @@ def main(argv=None):
         out = Path(a.out); raw = out / "raw"; raw.mkdir(parents=True, exist_ok=True)
         results_path = out / "results.json"
         existing = json.loads(results_path.read_text(encoding="utf-8")) if results_path.exists() else {}
-        cases = pending_cases(to_cases(records), existing)
+        cases = pending_cases(to_cases(records, suffix=a.suffix), existing)
         print(json.dumps({"to_run": len(cases), "already_valid": len(existing) - len(cases) if existing else 0}))
         with tempfile.TemporaryDirectory() as tmp:
             plugin, work = Path(tmp) / "plugin", Path(tmp) / "work"
@@ -131,7 +157,10 @@ def main(argv=None):
             if not _valid(p):
                 invalid.append(r["patent_id"]); continue
             rows.append(metrics(r["gold"], p["improve"], p["worsen"]))
-        print(json.dumps({"summary": summarize(rows), "invalid_or_unparsed": invalid}, indent=2))
+        models = sorted({res[r["patent_id"]].get("model", "") for r in records if r["patent_id"] in res})
+        print(json.dumps({"split": a.split, "summary": summarize(rows),
+                          "constant_baseline_hit3": constant_baseline(records),
+                          "models": models, "invalid_or_unparsed": invalid}, indent=2))
     return 0
 
 

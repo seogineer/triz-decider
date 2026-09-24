@@ -83,3 +83,24 @@ def test_pending_cases_skips_valid_results_and_retries_failures():
 def test_to_cases_deduplicates_repeated_patent_ids():
     recs = [{"patent_id": "US1", "gold": (1, 2), "text": "x"}, {"patent_id": "US1", "gold": (3, 4), "text": "x"}]
     assert len(tb.to_cases(recs)) == 1
+
+
+def test_split_heldout_excludes_every_dev_patent():
+    recs = [{"patent_id": str(i % 40), "gold": (1, 2), "text": "x"} for i in range(60)]
+    dev = tb.split(recs, "dev", 10, seed=3)
+    held = tb.split(recs, "heldout", 10, seed=3)
+    assert dev == tb.sample(recs, 10, seed=3)
+    assert not {r["patent_id"] for r in dev} & {r["patent_id"] for r in held}
+    assert len(held) + sum(r["patent_id"] in {d["patent_id"] for d in dev} for r in recs) == 60
+
+
+def test_to_cases_carries_suffix():
+    recs = [{"patent_id": "US1", "gold": (1, 2), "text": "x"}]
+    assert tb.to_cases(recs)[0]["suffix"] == "en"
+    assert tb.to_cases(recs, suffix="en_neutral")[0]["suffix"] == "en_neutral"
+
+
+def test_constant_baseline():
+    recs = [{"gold": g} for g in [(1, 2)] * 3 + [(3, 4)] * 2 + [(5, 6), (7, 8), (9, 10)]]
+    assert tb.constant_baseline(recs, top=2) == 5 / 8
+    assert tb.constant_baseline([]) == 0.0

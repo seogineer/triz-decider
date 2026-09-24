@@ -175,6 +175,12 @@ def test_build_prompt_modes():
     assert run_blind.build_prompt(case, "natural").startswith("P")
 
 
+def test_build_prompt_neutral_suffix_does_not_claim_confirmation():
+    case = {"problem": "P", "lang": "en", "suffix": "en_neutral"}
+    prompt = run_blind.build_prompt(case, "command")
+    assert "confirmed" not in prompt and prompt.endswith(run_blind.SUFFIX["en_neutral"])
+
+
 def test_parse_answer_empty():
     assert run_blind.parse_answer("") == {"improve": [], "worsen": [], "principles_cited": []}
 

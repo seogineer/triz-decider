@@ -29,6 +29,8 @@ ROOT = HERE.parent.parent
 SUFFIX = {
     "ko": "\n\n(모순 문장은 확인 완료했으니 확인 질문 없이 끝까지 진행해줘.)",
     "en": "\n\n(The contradiction statement is confirmed; do not ask for confirmation, run through to the end.)",
+    # for inputs whose contradiction nobody has confirmed (patent abstracts)
+    "en_neutral": "\n\n(Do not ask me any questions; make your own choices and run through to the end.)",
 }
 TIMEOUT = 280
 
@@ -89,7 +91,7 @@ def _tool_result_payloads(block):
 
 def parse_stream(lines):
     """Read claude stream-json lines: final text, skills used, lookup.py calls."""
-    info = {"text": "", "plugin_loaded": False, "skills": [], "lookup_calls": 0,
+    info = {"text": "", "model": "", "plugin_loaded": False, "skills": [], "lookup_calls": 0,
             "saw_unverified": False}
     returned = set()
     for line in lines:
@@ -99,6 +101,7 @@ def parse_stream(lines):
             continue
         kind = ev.get("type")
         if kind == "system" and ev.get("subtype") == "init":
+            info["model"] = ev.get("model", "")
             plugins = json.dumps(ev.get("plugins", []) + ev.get("slash_commands", []))
             # "triz-decider" is the slug before 2026-09-24; keeps old recorded runs scorable
             info["plugin_loaded"] = "triz-solver" in plugins or "triz-decider" in plugins
@@ -132,9 +135,10 @@ def safe_name(case_id):
 
 
 def build_prompt(case, mode):
+    suffix = SUFFIX[case.get("suffix", case["lang"])]
     if mode == "command":
-        return "/triz-solver:triz " + case["problem"] + SUFFIX[case["lang"]]
-    return case["problem"] + SUFFIX[case["lang"]]
+        return "/triz-solver:triz " + case["problem"] + suffix
+    return case["problem"] + suffix
 
 
 def run_case(case, mode, plugin_dir, workdir, raw_dir, attempts=3):
@@ -157,7 +161,7 @@ def run_case(case, mode, plugin_dir, workdir, raw_dir, attempts=3):
             break
     res = parse_answer(info["text"])
     res.update({"skill_used": info["skill_used"], "lookup_calls": info["lookup_calls"],
-                "plugin_loaded": info["plugin_loaded"], "attempts": attempt, "exit_code": code,
+                "plugin_loaded": info["plugin_loaded"], "model": info["model"], "attempts": attempt, "exit_code": code,
                 "saw_unverified": info["saw_unverified"],
                 "returned_principles": info["returned_principles"],
                 "disclosed": discloses_unverified(info["text"])})
