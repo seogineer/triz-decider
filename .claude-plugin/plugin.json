@@ -1,7 +1,7 @@
 {
   "name": "triz-solver",
   "displayName": "TRIZ Solver",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Resolve engineering contradictions with TRIZ: the contradiction matrix and 40 inventive principles for trade-offs, separation principles for physical contradictions",
   "author": { "name": "DoGyeong Seo" },
   "license": "MIT",

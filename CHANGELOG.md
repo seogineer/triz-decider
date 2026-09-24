@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.1 — 2026-09-25
 - **Tie rule for principle rankings.** `matrix` and `separation` rank by count as before; ties now go round-robin: every cell's (or separation type's) 1st principle, then every 2nd, and so on, in pair order or `--type` order. Before, ties kept first appearance, so the first pair or type filled the top of the list and the model skipped ranks to include the others. The skill now says to pass the best-fitting separation type first and take the ranking in order. Worked examples updated to the new output.
 
 ## 0.2.0 — 2026-09-24
