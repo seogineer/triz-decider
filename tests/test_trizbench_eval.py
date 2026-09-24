@@ -104,3 +104,5 @@ def test_constant_baseline():
     recs = [{"gold": g} for g in [(1, 2)] * 3 + [(3, 4)] * 2 + [(5, 6), (7, 8), (9, 10)]]
     assert tb.constant_baseline(recs, top=2) == 5 / 8
     assert tb.constant_baseline([]) == 0.0
+    fit = [{"gold": (9, 10)}]
+    assert tb.constant_baseline(recs, top=2, fit=fit) == 1 / 8

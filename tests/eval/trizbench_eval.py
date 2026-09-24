@@ -71,9 +71,11 @@ def to_cases(records, max_chars=3000, suffix="en"):
     return cases
 
 
-def constant_baseline(records, top=TOP_N):
-    """Hit@3 of always answering the `top` most common gold pairs of `records`."""
-    common = [g for g, _ in Counter(r["gold"] for r in records).most_common(top)]
+def constant_baseline(records, top=TOP_N, fit=None):
+    """Hit@3 of always answering the `top` most common gold pairs of `fit`
+    (default: `records` itself, which is in-sample and so optimistic)."""
+    fit = records if fit is None else fit
+    common = [g for g, _ in Counter(r["gold"] for r in fit).most_common(top)]
     return sum(r["gold"] in common for r in records) / len(records) if records else 0.0
 
 
@@ -160,6 +162,8 @@ def main(argv=None):
         models = sorted({res[r["patent_id"]].get("model", "") for r in records if r["patent_id"] in res})
         print(json.dumps({"split": a.split, "summary": summarize(rows),
                           "constant_baseline_hit3": constant_baseline(records),
+                          "constant_baseline_hit3_fit_on_dev": constant_baseline(
+                              records, fit=split(everything, "dev", a.n, a.seed)),
                           "models": models, "invalid_or_unparsed": invalid}, indent=2))
     return 0
 
