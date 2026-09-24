@@ -1,0 +1,328 @@
+{
+  "C21": {
+    "improve": [
+      1,
+      39
+    ],
+    "worsen": [
+      15,
+      19
+    ],
+    "principles_cited": [
+      35,
+      34,
+      31,
+      10
+    ],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "disclosed": false,
+    "returned_principles": [
+      2,
+      5,
+      10,
+      12,
+      18,
+      19,
+      31,
+      34,
+      35,
+      38
+    ]
+  },
+  "C22": {
+    "improve": [
+      28,
+      29
+    ],
+    "worsen": [
+      32
+    ],
+    "principles_cited": [
+      6,
+      35,
+      25,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "disclosed": false,
+    "returned_principles": [
+      6,
+      18,
+      25,
+      35
+    ]
+  },
+  "C23": {
+    "improve": [
+      15
+    ],
+    "worsen": [
+      3,
+      7
+    ],
+    "principles_cited": [
+      2,
+      19,
+      30,
+      10,
+      9
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "disclosed": false,
+    "returned_principles": [
+      2,
+      9,
+      10,
+      19,
+      30
+    ]
+  },
+  "C24": {
+    "improve": [
+      26,
+      2
+    ],
+    "worsen": [
+      14,
+      16,
+      27
+    ],
+    "principles_cited": [],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "disclosed": false,
+    "returned_principles": [
+      2,
+      3,
+      6,
+      8,
+      10,
+      14,
+      18,
+      19,
+      27,
+      28,
+      31,
+      34,
+      35,
+      40
+    ]
+  },
+  "C25": {
+    "improve": [
+      28,
+      27
+    ],
+    "worsen": [
+      25,
+      39
+    ],
+    "principles_cited": [
+      34,
+      28,
+      32,
+      10
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "disclosed": false,
+    "returned_principles": [
+      1,
+      4,
+      10,
+      24,
+      28,
+      29,
+      30,
+      32,
+      34,
+      35,
+      38
+    ]
+  },
+  "C26": {
+    "improve": [
+      21,
+      17
+    ],
+    "worsen": [
+      22,
+      20
+    ],
+    "principles_cited": [
+      35,
+      10,
+      21,
+      17,
+      38
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "disclosed": true,
+    "returned_principles": [
+      10,
+      17,
+      21,
+      35,
+      38
+    ]
+  },
+  "C27": {
+    "improve": [
+      27
+    ],
+    "worsen": [
+      32,
+      34,
+      36
+    ],
+    "principles_cited": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "disclosed": false,
+    "returned_principles": [
+      1,
+      11,
+      13,
+      35
+    ]
+  },
+  "C28": {
+    "improve": [
+      1,
+      2
+    ],
+    "worsen": [
+      28,
+      37
+    ],
+    "principles_cited": [
+      28,
+      26,
+      29,
+      32,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": true,
+    "disclosed": true,
+    "returned_principles": [
+      15,
+      17,
+      18,
+      25,
+      26,
+      28,
+      29,
+      32
+    ]
+  },
+  "C29": {
+    "improve": [
+      34
+    ],
+    "worsen": [
+      1
+    ],
+    "principles_cited": [
+      2,
+      25,
+      35,
+      13,
+      12
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": true,
+    "disclosed": true,
+    "returned_principles": [
+      1,
+      2,
+      10,
+      11,
+      12,
+      13,
+      15,
+      17,
+      25,
+      26,
+      28,
+      32,
+      35
+    ]
+  },
+  "C30": {
+    "improve": [
+      8,
+      6
+    ],
+    "worsen": [
+      25,
+      32,
+      36
+    ],
+    "principles_cited": [
+      35,
+      1,
+      10,
+      31,
+      18
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": true,
+    "disclosed": true,
+    "returned_principles": [
+      1,
+      4,
+      10,
+      16,
+      18,
+      31,
+      35,
+      36,
+      40
+    ]
+  }
+}

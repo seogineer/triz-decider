@@ -216,3 +216,31 @@ def test_score_unverified_disclosure_summary():
     out = score_mod.score(cases, results, matrix=fake_matrix)
     u = out["unverified"]
     assert u == {"cases_with_warning": 2, "disclosed": 1, "not_disclosed": ["U2"]}
+
+
+# --------------------------------- principles actually returned by lookup ---
+
+def _tool_result(payload):
+    return json.dumps({"type": "user", "message": {"content": [
+        {"type": "tool_result", "content": [{"type": "text", "text": json.dumps(payload)}]}]}})
+
+
+def test_parse_stream_collects_principles_returned_by_lookup():
+    lines = [
+        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-decider"}], "slash_commands": []}),
+        _tool_result({"pairs": [{"improve": 34, "worsen": 26, "principles": [2, 28, 10, 25]}],
+                      "ranking": [{"id": 2, "count": 1, "name": "x"}], "warnings": []}),
+        _tool_result({"principles": [{"id": 35, "name": "y"}]}),
+        _tool_result({"unrelated": [7, 8]}),
+    ]
+    info = run_blind.parse_stream(lines)
+    assert info["returned_principles"] == [2, 10, 25, 28, 35]
+
+
+def test_score_prefers_observed_lookup_output_over_recomputation():
+    cases = [{"id": "A", "expected_improve": [34], "expected_worsen": [1]}]
+    results = {"A": {"improve": [34], "worsen": [1], "principles_cited": [2, 25, 99],
+                     "returned_principles": [2, 25, 28]}}
+    # recomputation from the reported candidates would allow nothing; observed output allows 2 and 25
+    out = score_mod.score(cases, results, matrix=lambda i, w: set())
+    assert out["rows"][0]["hallucinated_principles"] == [99]

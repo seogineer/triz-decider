@@ -62,7 +62,7 @@ The skill folder is self-contained (`data/` and `scripts/` live inside it), so i
 | --- | --- |
 | Contradiction matrix | 1239 cells cross-checked against independent public sources. **9 disputed cells are withheld** and reported as `unverified_cell` warnings instead of guessed. Not yet compared with a printed original. |
 | 39 parameters, 40 principles | Numbers and names cross-checked; definitions, sub-principles and examples written for this project |
-| Mapping accuracy | 20 eval cases, blind run: Top-3 hit rate 20/20, 0 hallucinated principle numbers. Small and easy set with author-written expected values, so treat it as a smoke test, not a benchmark (see `tests/eval/results-v0.1.md`) |
+| Mapping accuracy | 30 blind-run cases: Top-3 hit rate 100% in every run, 0 hallucinated principle numbers, and 9/9 disclosures when a withheld cell was hit. Small set with author-written expected values and some run-to-run variation, so treat it as a smoke test, not a benchmark (see `tests/eval/results-v0.1.md`) |
 
 Sources, method and the disputed cells are listed in [DATA_SOURCES.md](DATA_SOURCES.md). TRIZ output is a source of ideas, not a verdict: check the mapping and validate ideas before acting on them.
 

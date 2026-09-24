@@ -64,10 +64,34 @@ def make_plugin_copy(dest):
                         ignore=shutil.ignore_patterns("__pycache__"))
 
 
+def _returned_principles(payload):
+    """Principle ids a lookup.py result carries (matrix pairs or principle records)."""
+    ids = set()
+    if isinstance(payload, dict):
+        for pair in payload.get("pairs", []) or []:
+            ids.update(x for x in pair.get("principles", []) if isinstance(x, int))
+        for rec in payload.get("principles", []) or []:
+            if isinstance(rec, dict) and isinstance(rec.get("id"), int):
+                ids.add(rec["id"])
+    return ids
+
+
+def _tool_result_payloads(block):
+    content = block.get("content", "")
+    texts = [content] if isinstance(content, str) else [
+        c.get("text", "") for c in content if isinstance(c, dict)]
+    for text in texts:
+        try:
+            yield json.loads(text)
+        except ValueError:
+            continue
+
+
 def parse_stream(lines):
     """Read claude stream-json lines: final text, skills used, lookup.py calls."""
     info = {"text": "", "plugin_loaded": False, "skills": [], "lookup_calls": 0,
             "saw_unverified": False}
+    returned = set()
     for line in lines:
         try:
             ev = json.loads(line)
@@ -91,8 +115,12 @@ def parse_stream(lines):
             for block in content if isinstance(content, list) else []:
                 if block.get("type") == "tool_result" and "unverified_cell" in json.dumps(block.get("content", "")):
                     info["saw_unverified"] = True
+                if block.get("type") == "tool_result":
+                    for payload in _tool_result_payloads(block):
+                        returned |= _returned_principles(payload)
         elif kind == "result":
             info["text"] = ev.get("result", "") or ""
+    info["returned_principles"] = sorted(returned)
     info["skill_used"] = any("triz-analysis" in x for x in info["skills"])
     return info
 
@@ -125,6 +153,7 @@ def run_case(case, mode, plugin_dir, workdir, raw_dir, attempts=3):
     res.update({"skill_used": info["skill_used"], "lookup_calls": info["lookup_calls"],
                 "plugin_loaded": info["plugin_loaded"], "attempts": attempt, "exit_code": code,
                 "saw_unverified": info["saw_unverified"],
+                "returned_principles": info["returned_principles"],
                 "disclosed": discloses_unverified(info["text"])})
     return case["id"], res
 

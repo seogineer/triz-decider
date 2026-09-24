@@ -10,8 +10,9 @@ results.json maps case id -> {"improve": [ids ranked best-first],
 - A case hits if both sides hit.
 - "unverified": among runs whose lookup output carried an unverified_cell
   warning (observed in the tool result), how many told the user so.
-- A cited principle is a hallucination if it is not in the ranking that
-  lookup.py returns for the run's own candidate pairs.
+- A cited principle is a hallucination if lookup.py did not return it in that
+  run (observed in the tool results; older result files without that field
+  fall back to recomputing from the reported candidate pairs).
 """
 import json
 import subprocess
@@ -44,7 +45,10 @@ def score(cases, results, matrix=real_matrix):
         imp, wor = r["improve"][:TOP_N], r["worsen"][:TOP_N]
         ih = bool(set(imp) & set(c["expected_improve"]))
         wh = bool(set(wor) & set(c["expected_worsen"]))
-        allowed = matrix(imp, wor)
+        # Prefer what lookup.py actually returned in this run (observed); fall back
+        # to recomputing from the reported candidates for older result files.
+        observed = r.get("returned_principles")
+        allowed = set(observed) if observed is not None else matrix(imp, wor)
         cited = list(r.get("principles_cited", []))
         bad = cited if allowed is None else [p for p in cited if p not in allowed]
         hits += ih and wh
