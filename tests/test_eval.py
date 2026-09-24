@@ -181,6 +181,11 @@ def test_build_prompt_neutral_suffix_does_not_claim_confirmation():
     assert "confirmed" not in prompt and prompt.endswith(run_blind.SUFFIX["en_neutral"])
 
 
+def test_build_prompt_none_suffix_sends_plain_problem():
+    case = {"problem": "P", "lang": "ko", "suffix": "none"}
+    assert run_blind.build_prompt(case, "command") == "/triz-solver:triz P"
+
+
 def test_parse_answer_labels_with_translation_and_bold_ids():
     text = ("| 개선 (Improving) | #12 Shape | a |\n"
             "| Improving | **#35 Adaptability or versatility** | b |\n"

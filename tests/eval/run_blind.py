@@ -31,6 +31,8 @@ SUFFIX = {
     "en": "\n\n(The contradiction statement is confirmed; do not ask for confirmation, run through to the end.)",
     # for inputs whose contradiction nobody has confirmed (patent abstracts)
     "en_neutral": "\n\n(Do not ask me any questions; make your own choices and run through to the end.)",
+    # interview smoke runs: the plain input, so the skill may ask its first question
+    "none": "",
 }
 TIMEOUT = 280
 # Only the tools the skill needs, no MCP servers: a host session's messaging or
