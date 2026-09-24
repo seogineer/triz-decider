@@ -16,7 +16,9 @@ results.json maps case id -> {"improve": [ids ranked best-first],
 
 Physical-contradiction cases (they carry "expected_separation") are scored on
 the separation types the run passed to `lookup.py separation --type`
-(observed in the tool calls): a case hits if any of them is expected. A cited
+(observed in the tool calls): a case hits if any of them is expected. A
+secondary rate also accepts the types the answer's table marks as chosen, for
+runs that reused the all-types lookup instead of calling --type again. A cited
 principle is a hallucination unless a matrix or separation result of that run
 recommended it.
 """
@@ -88,11 +90,13 @@ def score_physical(cases, results):
             missing.append(c["id"])
             continue
         types = list(r.get("separation_types", []))
+        stated = list(r.get("stated_separations", []))
         expected = set(c["expected_separation"])
         recommended = set(r.get("recommended_principles", []))
         bad = [p for p in r.get("principles_cited", []) if p not in recommended]
-        rows.append({"id": c["id"], "separation_types": types,
+        rows.append({"id": c["id"], "separation_types": types, "stated_separations": stated,
                      "hit": bool(set(types) & expected),
+                     "hit_stated_or_observed": bool((set(types) | set(stated)) & expected),
                      "first_hit": bool(types) and types[0] in expected,
                      "used_separation": bool(types),
                      "hallucinated_principles": bad})
@@ -102,6 +106,7 @@ def score_physical(cases, results):
         return sum(r[key] for r in rows) / n if n else 0.0
     return {"cases_scored": n, "cases_missing": missing,
             "separation_hit_rate": rate("hit"), "first_choice_hit_rate": rate("first_hit"),
+            "hit_rate_stated_or_observed": rate("hit_stated_or_observed"),
             "used_separation_rate": rate("used_separation"),
             "hallucinated_principles": sum(len(r["hallucinated_principles"]) for r in rows),
             "rows": rows}

@@ -134,7 +134,7 @@ def test_parse_answer_korean():
 
 def test_parse_answer_english():
     r = run_blind.parse_answer(ANSWER_EN)
-    assert r == {"improve": [9], "worsen": [23], "principles_cited": [35]}
+    assert r == {"improve": [9], "worsen": [23], "principles_cited": [35], "stated_separations": []}
 
 
 def test_parse_stream_extracts_tool_calls_and_result():
@@ -202,7 +202,8 @@ def test_run_command_is_isolated_from_host_tools():
 
 
 def test_parse_answer_empty():
-    assert run_blind.parse_answer("") == {"improve": [], "worsen": [], "principles_cited": []}
+    assert run_blind.parse_answer("") == {"improve": [], "worsen": [], "principles_cited": [],
+                                          "stated_separations": []}
 
 
 def test_plugin_copy_excludes_expected_values(tmp_path):
@@ -342,3 +343,24 @@ def test_score_physical():
     assert [r["first_hit"] for r in out["rows"]] == [True, False, False]
     assert out["hallucinated_principles"] == 2   # 99 in P2, 4 in P3 (nothing looked up)
     assert out["used_separation_rate"] == 2 / 3
+
+
+def test_stated_separations_reads_chosen_rows():
+    text = """## 분리 유형
+| 유형 | P | 반대 P | 판단 |
+| --- | --- | --- | --- |
+| 공간 | 머리 위 | (같은 표면) | 겹침 → 제외 |
+| 시간 | 비가 올 때 | 보관할 때 | 겹치지 않음 → **선택** |
+| 관계·조건 | a | b | 제외 |
+| 시스템 수준 | 전체 | 조각 | 겹치지 않음 → 선택 |
+| Separation in direction | a | b | selected |
+"""
+    assert run_blind.stated_separations(text) == ["time", "system", "direction"]
+
+
+def test_score_physical_accepts_stated_choice_as_secondary():
+    cases = [{"id": "P1", "expected_separation": ["time"]}]
+    results = {"P1": {"separation_types": [], "stated_separations": ["time"],
+                      "principles_cited": [], "recommended_principles": [9]}}
+    out = score_mod.score_physical(cases, results)
+    assert out["separation_hit_rate"] == 0 and out["hit_rate_stated_or_observed"] == 1

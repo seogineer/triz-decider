@@ -50,6 +50,28 @@ _DISCLOSE = re.compile(
 _PRINCIPLE_HEAD = re.compile(r"^#{2,4}\s*(?:원리|Principle)\s*#\s*(\d+)", re.M)
 
 
+_SEP_NAMES = (("space", r"공간|space"), ("time", r"시간|time"),
+              ("condition", r"관계|조건|relation|condition"), ("direction", r"방향|direction"),
+              ("system", r"시스템|system"))
+_CHOSEN = re.compile(r"선택|채택|select|chosen|adopt", re.I)
+_REJECTED = re.compile(r"제외|기각|reject|not select|excluded", re.I)
+
+
+def stated_separations(text):
+    """Separation types the answer's table marks as chosen (first cell names the type,
+    last cell carries the verdict), in table order."""
+    chosen = []
+    for line in text.splitlines():
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) < 2 or not _CHOSEN.search(cells[-1]) or _REJECTED.search(cells[-1]):
+            continue
+        for sep_id, pattern in _SEP_NAMES:
+            if re.search(pattern, cells[0], re.I) and sep_id not in chosen:
+                chosen.append(sep_id)
+                break
+    return chosen
+
+
 def discloses_unverified(text):
     """True if the answer tells the user a pair has no verified data."""
     return bool(_DISCLOSE.search(text))
@@ -66,7 +88,8 @@ def parse_answer(text):
     for num in _PRINCIPLE_HEAD.findall(text):
         if int(num) not in cited:
             cited.append(int(num))
-    return {"improve": improve, "worsen": worsen, "principles_cited": cited}
+    return {"improve": improve, "worsen": worsen, "principles_cited": cited,
+            "stated_separations": stated_separations(text)}
 
 
 def make_plugin_copy(dest):
