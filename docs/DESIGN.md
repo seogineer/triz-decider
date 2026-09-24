@@ -192,11 +192,26 @@ flowchart TD
       "sub_principles": {
         "ko": ["물체를 독립된 부분으로 나눈다", "물체를 조립·분해가 쉽게 만든다", "분할 정도를 높인다"]
       },
-      "examples": { "ko": ["모듈형 가구", "조립식 호스"] }
+      "examples": { "ko": ["모듈형 가구", "조립식 호스"] },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "긴 파이프를 한 덩어리로 옮기기 어려워, 플랜지로 잇는 짧은 토막으로 나눠 현장에서 조립한다.",
+          "en": "A long pipe is hard to transport in one piece, so it is split into short flanged sections joined on site."
+        }
+      ]
     }
   ]
 }
 ```
+
+`cases`(v0.3, FR-09)는 `examples`와 역할이 다르다. `examples`는 원리가 쓰인 **물건**을 짚고, `cases`는 **어떤 상충이 있었고 하위 원리 하나로 어떻게 풀었는지**를 한두 문장으로 보여 준다. 아이디어를 만들 때 비유로 쓰기 위한 것이다.
+- 원리마다 4건, 서로 다른 `domain`에서 고른다. `domain`은 `mechanical`(기계), `electronics`(전기·전자), `software`(소프트웨어·IT), `materials`(화학·소재), `medical`(의료·바이오), `everyday`(생활·서비스) 중 하나다
+- `sub_principle`은 그 원리 `sub_principles`의 1부터 세는 번호다
+- 특정 회사·제품·특허 이름을 쓰지 않는다(기억에 의존한 사실 주장을 피한다). 다른 원리 번호(`#N`)를 본문에 적지 않는다
+- 전부 이 프로젝트에서 직접 작성한다. 한국어로 먼저 쓰고 영어로 옮긴다(11.2)
+- `lookup.py principle`은 기본 출력에 `cases`를 넣지 않는다. `--cases`를 줄 때만 넣는다(기존 출력과 평가 비교 유지)
 
 ### 5.4 separation-principles.json
 
@@ -234,7 +249,7 @@ flowchart TD
 | 서브커맨드 | 인자 | 출력 | 릴리스 |
 | --- | --- | --- | --- |
 | `matrix` | `--improve 1,9 --worsen 2,14` | 조합별 원리 목록 + 원리 빈도 집계 | v0.1 |
-| `principle` | `--id 1,15,35` | 원리 정의·하위 원리·예시 | v0.1 |
+| `principle` | `--id 1,15,35` [`--cases`] | 원리 정의·하위 원리·예시. `--cases`면 산업 사례(5.3)도 | v0.1 (`--cases` v0.3) |
 | `param` | `--id 9` 또는 `--search 속도` | 파라미터 정의, 키워드 검색 결과 | v0.1 |
 | `separation` | `--type time[,space]` (생략 시 전체) | 분리 원리, 판별 질문, 연계 발명 원리(이름 포함) | v0.2 |
 | `validate` | 없음 | 데이터 무결성 검사 결과 | v0.1 |
@@ -498,6 +513,16 @@ v0.1은 데이터 확정이 선행 조건이며, 이후 구현은 Claude Code로
 - [x] 기존 Next.js 저장소를 재활용할지, 플러그인 전용 신규 저장소로 분리할지
 - [x] 행렬 셀 값 교차 검증에 사용할 공개 자료 선정 (DATA_SOURCES.md 2.2)
 - [x] 원리 설명의 기본 언어: 한국어 우선 작성 후 영어 번역 (표준 영문 표현 복제 위험을 줄이고 작성자가 직접 검수 가능). 원리·파라미터 명칭은 영어 표준 명칭 기준. 영문은 공식 디렉토리 제출 전 검토
+
+### 11.4 구현 순서 (v0.3)
+
+- [ ] `cases` 스키마(5.3), `lookup.py principle --cases`, `validate`·무결성 테스트
+- [ ] 시범: 원리 3개에 사례 작성, SKILL.md 아이디어 생성 단계에 사례 사용 규칙, 스모크 실행으로 쓸모 확인
+- [ ] 나머지 원리 사례 작성 (10개 단위 커밋, 원리당 4건, ko 먼저)
+- [ ] README(en/ko) 실제 실행 예시 보강, 상태 표시·데이터 상태 갱신, `DATA_SOURCES.md` 3장
+- [ ] CHANGELOG, 매니페스트 버전(0.3.0), 태그
+- [ ] (사용자) 영문 문장 검토 — 공식 디렉토리 제출 전 조건(11.2)
+- [ ] (사용자) 공식 Plugin Directory 제출 — 제출 요건은 그때 공식 문서를 확인
 
 ### 11.3 구현 순서 (v0.2)
 
