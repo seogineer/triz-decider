@@ -1,0 +1,1443 @@
+{
+  "C01": {
+    "improve": [
+      14
+    ],
+    "worsen": [
+      1,
+      26
+    ],
+    "principles_cited": [
+      1,
+      8,
+      40,
+      15,
+      29
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      8,
+      10,
+      15,
+      27,
+      29,
+      40
+    ],
+    "recommended_principles": [
+      1,
+      8,
+      10,
+      15,
+      27,
+      29,
+      40
+    ],
+    "separation_types": [],
+    "disclosed": true
+  },
+  "C02": {
+    "improve": [
+      15
+    ],
+    "worsen": [
+      1
+    ],
+    "principles_cited": [
+      19,
+      5,
+      34,
+      31
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      5,
+      19,
+      31,
+      34
+    ],
+    "recommended_principles": [
+      5,
+      19,
+      31,
+      34
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C03": {
+    "improve": [
+      9
+    ],
+    "worsen": [
+      27,
+      29
+    ],
+    "principles_cited": [
+      35,
+      28,
+      11,
+      27,
+      10
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      10,
+      11,
+      27,
+      28,
+      32,
+      35
+    ],
+    "recommended_principles": [
+      10,
+      11,
+      27,
+      28,
+      32,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C04": {
+    "improve": [
+      29
+    ],
+    "worsen": [
+      9,
+      25,
+      39
+    ],
+    "principles_cited": [
+      32,
+      10,
+      28,
+      18,
+      26
+    ],
+    "stated_separations": [],
+    "skill_used": false,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      10,
+      18,
+      26,
+      28,
+      32,
+      39
+    ],
+    "recommended_principles": [
+      10,
+      18,
+      26,
+      28,
+      32,
+      39
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C05": {
+    "improve": [
+      17,
+      9
+    ],
+    "worsen": [
+      31
+    ],
+    "principles_cited": [
+      35,
+      2,
+      24,
+      22,
+      21
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      2,
+      21,
+      22,
+      24,
+      35
+    ],
+    "recommended_principles": [
+      2,
+      21,
+      22,
+      24,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C06": {
+    "improve": [
+      35
+    ],
+    "worsen": [
+      36,
+      33
+    ],
+    "principles_cited": [
+      15,
+      29,
+      37,
+      28,
+      34
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      15,
+      16,
+      28,
+      29,
+      34,
+      37
+    ],
+    "recommended_principles": [
+      1,
+      15,
+      16,
+      28,
+      29,
+      34,
+      37
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C07": {
+    "improve": [
+      38
+    ],
+    "worsen": [
+      36,
+      26
+    ],
+    "principles_cited": [
+      35,
+      13,
+      15,
+      24,
+      10
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      10,
+      13,
+      15,
+      24,
+      35
+    ],
+    "recommended_principles": [
+      10,
+      13,
+      15,
+      24,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C08": {
+    "improve": [
+      2,
+      1
+    ],
+    "worsen": [
+      14,
+      11
+    ],
+    "principles_cited": [
+      10,
+      40,
+      28,
+      27,
+      18
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      2,
+      10,
+      13,
+      18,
+      27,
+      28,
+      29,
+      36,
+      37,
+      40
+    ],
+    "recommended_principles": [
+      2,
+      10,
+      13,
+      18,
+      27,
+      28,
+      29,
+      36,
+      37,
+      40
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C09": {
+    "improve": [
+      18
+    ],
+    "worsen": [
+      20,
+      22
+    ],
+    "principles_cited": [
+      1,
+      32,
+      35,
+      15,
+      13
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      6,
+      13,
+      15,
+      16,
+      32,
+      35
+    ],
+    "recommended_principles": [
+      1,
+      6,
+      13,
+      15,
+      16,
+      32,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C10": {
+    "improve": [
+      28
+    ],
+    "worsen": [
+      33,
+      36
+    ],
+    "principles_cited": [
+      34,
+      1,
+      13,
+      17,
+      27
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      10,
+      13,
+      17,
+      27,
+      34,
+      35
+    ],
+    "recommended_principles": [
+      1,
+      10,
+      13,
+      17,
+      27,
+      34,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C11": {
+    "improve": [
+      34
+    ],
+    "worsen": [
+      27,
+      13
+    ],
+    "principles_cited": [
+      11,
+      10,
+      1,
+      16,
+      2
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      2,
+      10,
+      11,
+      16,
+      35
+    ],
+    "recommended_principles": [
+      1,
+      2,
+      10,
+      11,
+      16,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C12": {
+    "improve": [
+      26,
+      2
+    ],
+    "worsen": [
+      14
+    ],
+    "principles_cited": [
+      10,
+      14,
+      35,
+      34,
+      28
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      2,
+      10,
+      14,
+      27,
+      28,
+      34,
+      35
+    ],
+    "recommended_principles": [
+      2,
+      10,
+      14,
+      27,
+      28,
+      34,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C13": {
+    "improve": [
+      1
+    ],
+    "worsen": [
+      14,
+      11,
+      30
+    ],
+    "principles_cited": [
+      40,
+      27,
+      18,
+      10,
+      36
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      10,
+      18,
+      21,
+      22,
+      27,
+      28,
+      36,
+      37,
+      40
+    ],
+    "recommended_principles": [
+      10,
+      18,
+      21,
+      22,
+      27,
+      28,
+      36,
+      37,
+      40
+    ],
+    "separation_types": [],
+    "disclosed": true
+  },
+  "C14": {
+    "improve": [
+      9
+    ],
+    "worsen": [
+      24,
+      27,
+      28
+    ],
+    "principles_cited": [
+      28,
+      13,
+      26,
+      11,
+      35
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      11,
+      13,
+      24,
+      26,
+      27,
+      28,
+      32,
+      35
+    ],
+    "recommended_principles": [
+      1,
+      11,
+      13,
+      24,
+      26,
+      27,
+      28,
+      32,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C15": {
+    "improve": [
+      21,
+      10
+    ],
+    "worsen": [
+      31
+    ],
+    "principles_cited": [
+      2,
+      35,
+      18,
+      13,
+      3
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      2,
+      3,
+      13,
+      18,
+      24,
+      35,
+      36
+    ],
+    "recommended_principles": [
+      2,
+      3,
+      13,
+      18,
+      24,
+      35,
+      36
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C16": {
+    "improve": [
+      39,
+      9
+    ],
+    "worsen": [
+      20,
+      21
+    ],
+    "principles_cited": [
+      35,
+      1,
+      20,
+      10,
+      19
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      2,
+      10,
+      19,
+      20,
+      35,
+      38
+    ],
+    "recommended_principles": [
+      1,
+      2,
+      10,
+      19,
+      20,
+      35,
+      38
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C17": {
+    "improve": [
+      3
+    ],
+    "worsen": [
+      14,
+      11
+    ],
+    "principles_cited": [
+      8,
+      35,
+      29,
+      34,
+      1
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      8,
+      29,
+      34,
+      35
+    ],
+    "recommended_principles": [
+      1,
+      8,
+      29,
+      34,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C18": {
+    "improve": [
+      3,
+      26
+    ],
+    "worsen": [
+      14,
+      30,
+      27
+    ],
+    "principles_cited": [
+      35,
+      29,
+      34,
+      10,
+      14
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      3,
+      8,
+      10,
+      14,
+      15,
+      17,
+      18,
+      24,
+      28,
+      29,
+      31,
+      33,
+      34,
+      35,
+      40
+    ],
+    "recommended_principles": [
+      1,
+      3,
+      8,
+      10,
+      14,
+      15,
+      17,
+      18,
+      24,
+      28,
+      29,
+      31,
+      33,
+      34,
+      35,
+      40
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C19": {
+    "improve": [
+      9
+    ],
+    "worsen": [
+      15,
+      23
+    ],
+    "principles_cited": [],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      3,
+      5,
+      10,
+      13,
+      19,
+      28,
+      35,
+      38
+    ],
+    "recommended_principles": [
+      3,
+      5,
+      10,
+      13,
+      19,
+      28,
+      35,
+      38
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C20": {
+    "improve": [
+      35,
+      12
+    ],
+    "worsen": [
+      14,
+      13
+    ],
+    "principles_cited": [
+      35,
+      30,
+      14,
+      3,
+      32
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      3,
+      4,
+      6,
+      10,
+      14,
+      18,
+      30,
+      32,
+      33,
+      35,
+      40
+    ],
+    "recommended_principles": [
+      1,
+      3,
+      4,
+      6,
+      10,
+      14,
+      18,
+      30,
+      32,
+      33,
+      35,
+      40
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C21": {
+    "improve": [
+      1,
+      10
+    ],
+    "worsen": [
+      15,
+      19
+    ],
+    "principles_cited": [
+      34,
+      31,
+      35,
+      19
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      2,
+      5,
+      10,
+      12,
+      17,
+      19,
+      31,
+      34,
+      35
+    ],
+    "recommended_principles": [
+      2,
+      5,
+      10,
+      12,
+      17,
+      19,
+      31,
+      34,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C22": {
+    "improve": [
+      28
+    ],
+    "worsen": [
+      32,
+      36
+    ],
+    "principles_cited": [
+      35,
+      6,
+      25,
+      18,
+      27
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      6,
+      10,
+      18,
+      25,
+      27,
+      34,
+      35
+    ],
+    "recommended_principles": [
+      6,
+      10,
+      18,
+      25,
+      27,
+      34,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C23": {
+    "improve": [
+      15,
+      26
+    ],
+    "worsen": [
+      3,
+      7
+    ],
+    "principles_cited": [],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      2,
+      9,
+      10,
+      14,
+      15,
+      18,
+      19,
+      20,
+      29,
+      30,
+      35
+    ],
+    "recommended_principles": [
+      2,
+      9,
+      10,
+      14,
+      15,
+      18,
+      19,
+      20,
+      29,
+      30,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C24": {
+    "improve": [
+      26,
+      2
+    ],
+    "worsen": [
+      31,
+      14
+    ],
+    "principles_cited": [],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 6,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      2,
+      3,
+      10,
+      14,
+      22,
+      27,
+      28,
+      34,
+      35,
+      39,
+      40
+    ],
+    "recommended_principles": [
+      1,
+      2,
+      3,
+      10,
+      14,
+      22,
+      27,
+      28,
+      34,
+      35,
+      39,
+      40
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C25": {
+    "improve": [
+      28,
+      27
+    ],
+    "worsen": [
+      25,
+      9
+    ],
+    "principles_cited": [
+      28,
+      24,
+      32,
+      34,
+      13
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      4,
+      10,
+      11,
+      13,
+      21,
+      24,
+      28,
+      30,
+      32,
+      34,
+      35
+    ],
+    "recommended_principles": [
+      4,
+      10,
+      11,
+      13,
+      21,
+      24,
+      28,
+      30,
+      32,
+      34,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C26": {
+    "improve": [
+      21,
+      9
+    ],
+    "worsen": [
+      20,
+      22
+    ],
+    "principles_cited": [
+      35,
+      10,
+      38,
+      14,
+      20
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      10,
+      14,
+      19,
+      20,
+      35,
+      38
+    ],
+    "recommended_principles": [
+      10,
+      14,
+      19,
+      20,
+      35,
+      38
+    ],
+    "separation_types": [],
+    "disclosed": true
+  },
+  "C27": {
+    "improve": [
+      27
+    ],
+    "worsen": [
+      32,
+      34,
+      36
+    ],
+    "principles_cited": [
+      1,
+      11,
+      13,
+      35
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      11,
+      13,
+      35
+    ],
+    "recommended_principles": [
+      1,
+      11,
+      13,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C29": {
+    "improve": [
+      34
+    ],
+    "worsen": [
+      1,
+      26
+    ],
+    "principles_cited": [
+      2,
+      27,
+      35,
+      11,
+      28
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      2,
+      10,
+      11,
+      25,
+      27,
+      28,
+      35
+    ],
+    "recommended_principles": [
+      2,
+      10,
+      11,
+      25,
+      27,
+      28,
+      35
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C30": {
+    "improve": [
+      7,
+      8
+    ],
+    "worsen": [
+      25,
+      32
+    ],
+    "principles_cited": [
+      35,
+      2,
+      6,
+      34,
+      10
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      2,
+      6,
+      10,
+      16,
+      18,
+      29,
+      32,
+      34,
+      35,
+      40
+    ],
+    "recommended_principles": [
+      1,
+      2,
+      6,
+      10,
+      16,
+      18,
+      29,
+      32,
+      34,
+      35,
+      40
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C31": {
+    "improve": [
+      9,
+      21
+    ],
+    "worsen": [
+      1
+    ],
+    "principles_cited": [
+      8,
+      38,
+      28,
+      13,
+      36
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      8,
+      13,
+      28,
+      31,
+      36,
+      38
+    ],
+    "recommended_principles": [
+      8,
+      13,
+      28,
+      31,
+      36,
+      38
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C32": {
+    "improve": [
+      39
+    ],
+    "worsen": [
+      33,
+      36
+    ],
+    "principles_cited": [
+      28,
+      1,
+      7,
+      19,
+      12
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      1,
+      7,
+      12,
+      17,
+      19,
+      24,
+      28
+    ],
+    "recommended_principles": [
+      1,
+      7,
+      12,
+      17,
+      19,
+      24,
+      28
+    ],
+    "separation_types": [],
+    "disclosed": false
+  },
+  "C33": {
+    "improve": [
+      14
+    ],
+    "worsen": [
+      33
+    ],
+    "principles_cited": [
+      40,
+      28,
+      2,
+      32
+    ],
+    "stated_separations": [],
+    "skill_used": true,
+    "lookup_calls": 2,
+    "plugin_loaded": true,
+    "model": "claude-sonnet-5",
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": false,
+    "returned_principles": [
+      2,
+      28,
+      32,
+      40
+    ],
+    "recommended_principles": [
+      2,
+      28,
+      32,
+      40
+    ],
+    "separation_types": [],
+    "disclosed": false
+  }
+}
