@@ -20,6 +20,10 @@ N_PARAMS = 39
 N_PRINCIPLES = 40
 # order follows the source (MATRIZ): space, time, relation/condition, direction, system level
 SEPARATION_TYPES = ("space", "time", "condition", "direction", "system")
+# industry cases per principle (DESIGN 5.3, v0.3)
+CASE_DOMAINS = ("mechanical", "electronics", "software", "materials", "medical", "everyday")
+CASES_PER_PRINCIPLE = 4
+_PRINCIPLE_REF_RE = re.compile(r"#\s*\d")
 
 EXIT_INVALID_ARGUMENT = 2
 EXIT_OUT_OF_RANGE = 3
@@ -189,6 +193,9 @@ def cmd_principle(args):
                 "sub_principles": pick(p["sub_principles"], args.lang),
                 "examples": pick(p["examples"], args.lang),
             })
+            if args.cases:
+                out[-1]["cases"] = [{"domain": c["domain"], "sub_principle": c["sub_principle"],
+                                     "text": c[args.lang]} for c in p.get("cases", [])]
     except (KeyError, TypeError) as exc:
         raise data_error(f"principle data missing or malformed: {exc!r}")
     return {"principles": out}
@@ -280,6 +287,35 @@ def _check_names(label, item, errors):
             errors.append(f"{label}: missing {lang} name")
 
 
+def _check_cases(p, errors):
+    """Industry cases of one principle (DESIGN 5.3)."""
+    where = f"principle {p.get('id')} cases"
+    cases = p["cases"]
+    if not isinstance(cases, list) or len(cases) != CASES_PER_PRINCIPLE:
+        errors.append(f"{where}: need exactly {CASES_PER_PRINCIPLE}")
+        return
+    n_sub = len((p.get("sub_principles") or {}).get("ko") or [])
+    domains = []
+    for i, c in enumerate(cases, 1):
+        if not isinstance(c, dict):
+            errors.append(f"{where} #{i}: must be an object")
+            continue
+        domains.append(c.get("domain"))
+        if c.get("domain") not in CASE_DOMAINS:
+            errors.append(f"{where} #{i}: domain must be one of {', '.join(CASE_DOMAINS)}")
+        sub = c.get("sub_principle")
+        if not isinstance(sub, int) or isinstance(sub, bool) or not 1 <= sub <= n_sub:
+            errors.append(f"{where} #{i}: sub_principle must be 1..{n_sub}")
+        for lang in ("ko", "en"):
+            text = c.get(lang)
+            if not isinstance(text, str) or not text.strip() or text.strip() == "TODO":
+                errors.append(f"{where} #{i}: missing {lang} text")
+            elif _PRINCIPLE_REF_RE.search(text):
+                errors.append(f"{where} #{i}: {lang} text must not cite a principle number")
+    if len(set(domains)) != len(domains):
+        errors.append(f"{where}: domains must differ")
+
+
 def cmd_validate(_args):
     files = {n: load(n) for n in (
         "parameters.json", "contradiction-matrix.json",
@@ -318,6 +354,11 @@ def cmd_validate(_args):
             errors.append(f"principle {p.get('id')}: missing ko sub_principles")
         if not (p.get("examples") or {}).get("ko"):
             errors.append(f"principle {p.get('id')}: missing ko examples")
+        if "cases" in p:
+            _check_cases(p, errors)
+    no_cases = sum(1 for p in principles if not p.get("cases"))
+    if no_cases:
+        warnings.append({"code": "missing_cases", "count": no_cases})
 
     matrix = files["contradiction-matrix.json"]
     if matrix.get("size") != N_PARAMS:
@@ -409,6 +450,8 @@ def build_parser():
 
     p = sub.add_parser("principle", help="look up inventive principles", allow_abbrev=False)
     p.add_argument("--id", required=True, help="principle ids, e.g. 1,15,35")
+    p.add_argument("--cases", action="store_true",
+                   help="also return industry cases (domain, sub_principle, text)")
     add_lang(p)
     p.set_defaults(func=cmd_principle)
 

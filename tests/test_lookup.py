@@ -67,7 +67,9 @@ def make_env(tmp_path, cells=None, missing_rows=None, unverified=None):
         "principles": [
             {"id": i, "name": {"en": f"Prin{i}", "ko": f"원리{i}"},
              "sub_principles": {"ko": [f"하위{i}a", f"하위{i}b"], "en": [f"sub{i}a"]},
-             "examples": {"ko": [f"예{i}"], "en": [f"ex{i}"]}}
+             "examples": {"ko": [f"예{i}"], "en": [f"ex{i}"]},
+             "cases": [{"domain": d, "sub_principle": 1 + k % 2, "ko": f"사례{i}{d}", "en": f"case{i}{d}"}
+                       for k, d in enumerate(("mechanical", "electronics", "software", "everyday"))]}
             for i in range(1, 41)
         ],
     })
@@ -268,6 +270,58 @@ def test_principle_lookup_en(env):
     assert p["name"] == "Prin2"
     assert p["sub_principles"] == ["sub2a"]
     assert p["examples"] == ["ex2"]
+
+
+def test_principle_omits_cases_by_default(env):
+    _, out, _ = run(env, "principle", "--id", "1")
+    assert "cases" not in out["principles"][0]
+
+
+def test_principle_cases_on_request(env):
+    _, ko, _ = run(env, "principle", "--id", "1", "--cases")
+    _, en, _ = run(env, "principle", "--id", "1", "--cases", "--lang", "en")
+    assert ko["principles"][0]["cases"][0] == {"domain": "mechanical", "sub_principle": 1, "text": "사례1mechanical"}
+    assert [c["text"] for c in en["principles"][0]["cases"]] == [
+        "case1mechanical", "case1electronics", "case1software", "case1everyday"]
+
+
+def test_principle_cases_empty_list_when_not_written(tmp_path):
+    script = make_env(tmp_path)
+    p = tmp_path / "data" / "inventive-principles.json"
+    d = json.loads(p.read_text(encoding="utf-8"))
+    del d["principles"][4]["cases"]
+    write(p, d)
+    _, out, _ = run(script, "principle", "--id", "5", "--cases")
+    assert out["principles"][0]["cases"] == []
+    code, out, _ = run(script, "validate")
+    assert code == 0 and {"code": "missing_cases", "count": 1} in out["warnings"]
+
+
+def _bad_case(case):
+    def mutate(cases):
+        cases[0].update(case)
+    return mutate
+
+
+@pytest.mark.parametrize("mutate, message", [
+    (lambda cs: cs.pop(), "exactly 4"),
+    (_bad_case({"domain": "space"}), "domain must be one of"),
+    (_bad_case({"domain": "electronics"}), "domains must differ"),
+    (_bad_case({"sub_principle": 3}), "sub_principle must be 1..2"),
+    (_bad_case({"sub_principle": 0}), "sub_principle must be 1..2"),
+    (_bad_case({"en": ""}), "missing en text"),
+    (_bad_case({"ko": "TODO"}), "missing ko text"),
+    (_bad_case({"ko": "원리 #15처럼 바꾼다"}), "must not cite a principle number"),
+])
+def test_validate_rejects_bad_cases(tmp_path, mutate, message):
+    script = make_env(tmp_path)
+    p = tmp_path / "data" / "inventive-principles.json"
+    d = json.loads(p.read_text(encoding="utf-8"))
+    mutate(d["principles"][0]["cases"])
+    write(p, d)
+    code, _, err = run(script, "validate")
+    assert code == 5
+    assert message in json.dumps(err, ensure_ascii=False)
 
 
 def test_principle_duplicates_deduplicated(env):

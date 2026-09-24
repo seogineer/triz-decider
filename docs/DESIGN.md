@@ -516,7 +516,7 @@ v0.1은 데이터 확정이 선행 조건이며, 이후 구현은 Claude Code로
 
 ### 11.4 구현 순서 (v0.3)
 
-- [ ] `cases` 스키마(5.3), `lookup.py principle --cases`, `validate`·무결성 테스트
+- [x] `cases` 스키마(5.3), `lookup.py principle --cases`, `validate`·무결성 테스트
 - [ ] 시범: 원리 3개에 사례 작성, SKILL.md 아이디어 생성 단계에 사례 사용 규칙, 스모크 실행으로 쓸모 확인
 - [ ] 나머지 원리 사례 작성 (10개 단위 커밋, 원리당 4건, ko 먼저)
 - [ ] README(en/ko) 실제 실행 예시 보강, 상태 표시·데이터 상태 갱신, `DATA_SOURCES.md` 3장
