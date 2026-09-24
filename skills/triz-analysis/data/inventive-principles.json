@@ -695,7 +695,33 @@
           "A lathe that spins the part instead of the tool",
           "A dish rack that dries plates upside down"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "앱이 새 소식이 있는지 서버에 계속 물으면 쓸데없는 요청이 쏟아진다. 반대로 서버가 새 소식이 생겼을 때만 앱에 알려 주게 한다.",
+          "en": "An app that keeps asking the server for news floods it with useless requests. Turning it round, the server tells the app only when there is news."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 2,
+          "ko": "큰 구조물을 용접하려고 사람이 용접기를 들고 돌면 자세가 나빠지고 품질이 들쭉날쭉하다. 용접기는 고정하고 구조물을 회전 받침에 올려 돌리면 늘 편한 자세로 용접한다.",
+          "en": "Walking round a large structure with a welding torch means awkward positions and uneven welds. Fixing the torch and turning the structure on a rotating fixture keeps the weld in the easy position."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 3,
+          "ko": "쇳물을 거푸집 위에서 부으면 거품과 찌꺼기가 함께 섞여 들어간다. 거푸집 아래쪽에서 쇳물을 밀어 올려 채우면 찌꺼기가 위로 떠 빠진다.",
+          "en": "Pouring molten metal in from the top of a mould drags in bubbles and dross. Filling the mould from the bottom upward lets the dross float to the top."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 3,
+          "ko": "소스 병은 내용물이 바닥에 가라앉아 흔들어야 나온다. 뚜껑이 아래로 가게 세워 두는 병으로 만들면 내용물이 늘 입구 쪽에 모여 있다.",
+          "en": "Sauce settles at the bottom of the bottle and needs shaking out. A bottle designed to stand on its cap keeps the contents at the opening."
+        }
+      ]
     },
     {
       "id": 14,
@@ -726,7 +752,33 @@
           "The rolling ball in a ballpoint pen",
           "A screw press"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 3,
+          "ko": "왕복하는 피스톤 펌프는 흐름이 끊겼다 이어지고 진동이 크다. 회전하는 날개로 유체를 미는 펌프로 바꾸면 흐름이 고르고 조용하다.",
+          "en": "A reciprocating piston pump gives a pulsing flow and strong vibration. A pump that pushes fluid with a spinning impeller gives a smooth, quiet flow."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "직각으로 꺾인 기판 배선에서는 빠른 신호가 모서리에서 반사된다. 배선 모서리를 둥글게 또는 비스듬히 꺾으면 반사가 줄어든다.",
+          "en": "Fast signals reflect at right-angle corners in circuit-board traces. Rounding or mitring the corners reduces the reflections."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "무거운 의료 장비를 한 방향 바퀴로 밀면 좁은 병실에서 방향을 바꾸기 어렵다. 모든 방향으로 도는 공 모양 바퀴를 달면 제자리에서 돌린다.",
+          "en": "Heavy medical equipment on fixed wheels is hard to turn in a small ward. Ball-shaped wheels that roll in every direction let it turn on the spot."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "욕조와 벽이 직각으로 만나는 모서리에는 물때가 끼고 부딪히면 다친다. 모서리를 둥글게 이어 만들면 청소가 쉽고 안전하다.",
+          "en": "Square corners where a bath meets the wall collect grime and hurt when bumped. Curving the corners makes them easy to clean and safer."
+        }
+      ]
     },
     {
       "id": 15,
@@ -812,7 +864,33 @@
           "Spin coating: over-dispense, then spin off the surplus",
           "Cutting a board slightly oversize and trimming to fit"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "구멍을 한 번에 정확한 크기와 위치로 뚫기 어렵다. 조금 작게 먼저 뚫고 마지막에 정밀 공구로 넓혀 맞춘다.",
+          "en": "Drilling a hole to exact size and position in one pass is hard. A slightly smaller hole is drilled first and then opened to size with a precision tool."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "모든 경우를 완벽히 처리하는 기능을 한 번에 만들기 어렵다. 핵심만 먼저 내놓고 실제로 쓰는 모습을 보며 나머지를 채운다.",
+          "en": "Building a feature that handles every case perfectly in one go is hard. The core is released first and the rest is filled in from real use."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "사람마다 알맞은 약의 양을 처음부터 정확히 정하기 어렵다. 적은 양으로 시작해 반응을 보며 조금씩 늘려 맞춘다.",
+          "en": "The right dose for each person is hard to know at the start. Treatment begins low and is raised step by step while the response is watched."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "벽지를 벽 크기에 딱 맞게 재단하기 어렵다. 조금 길게 잘라 붙인 뒤 천장과 바닥 모서리에서 남는 부분을 칼로 잘라 낸다.",
+          "en": "Cutting wallpaper exactly to the wall is hard. Strips are cut a little long, hung, and trimmed at the ceiling and floor."
+        }
+      ]
     },
     {
       "id": 17,
@@ -843,7 +921,33 @@
           "A multilayer circuit board",
           "A wheelbarrow tipped to dump its load"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "저장 셀을 평면으로만 늘리면 칩이 커진다. 셀을 수직으로 수십 층 쌓아 같은 면적에 더 많이 담는다.",
+          "en": "Adding storage cells side by side makes the chip larger. Stacking cells in dozens of vertical layers holds more in the same area."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "등을 대고 누운 환자는 폐의 일부에 공기가 잘 들어가지 않는다. 환자를 엎드린 자세로 돌려 눕히면 공기가 폐 전체로 더 고르게 퍼진다.",
+          "en": "In a patient lying on their back, part of the lungs gets little air. Turning the patient face down spreads the air more evenly through the lungs."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 2,
+          "ko": "긴 자재를 눕혀 쌓으면 바닥을 많이 차지하고 꺼내기 어렵다. 세워서 보관하는 수직 선반을 쓰면 좁은 곳에 많이 두고 하나씩 꺼낸다.",
+          "en": "Long stock laid flat takes up floor space and is hard to pull out. Vertical racks store it on end, holding more in a small area and releasing one piece at a time."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 3,
+          "ko": "바닥 매트는 한 면이 닳으면 버려야 했다. 앞뒤 양면을 모두 쓸 수 있게 만들면 뒤집어 한 번 더 쓴다.",
+          "en": "A floor mat used to be thrown out once one face wore. Making both faces usable lets it be flipped and used again."
+        }
+      ]
     },
     {
       "id": 18,
@@ -876,7 +980,33 @@
           "A concrete vibrator that settles the mix",
           "An electric toothbrush that shakes plaque loose"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "치석을 긁어내면 잇몸과 치아 표면이 상한다. 초음파로 떠는 끝을 대면 치석만 부서져 떨어진다.",
+          "en": "Scraping off tartar damages gums and enamel. A tip vibrating at ultrasonic frequency breaks the tartar away on its own."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 3,
+          "ko": "물건을 컨베이어 벨트로 옮기면 부품이 많고 닳는다. 받침판을 그 공진 진동수로 흔들면 적은 힘으로 물건이 조금씩 튀며 앞으로 나아간다.",
+          "en": "Belt conveyors have many wearing parts. A tray shaken at its resonant frequency moves parts forward in small hops with little power."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 4,
+          "ko": "코일과 금속판으로 된 부저는 크고 전력을 많이 쓴다. 압전 소자를 떨게 해 소리를 내면 얇고 전력이 적다.",
+          "en": "A buzzer built from a coil and metal plate is bulky and power-hungry. A vibrating piezoelectric element makes the sound in a thin, low-power part."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "소리로 알리면 조용해야 하는 곳에서 곤란하다. 기기 몸체를 떨게 해서 가진 사람만 알아채게 한다.",
+          "en": "A sound alert is awkward where quiet is needed. Making the device body vibrate tells only the person holding it."
+        }
+      ]
     },
     {
       "id": 19,
@@ -907,7 +1037,33 @@
           "An LED lamp dimmed with pulse-width modulation",
           "A flashing warning light"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 2,
+          "ko": "실패한 요청을 같은 간격으로 계속 다시 보내면 과부하 걸린 서버가 회복하지 못한다. 재시도 간격을 점점 늘리면 부하가 줄어 회복할 틈이 생긴다.",
+          "en": "Retrying failed requests at a fixed interval keeps an overloaded server from recovering. Growing the gap between retries eases the load and gives it room to recover."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "깊은 구멍을 한 번에 계속 뚫으면 칩이 구멍에 쌓여 공구가 부러진다. 조금 뚫고 뺐다가 다시 뚫기를 반복하면 칩이 그때마다 빠져나간다.",
+          "en": "Drilling a deep hole in one continuous pass packs chips in and snaps the tool. Drilling a little, withdrawing and repeating clears the chips each time."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "오래 누워 있는 환자는 다리 혈관에 피가 고여 굳기 쉽다. 다리에 감은 공기 주머니가 주기적으로 부풀었다 빠지며 눌러 주면 피가 흐른다.",
+          "en": "Blood pools and clots in the legs of patients who lie still for long. Cuffs that inflate and deflate in cycles squeeze the legs and keep blood moving."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 3,
+          "ko": "통신선 하나를 여러 장치가 함께 쓰기 어렵다. 시간을 짧게 나눠 한 장치가 보내고 쉬는 사이에 다른 장치가 차례로 보내게 한다.",
+          "en": "Several devices struggle to share one line. Time is split into short slots, and while one device pauses the others take their turns."
+        }
+      ]
     },
     {
       "id": 20,
@@ -938,7 +1094,33 @@
           "A hybrid engine kept in its efficient rpm range",
           "A continuous process line that never stops"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "작업이 한 서버에 몰리면 다른 서버는 논다. 일감을 여러 서버에 고르게 나눠 모두가 쉬지 않고 일하게 한다.",
+          "en": "When work piles onto one server, the others sit idle. Spreading the jobs evenly keeps every server busy."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 3,
+          "ko": "왕복하는 톱날은 되돌아가는 동안 자르지 못한다. 한 방향으로 계속 도는 띠톱으로 바꾸면 쉬지 않고 자른다.",
+          "en": "A reciprocating saw blade cuts nothing on its return stroke. A band saw running continuously in one direction cuts all the time."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "수술실은 한 수술을 마치고 다음 환자를 준비하는 동안 비어 있다. 다음 환자의 마취 준비를 옆 방에서 미리 시작하면 수술실이 비는 시간이 준다.",
+          "en": "An operating room stands empty while the next patient is prepared. Starting the next patient's anaesthesia in an adjoining room cuts the idle time."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 2,
+          "ko": "세탁이 끝난 뒤 빨래를 건조기로 옮길 때까지 기다려야 한다. 세탁과 건조를 한 기계에서 이어서 하면 중간에 기다릴 일이 없다.",
+          "en": "After washing, laundry waits until someone moves it to the dryer. A machine that washes and then dries removes the wait."
+        }
+      ]
     },
     {
       "id": 21,
@@ -965,7 +1147,33 @@
           "High-temperature short-time pasteurised milk",
           "Cutting plastic so fast that heat does not spread"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "materials",
+          "sub_principle": 1,
+          "ko": "비닐 포장을 뜨거운 판으로 오래 눌러 붙이면 둘레까지 녹아 쭈글쭈글해진다. 아주 짧은 순간 센 열로 붙이면 열이 퍼지기 전에 끝난다.",
+          "en": "Pressing plastic film with a hot bar for long melts and puckers the area around the seal. A very short burst of intense heat seals it before the heat spreads."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "레이저로 피부의 색소를 없앨 때 오래 쬐면 주변 피부까지 탄다. 아주 짧은 펄스로 쬐어 열이 퍼지기 전에 끝낸다.",
+          "en": "Removing skin pigment with a long laser exposure burns the surrounding skin. Very short pulses finish before the heat can spread."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "전력을 켜고 끄는 소자는 켜짐과 꺼짐 사이 중간 상태에서 열이 가장 많이 난다. 전환을 아주 빠르게 해 그 구간을 짧게 지나간다.",
+          "en": "A power switching device heats most while it is between on and off. Switching very fast rushes it through that state."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "채소를 끓는 물에 오래 두면 물러지고 색이 빠진다. 아주 잠깐 넣었다가 곧바로 찬물에 식힌다.",
+          "en": "Vegetables left in boiling water go soft and lose colour. A few seconds in the pot and straight into cold water avoids it."
+        }
+      ]
     },
     {
       "id": 22,
@@ -996,7 +1204,33 @@
           "A plant that burns waste as fuel",
           "A backfire set to stop a wildfire"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "브레이크를 밟으면 차의 운동 에너지가 열로 버려진다. 감속할 때 모터를 발전기로 돌려 그 에너지로 배터리를 충전한다.",
+          "en": "Braking throws a vehicle's kinetic energy away as heat. Running the motor as a generator while slowing puts that energy back into the battery."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "공격자의 무작위 접속 시도는 부담이다. 일부러 허술해 보이는 가짜 서버를 두어 공격 방식을 관찰하고 방어에 반영한다.",
+          "en": "Random break-in attempts are a burden. A deliberately weak-looking decoy server lets defenders watch the attacks and learn from them."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 2,
+          "ko": "산성 폐수와 알칼리성 폐수를 따로 처리하면 중화 약품이 많이 든다. 둘을 섞어 서로 중화시키면 약품이 크게 준다.",
+          "en": "Treating acidic and alkaline waste water separately takes a lot of neutralizing chemicals. Mixing the two so they neutralize each other cuts the chemicals sharply."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "독은 해롭지만 몸의 특정 작용을 강하게 바꾼다. 독에서 그 작용을 하는 성분을 찾아 약으로 다듬어 쓴다.",
+          "en": "A venom is harmful but strongly changes a particular body function. The compound behind that effect is found and refined into a medicine."
+        }
+      ]
     },
     {
       "id": 23,
@@ -1025,7 +1259,33 @@
           "Auto-brightness that follows ambient light",
           "Cruise control holding a set speed"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "사용자에게 맞지 않는 추천이 계속 나간다. 사용자가 누른 것과 건너뛴 것을 다시 추천에 반영한다.",
+          "en": "Recommendations keep missing what the user wants. What the user opens and what they skip is fed back into the recommendations."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "공구가 닳으면서 가공 치수가 조금씩 틀어진다. 가공 중에 치수를 재서 공구 위치를 자동으로 보정한다.",
+          "en": "As a tool wears, machined dimensions slowly drift. Measuring during machining corrects the tool position automatically."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "정해진 시간에 정해진 양의 인슐린을 넣으면 혈당이 들쭉날쭉하다. 혈당을 계속 재서 주입량을 자동으로 맞추는 펌프를 쓴다.",
+          "en": "Fixed insulin doses at fixed times leave blood sugar swinging. A pump that measures glucose continuously adjusts the dose on its own."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 2,
+          "ko": "증폭기의 증폭률을 크게 하면 왜곡도 커진다. 출력의 일부를 반대 방향으로 되돌려 넣는 양을 늘리면 증폭률은 조금 줄지만 왜곡이 크게 준다.",
+          "en": "Raising an amplifier's gain raises its distortion too. Feeding back more of the output in opposite phase gives up some gain but cuts distortion sharply."
+        }
+      ]
     },
     {
       "id": 24,
@@ -1054,7 +1314,33 @@
           "A pallet for moving heavy goods",
           "A catalyst that speeds up a reaction"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 2,
+          "ko": "얇은 판을 그대로 가공하면 휘고 떨린다. 판을 받침판에 임시로 붙여 가공한 뒤 떼어 낸다.",
+          "en": "Machining a thin plate on its own makes it bend and chatter. The plate is fixed temporarily to a backing plate, machined, and then released."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "칩과 방열판의 표면이 거칠어 그 사이 공기층 때문에 열이 잘 빠지지 않는다. 사이에 열을 잘 전하는 페이스트를 발라 틈을 메운다.",
+          "en": "Rough surfaces leave an air gap between chip and heat sink that blocks heat. A thermally conductive paste between them fills the gap."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "어떤 약은 위산에 분해돼 효과를 잃는다. 약을 위에서는 녹지 않는 막으로 감싸 장에 가서 녹게 한다.",
+          "en": "Some drugs are broken down by stomach acid. A coating that does not dissolve in the stomach carries the drug to the intestine, where it is released."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "서로 다른 데이터 형식을 쓰는 두 시스템을 직접 잇기 어렵다. 가운데에 형식을 바꿔 전달하는 중계 계층을 둔다.",
+          "en": "Two systems with different data formats are hard to connect directly. A middle layer translates and passes the data between them."
+        }
+      ]
     },
     {
       "id": 25,
