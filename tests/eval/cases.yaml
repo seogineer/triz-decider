@@ -353,8 +353,7 @@
       ],
       "expected_worsen": [
         1
-      ],
-      "expect_unverified": true
+      ]
     },
     {
       "id": "C32",
@@ -365,8 +364,7 @@
       ],
       "expected_worsen": [
         33
-      ],
-      "expect_unverified": true
+      ]
     },
     {
       "id": "C33",
@@ -377,8 +375,7 @@
       ],
       "expected_worsen": [
         33
-      ],
-      "expect_unverified": true
+      ]
     }
   ]
 }

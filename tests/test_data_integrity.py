@@ -111,3 +111,8 @@ def test_matrix_unverified_cells_are_valid_and_have_no_value(matrix):
         i, w = (int(x) for x in key.split("-"))
         assert 1 <= i <= 39 and 1 <= w <= 39 and i != w, key
         assert key not in matrix["cells"], f"{key} is unverified but has a value"
+
+
+def test_matrix_has_the_classic_cell_count(matrix):
+    """All independent sources agree the classic matrix has 1248 non-empty cells."""
+    assert len(matrix["cells"]) == 1248

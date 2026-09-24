@@ -1,7 +1,7 @@
 {
   "name": "triz-decider",
   "displayName": "TRIZ Decider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Resolve engineering contradictions with the TRIZ contradiction matrix and 40 inventive principles",
   "author": { "name": "Seo Do Gyeong" },
   "license": "MIT",
