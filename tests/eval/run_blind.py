@@ -38,9 +38,10 @@ TIMEOUT = 280
 # read and run the plugin copy that lives outside the working directory.
 ISOLATION = ["--tools", "Bash,Read,Skill", "--strict-mcp-config"]
 
-# side label may carry a translation in parentheses; the id may be bold (**#35 ...**)
+# side label may carry a translation or rank after it ("개선 (Improving)", "개선 1순위");
+# the id may be bold (**#35 ...**)
 _MAP_ROW = re.compile(
-    r"^\|\s*\**(개선|악화|Improv\w*|Worsen\w*)\**(?:\s*\([^)|]*\))?\s*\|\s*\**\s*#\s*(\d+)", re.M)
+    r"^\|\s*\**(개선|악화|Improv\w*|Worsen\w*)[^|\n]*\|\s*\**\s*#\s*(\d+)", re.M)
 _DISCLOSE = re.compile(
     r"unverified|not (?:yet )?verified|no verified|cannot (?:be )?look|미확정|검증(?:된|되지|을 못|이 안)|"
     r"확정(?:하지|되지|된 값이 없)|조회할 수 없|조회가 불가|데이터가 없", re.I)

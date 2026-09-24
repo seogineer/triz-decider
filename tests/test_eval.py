@@ -185,9 +185,10 @@ def test_parse_answer_labels_with_translation_and_bold_ids():
     text = ("| 개선 (Improving) | #12 Shape | a |\n"
             "| Improving | **#35 Adaptability or versatility** | b |\n"
             "| **Worsening** | **#36 Device complexity** | c |\n"
-            "| 악화 (Worsen) | #32 제조 용이성 | d |\n")
+            "| 악화 (Worsen) | #32 제조 용이성 | d |\n"
+            "| 개선 2순위 | #33 작동 용이성 | e |\n")
     got = run_blind.parse_answer(text)
-    assert got["improve"] == [12, 35] and got["worsen"] == [36, 32]
+    assert got["improve"] == [12, 35, 33] and got["worsen"] == [36, 32]
 
 
 def test_run_command_is_isolated_from_host_tools():
