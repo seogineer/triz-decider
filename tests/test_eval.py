@@ -30,7 +30,8 @@ def test_case_is_well_formed(case):
 @pytest.mark.parametrize("case", CASES, ids=lambda c: c["id"])
 def test_expected_pair_matches_case_kind(case):
     """Normal cases must be answerable from verified data; expect_unverified
-    cases must land exactly on withheld cells (and nothing else)."""
+    cases must land exactly on withheld cells, expect_empty cases on cells the
+    classic matrix leaves empty (both exercise the remapping path)."""
     import subprocess, sys
     p = subprocess.run(
         [sys.executable, str(score_mod.LOOKUP), "matrix",
@@ -41,6 +42,10 @@ def test_expected_pair_matches_case_kind(case):
     if case.get("expect_unverified"):
         assert out["pairs"] == [], f"{case['id']}: expected only withheld cells"
         assert any(w["code"] == "unverified_cell" for w in out["warnings"])
+    elif case.get("expect_empty"):
+        # the correct mapping lands on cells the classic matrix leaves empty
+        assert out["pairs"] == [], f"{case['id']}: expected only empty cells"
+        assert out["warnings"] == []
     else:
         assert out["ranking"], f"{case['id']}: expected pair gives no principles"
 
