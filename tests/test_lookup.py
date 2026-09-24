@@ -479,3 +479,78 @@ def test_output_is_utf8_json_not_escaped():
     proc = subprocess.run([sys.executable, str(REAL_SCRIPT), "principle", "--id", "1"],
                           capture_output=True)
     assert "분할".encode("utf-8") in proc.stdout
+
+
+# ------------------------------------------------------------ separation ---
+
+def test_separation_all_types_in_data_order(env):
+    code, out, err = run(env, "separation")
+    assert code == 0 and err is None
+    assert [s["id"] for s in out["separations"]] == ["space", "time", "condition", "direction", "system"]
+
+
+def test_separation_selected_types_with_names_and_lang(env):
+    code, out, _ = run(env, "separation", "--type", "time,space", "--lang", "en")
+    assert code == 0
+    time, space = out["separations"]
+    assert time["id"] == "time" and space["id"] == "space"
+    assert time["name"] == "Sep time" and time["question"] == "q time?"
+    assert time["related_principles"] == [{"id": 10, "name": "Prin10"}, {"id": 15, "name": "Prin15"}]
+    assert time["examples"] == ["ex time"]
+    _, ko, _ = run(env, "separation", "--type", "time")
+    assert ko["separations"][0]["question"] == "time 질문?"
+    assert ko["separations"][0]["related_principles"][0]["name"] == "원리10"
+
+
+def test_separation_ranking_counts_shared_principles(env):
+    _, out, _ = run(env, "separation", "--type", "space,system,condition")
+    # space [1,2], system [1,5], condition [3,40]: 1 appears twice, ties keep first appearance
+    assert [(r["id"], r["count"]) for r in out["ranking"]] == [(1, 2), (2, 1), (5, 1), (3, 1), (40, 1)]
+
+
+def test_separation_duplicate_type_is_collapsed(env):
+    _, out, _ = run(env, "separation", "--type", "time,time")
+    assert len(out["separations"]) == 1
+
+
+@pytest.mark.parametrize("raw", ["foo", "time,", "Time", ""])
+def test_separation_rejects_unknown_type(env, raw):
+    code, out, err = run(env, "separation", "--type", raw)
+    assert code == 2 and out is None
+    assert err["error"]["code"] == "invalid_argument"
+
+
+def test_separation_missing_data_file(tmp_path):
+    script = make_env(tmp_path)
+    (tmp_path / "data" / "separation-principles.json").unlink()
+    code, _, err = run(script, "separation")
+    assert code == 5 and err["error"]["code"] == "data_error"
+
+
+def test_separation_real_data_matches_json():
+    data = json.loads((REAL_DATA / "separation-principles.json").read_text(encoding="utf-8"))
+    code, out, _ = run(REAL_SCRIPT, "separation", "--lang", "en")
+    assert code == 0
+    for got, want in zip(out["separations"], data["separations"]):
+        assert got["id"] == want["id"]
+        assert [r["id"] for r in got["related_principles"]] == want["related_principles"]
+        assert got["question"] == want["question"]["en"]
+
+
+@pytest.mark.parametrize("mutate, message", [
+    (lambda seps: seps.pop(), "ids must be"),
+    (lambda seps: seps[0]["question"].update(ko="TODO"), "missing question text"),
+    (lambda seps: seps[1].update(related_principles=[]), "non-empty list"),
+    (lambda seps: seps[1].update(related_principles=[9, 9]), "duplicate related principle"),
+    (lambda seps: seps[2].update(related_principles=[41]), "out of range"),
+    (lambda seps: seps[3].update(examples=[{"ko": "예"}]), "examples need ko and en"),
+])
+def test_validate_rejects_bad_separation_data(tmp_path, mutate, message):
+    script = make_env(tmp_path)
+    path = tmp_path / "data" / "separation-principles.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    mutate(data["separations"])
+    write(path, data)
+    code, _, err = run(script, "validate")
+    assert code == 5
+    assert any(message in d for d in err["error"]["details"])

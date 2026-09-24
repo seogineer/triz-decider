@@ -184,6 +184,57 @@ def cmd_principle(args):
     return {"principles": out}
 
 
+def parse_types(raw):
+    """Parse 'time,space' into separation type ids; None means all types."""
+    if raw is None:
+        return list(SEPARATION_TYPES)
+    types = []
+    for t in (x.strip() for x in raw.split(",")):
+        if t not in SEPARATION_TYPES:
+            raise LookupError_(
+                "invalid_argument",
+                f"--type must be one or more of {', '.join(SEPARATION_TYPES)}, got {t!r}",
+                EXIT_INVALID_ARGUMENT,
+            )
+        if t not in types:
+            types.append(t)
+    return types
+
+
+def cmd_separation(args):
+    types = parse_types(args.type)
+    data = load("separation-principles.json")
+    principles = load("inventive-principles.json")
+    try:
+        names = {p["id"]: pick(p["name"], args.lang) for p in principles["principles"]}
+        by_id = {s["id"]: s for s in data["separations"]}
+        out = []
+        for t in types:
+            s = by_id[t]
+            out.append({
+                "id": t,
+                "name": pick(s["name"], args.lang),
+                "question": pick(s["question"], args.lang),
+                "when_to_use": pick(s["when_to_use"], args.lang),
+                "related_principles": [{"id": pid, "name": names[pid]}
+                                       for pid in s["related_principles"]],
+                "examples": [pick(e, args.lang) for e in s.get("examples", [])],
+            })
+    except (KeyError, TypeError) as exc:
+        raise data_error(f"separation data missing or malformed: {exc!r}")
+    # same rule as the matrix ranking: count desc, ties keep first appearance
+    order, counts = [], {}
+    for sep in out:
+        for rp in sep["related_principles"]:
+            if rp["id"] not in counts:
+                counts[rp["id"]] = 0
+                order.append(rp["id"])
+            counts[rp["id"]] += 1
+    ranking = [{"id": pid, "count": counts[pid], "name": names[pid]}
+               for pid in sorted(order, key=lambda pid: -counts[pid])]
+    return {"separations": out, "ranking": ranking}
+
+
 def _param_view(p, lang, full):
     view = {"id": p["id"], "name": pick(p["name"], lang), "keywords": p.get("keywords", [])}
     if full:
@@ -365,6 +416,13 @@ def build_parser():
     g.add_argument("--search", help="keyword search over names and keywords")
     add_lang(p)
     p.set_defaults(func=cmd_param)
+
+    p = sub.add_parser("separation", help="look up separation principles (physical contradictions)",
+                       allow_abbrev=False)
+    p.add_argument("--type", help="separation types, e.g. time,space (default: all): "
+                   + ", ".join(SEPARATION_TYPES))
+    add_lang(p)
+    p.set_defaults(func=cmd_separation)
 
     p = sub.add_parser("validate", help="check data integrity", allow_abbrev=False)
     add_lang(p)
