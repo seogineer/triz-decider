@@ -125,6 +125,11 @@ def parse_stream(lines):
     return info
 
 
+def safe_name(case_id):
+    """File-system safe name for a case id (patent ids can contain slashes)."""
+    return re.sub(r"[^A-Za-z0-9_.-]", "_", str(case_id))
+
+
 def build_prompt(case, mode):
     if mode == "command":
         return "/triz-decider:triz " + case["problem"] + SUFFIX[case["lang"]]
@@ -145,8 +150,8 @@ def run_case(case, mode, plugin_dir, workdir, raw_dir, attempts=3):
         except subprocess.TimeoutExpired:
             code, lines = -1, []
         info = parse_stream(lines)
-        (raw_dir / f"{case['id']}.jsonl").write_text("\n".join(lines), encoding="utf-8")
-        (raw_dir / f"{case['id']}.md").write_text(info["text"], encoding="utf-8")
+        (raw_dir / f"{safe_name(case['id'])}.jsonl").write_text("\n".join(lines), encoding="utf-8")
+        (raw_dir / f"{safe_name(case['id'])}.md").write_text(info["text"], encoding="utf-8")
         if code == 0 and info["plugin_loaded"] and info["text"]:
             break
     res = parse_answer(info["text"])

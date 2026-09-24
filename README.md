@@ -73,7 +73,7 @@ The 40 principles are a checklist for generating ideas, not a guarantee. If the 
 | --- | --- |
 | Contradiction matrix | all 1248 cells settled by a 2-of-3 vote of three independently transcribed sources (an English transcription family, the MATRIZ Knowledge Base, a Russian-language table). Nothing is withheld now; the `unverified_cell` warning remains for any future dispute. Not yet compared with a printed original. |
 | 39 parameters, 40 principles | Numbers and names cross-checked; definitions, sub-principles and examples written for this project |
-| Mapping accuracy | 30 blind-run cases: Top-3 hit rate 100% in every run, 0 hallucinated principle numbers, and 9/9 disclosures when a withheld cell was hit. Small set with author-written expected values and some run-to-run variation, so treat it as a smoke test, not a benchmark (see `tests/eval/results-v0.1.md`) |
+| Mapping accuracy | 30 blind-run cases: Top-3 hit rate 100% in every run, 0 hallucinated principle numbers, and 9/9 disclosures when a withheld cell was hit. Small set with author-written expected values and some run-to-run variation, so treat it as a smoke test. **On an independent patent benchmark (TRIZBench, 30 patents) the plugin scored Hit@3 = 10%, no better than always guessing the three most common answers (13%)**: it works best when you state the trade-off yourself, not when the input only describes a solution (see `tests/eval/results-v0.1.md`) |
 
 Sources, method and the disputed cells are listed in [DATA_SOURCES.md](DATA_SOURCES.md). TRIZ output is a source of ideas, not a verdict: check the mapping and validate ideas before acting on them.
 

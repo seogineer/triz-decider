@@ -244,3 +244,9 @@ def test_score_prefers_observed_lookup_output_over_recomputation():
     # recomputation from the reported candidates would allow nothing; observed output allows 2 and 25
     out = score_mod.score(cases, results, matrix=lambda i, w: set())
     assert out["rows"][0]["hallucinated_principles"] == [99]
+
+
+def test_safe_name_handles_patent_ids_with_slashes():
+    assert run_blind.safe_name("WO01/13760") == "WO01_13760"
+    assert run_blind.safe_name("US4966257") == "US4966257"
+    assert "/" not in run_blind.safe_name("../../etc/passwd")

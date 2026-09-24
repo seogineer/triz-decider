@@ -487,7 +487,7 @@ v0.1은 데이터 확정이 선행 조건이며, 이후 구현은 Claude Code로
 - [x] 행렬 셀 값 교차 검증 및 `DATA_SOURCES.md` 작성 (1248셀 확정, 3개 독립 계열 표결, 보류 0셀 — 인쇄본 대조는 릴리스 전 TODO)
 - [x] `lookup.py` + 단위 테스트 (separation 서브커맨드는 v0.2)
 - [x] `SKILL.md`, `parameters-39.md`, `/triz` 커맨드
-- [x] 평가 케이스 20건 작성 및 실행 (Top-3 100%, 환각 0, 케이스 30건·반복 실행 포함. 기대값 제3자 검토는 남음: tests/eval/results-v0.1.md)
+- [x] 평가 케이스 20건 작성 및 실행 (자체 케이스 Top-3 100%, 환각 0. **독립 벤치마크 TRIZBench에서는 Hit@3 10%로 우연 수준**. 기대값 제3자 검토는 남음: tests/eval/results-v0.1.md)
 - [ ] README(ko/en), 매니페스트, 로컬 설치 검증, 공개 (README·매니페스트·로컬 설치 검증 완료, `main` 푸시 완료, `v0.1.0` 태그는 평가 통과 후)
 
 ### 11.2 미결 사항
