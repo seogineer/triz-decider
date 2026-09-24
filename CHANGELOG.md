@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+- Eval: re-measured on TRIZBench with 75 held-out patents that share no patent with the first 30. Hit@3 is 10/75 = 13% (95% CI 7-23%), about the level of a constant three-pair baseline (9% when fit on the first 30). Every run called `lookup.py`; the misses come from picking the parameter pair from an abstract. See `tests/eval/results-v0.1.md`.
+- Eval: tried a "reconstruct the contradiction from a solution description" step in the skill. It did not raise Hit@3 on the first 30 (2/30 before and after), so it was not adopted; the skill is unchanged.
+- Eval harness: blind runs are isolated from the host session (only Bash, Read and Skill; no MCP; `--add-dir` for the plugin copy), record the model, and can use a prompt suffix that does not claim the contradiction is confirmed. The mapping-row parser accepts translated or ranked side labels and bold ids.
+- Data: the printed-matrix spot check is closed as not feasible (no printed copy available).
+
 ## 0.1.2 — 2026-09-24
 - **Renamed the plugin slug `triz-decider` → `triz-solver`** (display name TRIZ Solver). Commands are now `/triz-solver:triz`; reinstall with `/plugin install triz-solver@triz-solver`. The plugin derives solution ideas rather than making a decision, and the slug can still change before directory listing.
 - README (en/ko) now states the scope: the plugin expects an input that names the trade-off; it does not dig a contradiction out of a solution description. A "not covered" section lists what is not implemented (physical contradictions, interview flow).
