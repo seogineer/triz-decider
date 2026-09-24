@@ -33,8 +33,14 @@ SUFFIX = {
     "en_neutral": "\n\n(Do not ask me any questions; make your own choices and run through to the end.)",
 }
 TIMEOUT = 280
+# Only the tools the skill needs, no MCP servers: a host session's messaging or
+# agent tools must not leak into a blind run. --add-dir lets a sandboxed host
+# read and run the plugin copy that lives outside the working directory.
+ISOLATION = ["--tools", "Bash,Read,Skill", "--strict-mcp-config"]
 
-_MAP_ROW = re.compile(r"^\|\s*(개선|악화|Improv\w*|Worsen\w*)\s*\|\s*#\s*(\d+)", re.M)
+# side label may carry a translation in parentheses; the id may be bold (**#35 ...**)
+_MAP_ROW = re.compile(
+    r"^\|\s*\**(개선|악화|Improv\w*|Worsen\w*)\**(?:\s*\([^)|]*\))?\s*\|\s*\**\s*#\s*(\d+)", re.M)
 _DISCLOSE = re.compile(
     r"unverified|not (?:yet )?verified|no verified|cannot (?:be )?look|미확정|검증(?:된|되지|을 못|이 안)|"
     r"확정(?:하지|되지|된 값이 없)|조회할 수 없|조회가 불가|데이터가 없", re.I)
@@ -148,6 +154,7 @@ def run_case(case, mode, plugin_dir, workdir, raw_dir, attempts=3):
         try:
             p = subprocess.run(
                 ["claude", "-p", build_prompt(case, mode), "--plugin-dir", str(plugin_dir),
+                 *ISOLATION, "--add-dir", str(plugin_dir),
                  "--allowedTools", "Bash(python3:*)", "Read",
                  "--output-format", "stream-json", "--verbose"],
                 cwd=workdir, capture_output=True, text=True, encoding="utf-8", timeout=TIMEOUT)

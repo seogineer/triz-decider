@@ -181,6 +181,20 @@ def test_build_prompt_neutral_suffix_does_not_claim_confirmation():
     assert "confirmed" not in prompt and prompt.endswith(run_blind.SUFFIX["en_neutral"])
 
 
+def test_parse_answer_labels_with_translation_and_bold_ids():
+    text = ("| 개선 (Improving) | #12 Shape | a |\n"
+            "| Improving | **#35 Adaptability or versatility** | b |\n"
+            "| **Worsening** | **#36 Device complexity** | c |\n"
+            "| 악화 (Worsen) | #32 제조 용이성 | d |\n")
+    got = run_blind.parse_answer(text)
+    assert got["improve"] == [12, 35] and got["worsen"] == [36, 32]
+
+
+def test_run_command_is_isolated_from_host_tools():
+    assert run_blind.ISOLATION[:2] == ["--tools", "Bash,Read,Skill"]
+    assert "--strict-mcp-config" in run_blind.ISOLATION
+
+
 def test_parse_answer_empty():
     assert run_blind.parse_answer("") == {"improve": [], "worsen": [], "principles_cited": []}
 
