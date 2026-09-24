@@ -57,7 +57,7 @@
 
 ```
 python3 skills/triz-analysis/scripts/lookup.py matrix --improve 9 --worsen 19,22
-python3 skills/triz-analysis/scripts/lookup.py principle --id 35,15
+python3 skills/triz-analysis/scripts/lookup.py principle --id 35,15 --cases
 python3 skills/triz-analysis/scripts/lookup.py param --search 속도
 python3 skills/triz-analysis/scripts/lookup.py separation --type time,space
 python3 skills/triz-analysis/scripts/lookup.py validate

@@ -26,7 +26,7 @@ description: Analyze engineering or product problems with TRIZ. Use when the use
 
 ```
 python3 <skill-dir>/scripts/lookup.py matrix --improve 9 --worsen 19,22 [--lang en]
-python3 <skill-dir>/scripts/lookup.py principle --id 10,13,28
+python3 <skill-dir>/scripts/lookup.py principle --id 10,13,28 --cases
 python3 <skill-dir>/scripts/lookup.py param --id 9        # 정의 확인
 python3 <skill-dir>/scripts/lookup.py param --search 소음  # 키워드 검색
 python3 <skill-dir>/scripts/lookup.py separation --type time,space   # 분리 원리 (생략하면 5종 전부)
@@ -63,8 +63,8 @@ python3 <skill-dir>/scripts/lookup.py separation --type time,space   # 분리 �
 2. **파라미터 매핑** — 이 단계에서만 `references/parameters-39.md`를 읽는다. 개선·악화 각각 후보 1~3개를 고르고 근거를 한 줄씩 붙인다. 애매하면 `param --search`/`param --id`로 정의를 확인한다. 39개 중 맞는 것이 없으면 억지로 고르지 말고 사용자에게 다시 묻는다.
 3. **행렬 조회** — 후보 전체를 한 번에 `matrix`로 넘긴다(최대 3×3=9쌍). 개선 후보와 악화 후보에 같은 번호를 넣지 않는다.
 4. **원리 집계** — 출력의 `ranking`(빈도 내림차순)에서 상위 3~5개를 순서대로 고른다. 동률은 스크립트가 이미 정렬해 두었으므로(셀 안에서 앞에 나온 원리부터 조합을 번갈아) 출력 순서를 따른다.
-5. **원리 정의 조회** — 고른 원리 ID로 `principle`을 호출해 이름과 하위 원리를 얻는다.
-6. **아이디어 생성** — 원리마다 사용자 시스템에 맞춘 적용안 1~3개를 쓴다. 하위 원리 중 어느 것을 적용했는지 드러나게 한다.
+5. **원리 정의 조회** — 고른 원리 ID로 `principle --cases`를 호출해 이름, 하위 원리, 산업 사례를 얻는다.
+6. **아이디어 생성** — 원리마다 사용자 시스템에 맞춘 적용안 1~3개를 쓴다. 하위 원리 중 어느 것을 적용했는지 드러나게 한다. 아래 "사례 사용"을 따른다.
 7. **출력** — 4장 포맷으로 정리한다. 예시는 `references/workflow-examples.md`.
 
 ## 3. 물리적 모순 절차
@@ -77,8 +77,10 @@ python3 <skill-dir>/scripts/lookup.py separation --type time,space   # 분리 �
 4. **원리 조회** — 상위 원리 3~5개를 조회 결과의 **순서대로** 고른다(순서를 건너뛰지 않는다).
    - 여러 유형: 한 번에 `separation --type`으로 조회하되 **가장 잘 맞는 유형을 먼저** 적고, `ranking`(빈도 내림차순)에서 고른다. 동률은 스크립트가 `--type` 순서대로 유형을 번갈아 정렬해 두었다.
    - 한 유형: 그 유형의 `related_principles`에서 고른다. 2단계 전체 조회 결과에 이미 있으므로 다시 부르지 않아도 된다. 이때 출처는 "`separation` 전체 조회 결과의 [유형]"으로 적는다.
-5. **원리 정의 조회** — 고른 원리 ID로 `principle`을 호출한다.
-6. **아이디어 생성** — 원리마다 적용안 1~3개. 어떤 분리(예: "비가 올 때만 크게")를 구현하는지 드러나게 쓴다.
+5. **원리 정의 조회** — 고른 원리 ID로 `principle --cases`를 호출한다.
+6. **아이디어 생성** — 원리마다 적용안 1~3개. 어떤 분리(예: "비가 올 때만 크게")를 구현하는지 드러나게 쓴다. 아래 "사례 사용"을 따른다.
+
+**사례 사용** — `cases`는 다른 분야에서 같은 하위 원리로 상충을 푼 예다. 사용자 시스템의 무엇이 사례의 무엇에 대응하는지 따져 **비유로만** 쓰고, 아이디어는 사용자 시스템에 맞춰 새로 쓴다. 사례를 그대로 옮겨 아이디어로 내놓지 않는다. 사례를 언급할 때는 "(사례: `domain_name`)"처럼 밝힌다. 사례가 없거나 맞는 것이 없으면 쓰지 않는다.
 7. **출력** — 4장의 물리적 모순 포맷.
 
 ## 4. 출력 포맷

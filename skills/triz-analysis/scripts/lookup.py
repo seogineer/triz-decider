@@ -23,6 +23,14 @@ SEPARATION_TYPES = ("space", "time", "condition", "direction", "system")
 # industry cases per principle (DESIGN 5.3, v0.3)
 CASE_DOMAINS = ("mechanical", "electronics", "software", "materials", "medical", "everyday")
 CASES_PER_PRINCIPLE = 4
+CASE_DOMAIN_NAMES = {
+    "mechanical": {"ko": "기계", "en": "mechanical"},
+    "electronics": {"ko": "전기·전자", "en": "electronics"},
+    "software": {"ko": "소프트웨어·IT", "en": "software/IT"},
+    "materials": {"ko": "화학·소재", "en": "chemistry/materials"},
+    "medical": {"ko": "의료·바이오", "en": "medical/bio"},
+    "everyday": {"ko": "생활·서비스", "en": "everyday life/services"},
+}
 _PRINCIPLE_REF_RE = re.compile(r"#\s*\d")
 
 EXIT_INVALID_ARGUMENT = 2
@@ -194,8 +202,10 @@ def cmd_principle(args):
                 "examples": pick(p["examples"], args.lang),
             })
             if args.cases:
-                out[-1]["cases"] = [{"domain": c["domain"], "sub_principle": c["sub_principle"],
-                                     "text": c[args.lang]} for c in p.get("cases", [])]
+                out[-1]["cases"] = [{"domain": c["domain"],
+                                     "domain_name": CASE_DOMAIN_NAMES[c["domain"]][args.lang],
+                                     "sub_principle": c["sub_principle"], "text": c[args.lang]}
+                                    for c in p.get("cases", [])]
     except (KeyError, TypeError) as exc:
         raise data_error(f"principle data missing or malformed: {exc!r}")
     return {"principles": out}

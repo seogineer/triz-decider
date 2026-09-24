@@ -31,7 +31,33 @@
           "A battery pack divided into cells",
           "Carpet tiles replaced one square at a time"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "하나로 묶인 서버 프로그램은 기능 하나를 고쳐도 전체를 다시 배포해야 해서 그동안 서비스가 멈췄다. 기능별로 따로 실행되는 작은 서비스로 나누자, 바꾼 부분만 배포하고 나머지는 계속 돌아간다.",
+          "en": "A single server program had to be redeployed as a whole for any change, taking the service down meanwhile. Split into small services that run on their own, only the changed part is redeployed while the rest keeps running."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 2,
+          "ko": "긴 컨베이어를 통째로 만들면 운반과 수리가 어렵다. 같은 규격의 짧은 모듈을 볼트로 잇게 하면 설치가 쉽고, 고장 난 구간만 떼어 바꿀 수 있다.",
+          "en": "A long conveyor built in one piece is hard to ship and repair. Made of short modules of one standard size bolted together, it installs easily and a failed section can be swapped on its own."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "화면 전체를 한 번에 밝히는 백라이트는 어두운 장면에서도 전력을 쓰고 검은색이 뜬다. 백라이트를 여러 구역으로 나눠 구역마다 밝기를 따로 조절하면 전력은 줄고 명암비는 높아진다.",
+          "en": "A backlight that lights the whole screen at once wastes power on dark scenes and washes out blacks. Divided into zones whose brightness is set separately, it uses less power and gives higher contrast."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 3,
+          "ko": "약효 성분의 양은 줄일 수 없는데 큰 알약은 삼키기 어렵다. 같은 양을 작은 알갱이 여러 개로 나눠 캡슐에 담으면 삼키기 쉬워지고, 알갱이마다 녹는 속도를 달리할 수도 있다.",
+          "en": "The dose cannot shrink, yet a large tablet is hard to swallow. The same dose split into many small pellets inside a capsule is easier to take, and the pellets can dissolve at different rates."
+        }
+      ]
     },
     {
       "id": 2,
@@ -447,7 +473,33 @@
           "A folding bicycle",
           "A nozzle with an adjustable angle"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "날개는 이착륙 때 큰 양력이, 순항 때 작은 공기 저항이 필요하다. 날개 뒤쪽에 펼쳤다 접는 보조 날개를 달아 비행 단계마다 날개 모양을 바꾼다.",
+          "en": "A wing needs high lift for take-off and landing but low drag in cruise. Flaps that extend and retract at the trailing edge change the wing's shape for each phase of flight."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "서버 수가 고정돼 있으면 사용자가 몰릴 때는 느려지고 한산할 때는 비용이 낭비된다. 부하에 따라 서버 수를 자동으로 늘리고 줄이면 두 경우 모두 알맞게 운영된다.",
+          "en": "With a fixed number of servers, the service slows at peak times and wastes money when quiet. Adding and removing servers automatically with the load keeps both cases right."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "곧은 내시경은 굽은 장기 안쪽을 볼 수 없다. 끝부분을 여러 마디로 나눠 서로 꺾이게 하면 좁고 굽은 통로를 따라 들어갈 수 있다.",
+          "en": "A straight endoscope cannot see around bends inside the body. With its tip divided into segments that bend against each other, it can follow narrow, curved passages."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 4,
+          "ko": "곧고 단단한 빨대는 컵 모양이나 마시는 자세에 맞지 않았다. 목 부분에 주름을 넣어 휘게 하자 한 가지 빨대로 여러 각도에서 마실 수 있다.",
+          "en": "A straight, rigid straw did not suit every cup or posture. A pleated neck that bends lets one straw work at many angles."
+        }
+      ]
     },
     {
       "id": 16,
@@ -1043,7 +1095,33 @@
           "Gas liquefied for storage",
           "A suspension whose stiffness varies with conditions"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "얇은 기기에서 칩을 식히려면 큰 방열판이 필요하다. 밀폐된 가는 관 속 액체가 칩 쪽에서 끓어 증기가 되고 먼 쪽에서 식어 다시 액체가 되게 하면, 작은 부피로 많은 열을 옮길 수 있다.",
+          "en": "Cooling a chip in a thin device would need a large heat sink. Liquid in a sealed thin tube that boils near the chip and condenses at the far end moves a lot of heat in little space."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 4,
+          "ko": "액체 접착제는 흘러내리고 마를 때까지 기다려야 한다. 상온에서 고체인 접착제를 가열해 녹여 바르면 액체처럼 스며들었다가 식으면서 곧바로 굳는다.",
+          "en": "Liquid glue runs and needs time to dry. A glue that is solid at room temperature is heated to melt, flows in like a liquid, and sets as soon as it cools."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 3,
+          "ko": "단단한 로봇 손가락은 연한 물체를 으깨고, 부드러운 손가락은 무거운 물체를 놓친다. 안쪽 공기압으로 굳기를 조절하는 손가락이면 두 경우를 모두 잡을 수 있다.",
+          "en": "A rigid robot finger crushes soft objects, and a soft one drops heavy ones. A finger whose stiffness is set by the air pressure inside can grip both."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "몸에 주사하는 약은 묽어야 잘 들어가지만, 몸 안에서는 한곳에 머물러야 효과가 오래간다. 체온에 닿으면 끈적하게 굳는 제형을 쓰면 주사할 때는 흐르고 들어간 뒤에는 그 자리에 남는다.",
+          "en": "An injected drug must be thin to pass the needle but should stay put inside the body to act longer. A formulation that thickens at body temperature flows during injection and stays where it was placed."
+        }
+      ]
     },
     {
       "id": 36,

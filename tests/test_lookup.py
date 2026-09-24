@@ -280,7 +280,9 @@ def test_principle_omits_cases_by_default(env):
 def test_principle_cases_on_request(env):
     _, ko, _ = run(env, "principle", "--id", "1", "--cases")
     _, en, _ = run(env, "principle", "--id", "1", "--cases", "--lang", "en")
-    assert ko["principles"][0]["cases"][0] == {"domain": "mechanical", "sub_principle": 1, "text": "사례1mechanical"}
+    assert ko["principles"][0]["cases"][0] == {"domain": "mechanical", "domain_name": "기계",
+                                               "sub_principle": 1, "text": "사례1mechanical"}
+    assert en["principles"][0]["cases"][2]["domain_name"] == "software/IT"
     assert [c["text"] for c in en["principles"][0]["cases"]] == [
         "case1mechanical", "case1electronics", "case1software", "case1everyday"]
 
