@@ -111,12 +111,19 @@ def test_matrix_empty_pairs_not_an_error(env):
     assert out["ranking"] == []
 
 
-def test_matrix_ranking_count_desc_ties_by_first_appearance(env):
+def test_matrix_ranking_count_desc(env):
     _, out, _ = run(env, "matrix", "--improve", "1,4", "--worsen", "2,3")
-    # counts: 5->2, 3->2, 9->2, 7->1. First appearance order: 5, 3, 7, 9.
+    # cells [5,3,7], [3,9], [9,5]: 5, 3, 9 twice each, 7 once
     assert [(r["id"], r["count"]) for r in out["ranking"]] == [
         (5, 2), (3, 2), (9, 2), (7, 1),
     ]
+
+
+def test_matrix_ranking_ties_go_by_position_within_cell(env):
+    _, out, _ = run(env, "matrix", "--improve", "1", "--worsen", "2,3")
+    # cells [5,3,7], [3,9]: 3 twice; among ties 5 (1st in a cell) and 9 (2nd)
+    # come before 7 (3rd), even though 7 appears earlier in the output
+    assert [(r["id"], r["count"]) for r in out["ranking"]] == [(3, 2), (5, 1), (9, 1), (7, 1)]
 
 
 def test_matrix_ranking_name_follows_lang(env):
@@ -504,8 +511,17 @@ def test_separation_selected_types_with_names_and_lang(env):
 
 def test_separation_ranking_counts_shared_principles(env):
     _, out, _ = run(env, "separation", "--type", "space,system,condition")
-    # space [1,2], system [1,5], condition [3,40]: 1 appears twice, ties keep first appearance
-    assert [(r["id"], r["count"]) for r in out["ranking"]] == [(1, 2), (2, 1), (5, 1), (3, 1), (40, 1)]
+    # space [1,2], system [1,5], condition [3,40]: 1 appears twice; ties go
+    # round-robin by position, then by --type order
+    assert [(r["id"], r["count"]) for r in out["ranking"]] == [(1, 2), (3, 1), (2, 1), (5, 1), (40, 1)]
+
+
+def test_separation_ties_interleave_types_in_given_order(env):
+    _, out, _ = run(env, "separation", "--type", "time,direction")
+    # time [10,15], direction [4,14]: all count 1
+    assert [r["id"] for r in out["ranking"]] == [10, 4, 15, 14]
+    _, out, _ = run(env, "separation", "--type", "direction,time")
+    assert [r["id"] for r in out["ranking"]] == [4, 10, 14, 15]
 
 
 def test_separation_duplicate_type_is_collapsed(env):

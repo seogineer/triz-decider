@@ -114,6 +114,22 @@ def parse_ids(raw, label, upper):
 
 # --------------------------------------------------------------- commands ---
 
+def rank_principles(lists):
+    """Principle ids ranked by count (desc); ties go round-robin over the lists.
+
+    A tie is broken by the principle's earliest position within any list, then
+    by that list's order: every list's 1st principle, then every list's 2nd, and
+    so on. Lists are matrix cells in pair order, or separation types in --type
+    order, so on a tie the first list never fills the top of the ranking alone.
+    """
+    counts, first = {}, {}
+    for l_idx, ids in enumerate(lists):
+        for pos, pid in enumerate(ids):
+            counts[pid] = counts.get(pid, 0) + 1
+            first[pid] = min(first.get(pid, (pos, l_idx)), (pos, l_idx))
+    return [(pid, counts[pid]) for pid in sorted(counts, key=lambda pid: (-counts[pid], first[pid]))]
+
+
 def cmd_matrix(args):
     improve = parse_ids(args.improve, "--improve", N_PARAMS)
     worsen = parse_ids(args.worsen, "--worsen", N_PARAMS)
@@ -135,7 +151,7 @@ def cmd_matrix(args):
     except (KeyError, TypeError) as exc:
         raise data_error(f"malformed data file: {exc!r}")
 
-    pairs, empty_pairs, order, counts, unverified_pairs = [], [], [], {}, []
+    pairs, empty_pairs, unverified_pairs = [], [], []
     for i in improve:
         for w in worsen:
             if f"{i}-{w}" in unverified:  # never answer from a disputed cell
@@ -147,16 +163,10 @@ def cmd_matrix(args):
                 empty_pairs.append({"improve": i, "worsen": w})
                 continue
             pairs.append({"improve": i, "worsen": w, "principles": list(cell)})
-            for pid in cell:
-                if pid not in counts:
-                    counts[pid] = 0
-                    order.append(pid)
-                counts[pid] += 1
 
-    # sorted() is stable: ties keep first-appearance order.
-    ranked = sorted(order, key=lambda pid: -counts[pid])
     try:
-        ranking = [{"id": pid, "count": counts[pid], "name": names[pid]} for pid in ranked]
+        ranking = [{"id": pid, "count": n, "name": names[pid]}
+                   for pid, n in rank_principles([p["principles"] for p in pairs])]
     except KeyError as exc:
         raise data_error(f"matrix references unknown principle id {exc}")
 
@@ -222,16 +232,8 @@ def cmd_separation(args):
             })
     except (KeyError, TypeError) as exc:
         raise data_error(f"separation data missing or malformed: {exc!r}")
-    # same rule as the matrix ranking: count desc, ties keep first appearance
-    order, counts = [], {}
-    for sep in out:
-        for rp in sep["related_principles"]:
-            if rp["id"] not in counts:
-                counts[rp["id"]] = 0
-                order.append(rp["id"])
-            counts[rp["id"]] += 1
-    ranking = [{"id": pid, "count": counts[pid], "name": names[pid]}
-               for pid in sorted(order, key=lambda pid: -counts[pid])]
+    ranking = [{"id": pid, "count": n, "name": names[pid]}
+               for pid, n in rank_principles([[rp["id"] for rp in sep["related_principles"]] for sep in out])]
     return {"separations": out, "ranking": ranking}
 
 

@@ -221,7 +221,7 @@ __marimo__/
 tests/eval/**/raw/*.jsonl
 
 # TRIZBench comparison run: derived from a third-party dataset, local only
-tests/eval/trizbench-run/
+tests/eval/trizbench-*/
 
 # Local Claude Code components (e.g. claude-code-templates installs)
 .claude/

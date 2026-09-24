@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- **Tie rule for principle rankings.** `matrix` and `separation` rank by count as before; ties now go round-robin: every cell's (or separation type's) 1st principle, then every 2nd, and so on, in pair order or `--type` order. Before, ties kept first appearance, so the first pair or type filled the top of the list and the model skipped ranks to include the others. The skill now says to pass the best-fitting separation type first and take the ranking in order. Worked examples updated to the new output.
+
 ## 0.2.0 — 2026-09-24
 - **Physical contradictions.** The skill states one property with two opposite demands and their reasons, checks where, when, for whom, in which direction and at which level each demand holds, and picks the separation types where they do not overlap. New `lookup.py separation [--type time,space]` returns each type's question, usage note, examples and related principles, plus a frequency ranking. Guide and worked example: `references/physical-contradiction.md`.
 - **Separation data rebuilt.** Five types (space, time, relation/condition, direction, system level) and their related principles follow the MATRIZ TRIZ Knowledge Base (CC BY 4.0) via the pytriz transcription; a direct check against the wiki is still pending. Questions and examples are new text. The unsourced legacy lists are gone.
