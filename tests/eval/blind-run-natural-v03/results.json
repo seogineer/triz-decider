@@ -1,0 +1,98 @@
+{
+  "C31": {
+    "improve": [
+      9
+    ],
+    "worsen": [
+      1,
+      26
+    ],
+    "principles_cited": [
+      10,
+      19,
+      29,
+      38
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": true,
+    "returned_principles": [
+      10,
+      19,
+      29,
+      38
+    ],
+    "disclosed": true
+  },
+  "C32": {
+    "improve": [
+      39,
+      35
+    ],
+    "worsen": [
+      33,
+      36
+    ],
+    "principles_cited": [
+      28,
+      15,
+      12,
+      17,
+      24
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": true,
+    "returned_principles": [
+      1,
+      12,
+      15,
+      16,
+      17,
+      24,
+      28,
+      29,
+      34,
+      37
+    ],
+    "disclosed": true
+  },
+  "C33": {
+    "improve": [
+      14,
+      13
+    ],
+    "worsen": [
+      33,
+      36
+    ],
+    "principles_cited": [
+      35,
+      32,
+      30,
+      2,
+      22
+    ],
+    "skill_used": true,
+    "lookup_calls": 3,
+    "plugin_loaded": true,
+    "attempts": 1,
+    "exit_code": 0,
+    "saw_unverified": true,
+    "returned_principles": [
+      2,
+      22,
+      26,
+      30,
+      32,
+      35
+    ],
+    "disclosed": true
+  }
+}

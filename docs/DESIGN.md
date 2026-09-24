@@ -484,7 +484,7 @@ v0.1은 데이터 확정이 선행 조건이며, 이후 구현은 Claude Code로
 ### 11.1 구현 순서 (v0.1)
 
 - [x] 기존 JSON 3종 검토 후 5장 스키마로 변환, `parameters.json` 신규 작성
-- [x] 행렬 셀 값 교차 검증 및 `DATA_SOURCES.md` 작성 (1239셀 확정, 9셀 미확정 — 인쇄본 대조는 릴리스 전 TODO)
+- [x] 행렬 셀 값 교차 검증 및 `DATA_SOURCES.md` 작성 (1231셀 확정, 18셀 보류 — 인쇄본 대조는 릴리스 전 TODO)
 - [x] `lookup.py` + 단위 테스트 (separation 서브커맨드는 v0.2)
 - [x] `SKILL.md`, `parameters-39.md`, `/triz` 커맨드
 - [x] 평가 케이스 20건 작성 및 실행 (Top-3 100%, 환각 0, 케이스 30건·반복 실행 포함. 기대값 제3자 검토는 남음: tests/eval/results-v0.1.md)

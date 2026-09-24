@@ -320,8 +320,7 @@
       ],
       "expected_worsen": [
         28
-      ],
-      "expect_unverified": true
+      ]
     },
     {
       "id": "C29",
@@ -332,8 +331,7 @@
       ],
       "expected_worsen": [
         1
-      ],
-      "expect_unverified": true
+      ]
     },
     {
       "id": "C30",
@@ -344,6 +342,41 @@
       ],
       "expected_worsen": [
         25
+      ]
+    },
+    {
+      "id": "C31",
+      "lang": "ko",
+      "problem": "전동 킥보드의 속도를 높였더니 차체의 무게가 늘어나 버렸다.",
+      "expected_improve": [
+        9
+      ],
+      "expected_worsen": [
+        1
+      ],
+      "expect_unverified": true
+    },
+    {
+      "id": "C32",
+      "lang": "ko",
+      "problem": "생산 라인의 생산성을 높이려고 기능을 늘렸더니 설비 조작이 어려워졌다.",
+      "expected_improve": [
+        39
+      ],
+      "expected_worsen": [
+        33
+      ],
+      "expect_unverified": true
+    },
+    {
+      "id": "C33",
+      "lang": "en",
+      "problem": "We reinforced the housing to make it stronger, but the device has become harder to operate.",
+      "expected_improve": [
+        14
+      ],
+      "expected_worsen": [
+        33
       ],
       "expect_unverified": true
     }
