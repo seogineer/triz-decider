@@ -222,6 +222,130 @@
       "expected_worsen": [
         14
       ]
+    },
+    {
+      "id": "C21",
+      "lang": "ko",
+      "problem": "배송 드론이 더 무거운 짐을 싣게 하고 싶은데, 그러면 한 번 충전으로 나는 시간이 확 줄어든다.",
+      "expected_improve": [
+        1,
+        26
+      ],
+      "expected_worsen": [
+        15,
+        19
+      ]
+    },
+    {
+      "id": "C22",
+      "lang": "ko",
+      "problem": "수술용 로봇의 동작을 더 정밀하게 만들려니, 부품을 그만큼 정교하게 가공해야 해서 만들기가 너무 어렵다.",
+      "expected_improve": [
+        28,
+        29
+      ],
+      "expected_worsen": [
+        32
+      ]
+    },
+    {
+      "id": "C23",
+      "lang": "en",
+      "problem": "Our smartwatch needs a bigger battery to last a week, but the case is getting too thick.",
+      "expected_improve": [
+        15,
+        19
+      ],
+      "expected_worsen": [
+        3,
+        7
+      ]
+    },
+    {
+      "id": "C24",
+      "lang": "en",
+      "problem": "We made the bridge cables thinner to save material, yet now they vibrate and fail earlier.",
+      "expected_improve": [
+        26
+      ],
+      "expected_worsen": [
+        14,
+        27
+      ]
+    },
+    {
+      "id": "C25",
+      "lang": "ko",
+      "problem": "공장에서 검사 항목을 늘려 불량을 더 잘 잡게 했더니 검사에 걸리는 시간이 길어졌다.",
+      "expected_improve": [
+        28,
+        37
+      ],
+      "expected_worsen": [
+        25
+      ]
+    },
+    {
+      "id": "C26",
+      "lang": "ko",
+      "problem": "에어컨의 냉방 능력을 올렸더니 전기요금이 폭등했다.",
+      "expected_improve": [
+        17,
+        21
+      ],
+      "expected_worsen": [
+        20,
+        22
+      ]
+    },
+    {
+      "id": "C27",
+      "lang": "en",
+      "problem": "Making the pump more reliable with redundant valves has made it far harder to build and to service.",
+      "expected_improve": [
+        27
+      ],
+      "expected_worsen": [
+        32,
+        34,
+        36
+      ]
+    },
+    {
+      "id": "C28",
+      "lang": "ko",
+      "problem": "차체를 가볍게 하려고 경량 소재를 썼더니, 이 차의 무게를 재는 센서의 측정 정확도를 맞추기 어려워졌다.",
+      "expected_improve": [
+        1
+      ],
+      "expected_worsen": [
+        28
+      ],
+      "expect_unverified": true
+    },
+    {
+      "id": "C29",
+      "lang": "ko",
+      "problem": "장비를 수리하기 쉽게 만들려고 분해용 부품과 보강재를 넣었더니, 이동하는 장비 자체가 더 무거워졌다.",
+      "expected_improve": [
+        34
+      ],
+      "expected_worsen": [
+        1
+      ],
+      "expect_unverified": true
+    },
+    {
+      "id": "C30",
+      "lang": "ko",
+      "problem": "설치형 장비의 부피를 줄이려고 했더니 조립하고 세팅하는 데 걸리는 시간이 크게 늘었다.",
+      "expected_improve": [
+        8
+      ],
+      "expected_worsen": [
+        25
+      ],
+      "expect_unverified": true
     }
   ]
 }

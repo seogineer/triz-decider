@@ -33,7 +33,15 @@ SUFFIX = {
 TIMEOUT = 280
 
 _MAP_ROW = re.compile(r"^\|\s*(개선|악화|Improv\w*|Worsen\w*)\s*\|\s*#\s*(\d+)", re.M)
+_DISCLOSE = re.compile(
+    r"unverified|not (?:yet )?verified|no verified|cannot (?:be )?look|미확정|검증(?:된|되지|을 못|이 안)|"
+    r"확정(?:하지|되지|된 값이 없)|조회할 수 없|조회가 불가|데이터가 없", re.I)
 _PRINCIPLE_HEAD = re.compile(r"^#{2,4}\s*(?:원리|Principle)\s*#\s*(\d+)", re.M)
+
+
+def discloses_unverified(text):
+    """True if the answer tells the user a pair has no verified data."""
+    return bool(_DISCLOSE.search(text))
 
 
 def parse_answer(text):
@@ -58,7 +66,8 @@ def make_plugin_copy(dest):
 
 def parse_stream(lines):
     """Read claude stream-json lines: final text, skills used, lookup.py calls."""
-    info = {"text": "", "plugin_loaded": False, "skills": [], "lookup_calls": 0}
+    info = {"text": "", "plugin_loaded": False, "skills": [], "lookup_calls": 0,
+            "saw_unverified": False}
     for line in lines:
         try:
             ev = json.loads(line)
@@ -77,6 +86,11 @@ def parse_stream(lines):
                     info["skills"].append(str(inp.get("skill", "")))
                 if block.get("name") == "Bash" and "lookup.py" in str(inp.get("command", "")):
                     info["lookup_calls"] += 1
+        elif kind == "user":
+            content = ev.get("message", {}).get("content", [])
+            for block in content if isinstance(content, list) else []:
+                if block.get("type") == "tool_result" and "unverified_cell" in json.dumps(block.get("content", "")):
+                    info["saw_unverified"] = True
         elif kind == "result":
             info["text"] = ev.get("result", "") or ""
     info["skill_used"] = any("triz-analysis" in x for x in info["skills"])
@@ -109,7 +123,9 @@ def run_case(case, mode, plugin_dir, workdir, raw_dir, attempts=3):
             break
     res = parse_answer(info["text"])
     res.update({"skill_used": info["skill_used"], "lookup_calls": info["lookup_calls"],
-                "plugin_loaded": info["plugin_loaded"], "attempts": attempt, "exit_code": code})
+                "plugin_loaded": info["plugin_loaded"], "attempts": attempt, "exit_code": code,
+                "saw_unverified": info["saw_unverified"],
+                "disclosed": discloses_unverified(info["text"])})
     return case["id"], res
 
 

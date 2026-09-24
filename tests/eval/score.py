@@ -8,6 +8,8 @@ results.json maps case id -> {"improve": [ids ranked best-first],
 
 - A side "hits" if any expected id is among that side's top-3 candidates.
 - A case hits if both sides hit.
+- "unverified": among runs whose lookup output carried an unverified_cell
+  warning (observed in the tool result), how many told the user so.
 - A cited principle is a hallucination if it is not in the ranking that
   lookup.py returns for the run's own candidate pairs.
 """
@@ -52,6 +54,15 @@ def score(cases, results, matrix=real_matrix):
         rows.append({"id": c["id"], "improve_hit": ih, "worsen_hit": wh,
                      "hit": ih and wh, "hallucinated_principles": bad})
     n = len(rows)
+    warned = [c["id"] for c in cases if c["id"] in results and results[c["id"]].get("saw_unverified")]
+    undisclosed = [i for i in warned if not results[i].get("disclosed")]
+    return {"unverified": {"cases_with_warning": len(warned),
+                           "disclosed": len(warned) - len(undisclosed),
+                           "not_disclosed": undisclosed},
+            **_summary(rows, n, hits, imp_hits, wor_hits, halluc, missing)}
+
+
+def _summary(rows, n, hits, imp_hits, wor_hits, halluc, missing):
     return {"cases_scored": n, "cases_missing": missing,
             "top3_hit_rate": hits / n if n else 0.0,
             "improve_hit_rate": imp_hits / n if n else 0.0,

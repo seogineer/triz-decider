@@ -13,9 +13,9 @@ spec.loader.exec_module(score_mod)
 CASES = json.loads((EVAL / "cases.yaml").read_text(encoding="utf-8"))["cases"]
 
 
-def test_twenty_cases_with_unique_ids():
-    assert len(CASES) == 20
-    assert len({c["id"] for c in CASES}) == 20
+def test_cases_have_unique_ids():
+    assert len(CASES) >= 20
+    assert len({c["id"] for c in CASES}) == len(CASES)
 
 
 @pytest.mark.parametrize("case", CASES, ids=lambda c: c["id"])
@@ -28,10 +28,21 @@ def test_case_is_well_formed(case):
 
 
 @pytest.mark.parametrize("case", CASES, ids=lambda c: c["id"])
-def test_expected_pair_returns_principles(case):
-    """Every case must be answerable from verified matrix data."""
-    ranking = score_mod.real_matrix(case["expected_improve"], case["expected_worsen"])
-    assert ranking, f"{case['id']}: expected pair gives no principles"
+def test_expected_pair_matches_case_kind(case):
+    """Normal cases must be answerable from verified data; expect_unverified
+    cases must land exactly on withheld cells (and nothing else)."""
+    import subprocess, sys
+    p = subprocess.run(
+        [sys.executable, str(score_mod.LOOKUP), "matrix",
+         "--improve", ",".join(map(str, case["expected_improve"])),
+         "--worsen", ",".join(map(str, case["expected_worsen"]))],
+        capture_output=True, text=True, encoding="utf-8")
+    out = json.loads(p.stdout)
+    if case.get("expect_unverified"):
+        assert out["pairs"] == [], f"{case['id']}: expected only withheld cells"
+        assert any(w["code"] == "unverified_cell" for w in out["warnings"])
+    else:
+        assert out["ranking"], f"{case['id']}: expected pair gives no principles"
 
 
 def fake_matrix(imp, wor):
@@ -168,3 +179,40 @@ def test_plugin_copy_excludes_expected_values(tmp_path):
     assert (tmp_path / "skills" / "triz-analysis" / "SKILL.md").exists()
     assert not (tmp_path / "tests").exists()
     assert not any(tmp_path.rglob("cases.yaml"))
+
+
+# ------------------------------------------- unverified-cell disclosure ---
+
+def test_parse_stream_sees_unverified_warning_in_tool_result():
+    lines = [
+        json.dumps({"type": "system", "subtype": "init", "plugins": [{"name": "triz-decider"}], "slash_commands": []}),
+        json.dumps({"type": "user", "message": {"content": [
+            {"type": "tool_result", "content": '{"warnings": [{"code": "unverified_cell", "improve": 1, "worsen": 28}]}'}]}}),
+        json.dumps({"type": "result", "result": "ok"}),
+    ]
+    assert run_blind.parse_stream(lines)["saw_unverified"] is True
+    assert run_blind.parse_stream(lines[:1] + lines[2:])["saw_unverified"] is False
+
+
+@pytest.mark.parametrize("text, expected", [
+    ("이 조합은 검증된 데이터가 없어 조회할 수 없습니다.", True),
+    ("Cell is unverified in the dataset, so I cannot look it up.", True),
+    ("해당 셀은 미확정이라 원리를 추천하지 않습니다.", True),
+    ("추천 원리는 #10, #35 입니다.", False),
+])
+def test_discloses_unverified(text, expected):
+    assert run_blind.discloses_unverified(text) is expected
+
+
+def test_score_unverified_disclosure_summary():
+    cases = [{"id": "U1", "expected_improve": [1], "expected_worsen": [28], "expect_unverified": True},
+             {"id": "U2", "expected_improve": [34], "expected_worsen": [1], "expect_unverified": True},
+             {"id": "N1", "expected_improve": [9], "expected_worsen": [27]}]
+    results = {
+        "U1": {"improve": [1], "worsen": [28], "principles_cited": [], "saw_unverified": True, "disclosed": True},
+        "U2": {"improve": [34], "worsen": [1], "principles_cited": [], "saw_unverified": True, "disclosed": False},
+        "N1": {"improve": [9], "worsen": [27], "principles_cited": [], "saw_unverified": False, "disclosed": False},
+    }
+    out = score_mod.score(cases, results, matrix=fake_matrix)
+    u = out["unverified"]
+    assert u == {"cases_with_warning": 2, "disclosed": 1, "not_disclosed": ["U2"]}
