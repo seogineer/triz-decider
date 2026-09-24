@@ -1,6 +1,14 @@
 # Changelog
 
-## Unreleased
+## 0.2.0 — 2026-09-24
+- **Physical contradictions.** The skill states one property with two opposite demands and their reasons, checks where, when, for whom, in which direction and at which level each demand holds, and picks the separation types where they do not overlap. New `lookup.py separation [--type time,space]` returns each type's question, usage note, examples and related principles, plus a frequency ranking. Guide and worked example: `references/physical-contradiction.md`.
+- **Separation data rebuilt.** Five types (space, time, relation/condition, direction, system level) and their related principles follow the MATRIZ TRIZ Knowledge Base (CC BY 4.0) via the pytriz transcription; a direct check against the wiki is still pending. Questions and examples are new text. The unsourced legacy lists are gone.
+- **Structured interview.** Vague inputs and inputs that only describe a solution get up to five questions, one at a time, instead of a guessed contradiction. With "no questions", the skill proceeds and marks the contradiction as unconfirmed.
+- **Markdown reports.** `/triz ... --save` or "save this" writes the analysis to `triz-report-YYYYMMDD-<topic>.md` without overwriting.
+- Eval: 10 physical-contradiction cases. The looked-up separation type matched in 9/10 (command) and 8/10 (plain language) runs, 10/10 counting the stated choice; no hallucinated principles. The v0.1 technical cases still hit 30/32. See `tests/eval/results-v0.2.md`.
+- Eval harness: records separation lookups and recommended principles, scores physical cases, can send inputs with no suffix, and no longer mistakes the word `unverified_cell` in SKILL.md for a lookup warning.
+
+### Also in 0.2.0: benchmark and data follow-ups from after 0.1.2
 - Eval: re-measured on TRIZBench with 75 held-out patents that share no patent with the first 30. Hit@3 is 10/75 = 13% (95% CI 7-23%), about the level of a constant three-pair baseline (9% when fit on the first 30). Every run called `lookup.py`; the misses come from picking the parameter pair from an abstract. See `tests/eval/results-v0.1.md`.
 - Eval: tried a "reconstruct the contradiction from a solution description" step in the skill. It did not raise Hit@3 on the first 30 (2/30 before and after), so it was not adopted; the skill is unchanged.
 - Eval harness: blind runs are isolated from the host session (only Bash, Read and Skill; no MCP; `--add-dir` for the plugin copy), record the model, and can use a prompt suffix that does not claim the contradiction is confirmed. The mapping-row parser accepts translated or ranked side labels and bold ids.
