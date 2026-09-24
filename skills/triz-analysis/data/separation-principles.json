@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "source": "Separation types and related_principles: MATRIZ TRIZ Knowledge Base (https://wiki.matriz.org), CC BY 4.0, as transcribed by mmysior/pytriz separations.json (MIT); direct check against the wiki still pending. Questions, descriptions and examples written for this project. See DATA_SOURCES.md",
+  "source": "Separation types and related_principles: MATRIZ TRIZ Knowledge Base (https://wiki.matriz.org), CC BY 4.0, as transcribed by mmysior/pytriz separations.json (MIT); checked against the wiki page 'Algorithm of resolving physical contradictions' on 2026-09-25 (all five lists identical, same order). Questions, descriptions and examples written for this project. See DATA_SOURCES.md",
   "separations": [
     {
       "id": "space",

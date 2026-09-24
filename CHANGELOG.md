@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Data: the five separation lists were checked against the MATRIZ wiki page "Algorithm of resolving physical contradictions"; all match the data in number and order. No data values changed.
 - Physical flow: with one separation type, the skill may reuse the full `separation` lookup from step 2 and must say so; answers name only commands that were actually run.
 - Eval: the scorer now reads lookup JSON inside chained command output (e.g. `cat guide.md && lookup.py separation`). Before, such runs had every cited principle counted as a hallucination.
 

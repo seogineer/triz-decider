@@ -9,7 +9,7 @@
 | `contradiction-matrix.json` | **3개 독립 계열 표결로 교차 검증 완료** (1248셀 확정, 보류 0셀). 아래 2장 |
 | `parameters.json` | 번호·명칭은 독립 자료와 대조 완료, 정의·키워드는 직접 작성 |
 | `inventive-principles.json` | 번호·명칭은 대조 완료, 본문은 직접 재작성 (3장) |
-| `separation-principles.json` | 분리 유형·연계 원리는 MATRIZ 지식베이스(전사본) 채택, 원문 직접 대조는 남음. 질문·예시는 직접 작성 (5장) |
+| `separation-principles.json` | 분리 유형·연계 원리는 MATRIZ 지식베이스 채택(전사본을 원문과 대조해 일치 확인). 질문·예시는 직접 작성 (5장) |
 
 ## 2. contradiction-matrix.json
 
@@ -93,7 +93,7 @@
 
 ## 5. separation-principles.json
 
-현재 버전 1.0.0. 검증일 2026-09-24. **분리 유형과 연계 발명 원리는 MATRIZ 지식베이스를 따르되, 원문과의 직접 대조는 남아 있다.**
+현재 버전 1.0.0. 검증일 2026-09-24, 원문 대조 2026-09-25. **분리 유형과 연계 발명 원리는 MATRIZ 지식베이스를 따르며, 원문과 대조해 다섯 목록이 순서까지 일치함을 확인했다(5.4).**
 
 ### 5.1 레거시 데이터 폐기
 초기 데이터(4종, `source`: UNVERIFIED)는 연계 원리 목록의 출처가 없었고, 판별 질문 4개가 `TODO`였으며, 예시가 교재에 흔한 문장(도개교, 체인 등)이었다. 전량 교체했다(원본은 git 이력에 있음).
@@ -124,5 +124,6 @@
 - the-trizjournal.com 등 기사: 이 작업 환경의 네트워크 정책으로 접근할 수 없었다
 
 ### 5.4 남은 일
-- [ ] **MATRIZ 원문과 직접 대조** (wiki.matriz.org가 작업 환경 네트워크 정책에 막혀 있어 전사본만 확인함. 허용되면 다섯 목록을 원문과 비교)
+- [x] **MATRIZ 원문과 직접 대조** (2026-09-25, 로컬 환경에서 접속). 원문: MATRIZ 위키 "Algorithm of resolving physical contradictions"(https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/contradictions/physical-contradiction-6056/algorithm-for-resolving-physical-contradictions/, 페이지 수정일 2026-09-22). 다섯 절(Separating in space / time / relation (conditions) / direction / at the system level)의 원리 번호를 WordPress REST API(`/wp-json/wp/v2/docs/8631`)로 받은 본문에서 뽑아 `separation-principles.json`과 비교했다. **다섯 목록 모두 번호와 순서가 같다.** 통제 질문(where? / when? / for whom, for what object? / 시스템 수준은 질문 없이 늘 권장)도 판별 질문의 취지와 맞는다
+- 같은 페이지에는 분리 외에 **요구 동시 충족(satisfying)** 접근의 원리 묶음(13, 28, 35, 36, 37, 38, 39)과 **우회(bypassing)** 접근(아무 원리나 적용)이 더 있다. 이 프로젝트는 분리 5종만 다룬다. 넣을지는 이후 버전에서 판단한다
 - [ ] 예시 문장의 한국어 표현 검수
