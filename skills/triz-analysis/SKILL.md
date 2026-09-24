@@ -3,7 +3,8 @@ name: triz-analysis
 description: Analyze engineering or product problems with TRIZ. Use when the user
   describes a trade-off (improving one property worsens another), a conflicting
   requirement, or asks for TRIZ, contradiction matrix, or inventive principles.
-  Also triggers on Korean: 트리즈, 모순, 트레이드오프, 발명 원리.
+  Also triggers on Korean: 트리즈, 모순, 기술적 모순, 물리적 모순, 모순 행렬,
+  트레이드오프, 발명 원리, 발명원리.
 ---
 
 # TRIZ 분석 (기술적 모순)

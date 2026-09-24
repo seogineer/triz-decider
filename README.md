@@ -56,6 +56,17 @@ Errors are JSON on stderr with exit codes 2 (bad argument), 3 (id out of range),
 
 The skill folder is self-contained (`data/` and `scripts/` live inside it), so it can also be uploaded on its own to Claude.ai.
 
+## What it does not cover
+
+TRIZ is much broader than this plugin. v0.1 only does the technical-contradiction route (contradiction matrix, then the 40 inventive principles). It does **not** do:
+
+- problem analysis before the contradiction is known: function analysis, trimming, root-cause and hidden-resource analysis
+- the 76 standard solutions and substance-field analysis
+- ARIZ, technology evolution laws, or functional-oriented search
+- physical contradictions and the guided interview (planned for v0.2)
+
+The 40 principles are a checklist for generating ideas, not a guarantee. If the results feel off, the mapping or the problem definition usually needs another look before the principles do.
+
 ## Data status
 
 | Data | Status |
