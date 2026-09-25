@@ -1369,7 +1369,33 @@
           "A street lamp powered by its own solar panel",
           "A heat exchanger that preheats with surplus heat"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "서버 프로그램이 멈추면 사람이 알아채 다시 켤 때까지 서비스가 끊긴다. 프로그램이 제 상태를 스스로 점검해 이상하면 스스로 다시 시작하게 한다.",
+          "en": "When a server program hangs, the service is down until someone notices and restarts it. A program that checks its own health restarts itself when something is wrong."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "베어링에 사람이 주기적으로 기름을 넣어야 했다. 기름을 머금은 다공질 금속으로 베어링을 만들면 돌면서 스스로 기름을 내놓는다.",
+          "en": "Bearings needed oiling by hand at intervals. A bearing made of porous metal soaked in oil releases its own lubricant as it turns."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 2,
+          "ko": "센서마다 전선이나 배터리를 연결하기 어렵다. 주변의 진동이나 온도 차이에서 전기를 얻어 스스로 작동하게 한다.",
+          "en": "Wiring or battery-powering every sensor is impractical. Harvesting power from nearby vibration or temperature differences lets each sensor run by itself."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "오븐 안쪽에 눌어붙은 기름때를 닦기 번거롭다. 오븐이 아주 높은 온도로 스스로 달궈 찌꺼기를 재로 태우게 하면 재만 닦아 내면 된다.",
+          "en": "Scrubbing baked-on grease from an oven is a chore. An oven that heats itself very high turns the residue to ash, which just wipes away."
+        }
+      ]
     },
     {
       "id": 26,
@@ -1400,7 +1426,33 @@
           "Surveying terrain from satellite images",
           "Inspecting equipment with a thermal camera"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "실제 결제 시스템으로 시험하면 비용이 들고 위험하다. 같은 방식으로 응답하는 가짜 결제 서버를 두고 시험한다.",
+          "en": "Testing against the real payment system costs money and carries risk. A fake payment server that answers the same way is used for tests."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "실제 부품으로 충돌 시험을 반복하면 비싸고 오래 걸린다. 컴퓨터 속 모델로 먼저 시험하고 실물 시험은 마지막 확인에만 쓴다.",
+          "en": "Repeating crash tests on real parts is slow and expensive. Tests run first on a computer model, and physical tests are kept for final confirmation."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "피부과 전문의가 멀리 있는 환자를 직접 보기 어렵다. 환자가 찍은 피부 사진을 보내 판독하게 한다.",
+          "en": "A dermatologist cannot easily see distant patients in person. Photos of the skin are sent and read remotely."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 3,
+          "ko": "그림 위에 칠한 물감 때문에 밑그림이 보이지 않는다. 적외선으로 찍으면 물감층을 지나 밑그림이 드러난다.",
+          "en": "Paint layers hide the underdrawing of a painting. An infrared image sees through the paint and reveals it."
+        }
+      ]
     },
     {
       "id": 27,
@@ -1427,7 +1479,33 @@
           "A paper cup",
           "A disposable cleanroom suit"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "체온계 끝을 환자마다 소독하면 시간이 들고 감염 위험이 남는다. 한 번 쓰고 버리는 얇은 덮개를 씌워 잰다.",
+          "en": "Disinfecting a thermometer tip between patients takes time and still leaves a risk. A thin single-use cover goes over the tip for each reading."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "정밀하게 다듬은 공구 하나를 무뎌질 때마다 갈아 쓰면 기계가 오래 멈춘다. 값싼 교체형 날을 끼워 쓰다 무뎌지면 버리고 새 날로 바꾼다.",
+          "en": "Regrinding one precision tool whenever it dulls stops the machine for long. Cheap replaceable inserts are thrown away when dull and swapped in seconds."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "오래 켜 둔 서버는 설정이 조금씩 달라져 관리하기 어렵다. 서버를 짧게 쓰고 버린 뒤 같은 이미지로 새로 띄운다.",
+          "en": "Long-running servers drift in configuration and get hard to manage. Servers are used briefly, discarded and recreated from the same image."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "청소 걸레를 쓸 때마다 빨아야 해서 번거롭다. 한 번 쓰고 버리는 얇은 시트를 막대에 끼워 쓴다.",
+          "en": "A cleaning cloth needs washing after every use. A cheap disposable sheet clipped to a handle is used once and thrown away."
+        }
+      ]
     },
     {
       "id": 28,
@@ -1460,7 +1538,33 @@
           "A wireless charger with no contact",
           "Town gas odorised so leaks can be smelled"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 2,
+          "ko": "금속 부품을 기계 손으로 집으면 표면에 자국이 남는다. 전자석으로 붙잡아 옮기면 긁히지 않는다.",
+          "en": "Gripping metal parts with mechanical jaws marks their surface. An electromagnet lifts and moves them without scratches."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "몸속을 보려면 절개해야 했다. 몸에 소리를 쏘아 돌아오는 메아리로 속을 들여다본다.",
+          "en": "Seeing inside the body used to mean cutting it open. Sound sent into the body and its echoes show what is inside."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 4,
+          "ko": "회전축 둘레를 막는 고무 씰은 닿아서 닳는다. 자성 입자를 섞은 액체를 자석으로 축 둘레에 붙잡아 두면 닳는 부분 없이 틈을 막는다.",
+          "en": "A rubber seal around a rotating shaft wears by rubbing. A liquid loaded with magnetic particles, held around the shaft by magnets, closes the gap with nothing to wear."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 3,
+          "ko": "고정된 자석으로는 금속을 한 방향으로 계속 밀 수 없다. 늘어선 코일의 전류를 차례로 바꿔 움직이는 자기장을 만들면 금속을 밀어 옮긴다.",
+          "en": "A fixed magnet cannot keep pushing metal in one direction. Switching current through a row of coils in sequence makes a travelling magnetic field that drives the metal along."
+        }
+      ]
     },
     {
       "id": 29,
@@ -1487,7 +1591,33 @@
           "A hydraulic brake",
           "An air-flotation conveyor"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "무거운 차를 나사식 잭으로 들어 올리면 느리고 힘들다. 작은 피스톤을 누르면 기름이 큰 피스톤을 밀어 올리는 유압 잭을 쓴다.",
+          "en": "Raising a heavy car with a screw jack is slow and hard work. In a hydraulic jack, pushing a small piston drives oil that lifts a large one."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "딱딱한 부목은 다친 다리의 부기에 맞지 않는다. 공기를 넣어 부풀리는 부목은 다리 모양에 맞춰 고르게 감싼다.",
+          "en": "A rigid splint does not fit a swollen injured leg. An inflatable splint takes the shape of the leg and grips it evenly."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "포장 상자 속 물건이 움직이다 깨진다. 빈 곳을 공기를 채운 비닐 쿠션으로 메우면 가볍게 고정된다.",
+          "en": "Items shift in a shipping box and break. Filling the gaps with air-filled plastic cushions holds them lightly in place."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 1,
+          "ko": "금형에서 플라스틱 제품을 핀으로 밀어내면 표면에 자국이 남는다. 압축 공기를 불어 넣어 제품을 떼어 낸다.",
+          "en": "Pushing a plastic part out of a mould with ejector pins leaves marks. A blast of compressed air releases it instead."
+        }
+      ]
     },
     {
       "id": 30,
@@ -1516,7 +1646,33 @@
           "Cling film around food",
           "A waterproof breathable membrane"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "medical",
+          "sub_principle": 2,
+          "ko": "상처를 거즈로 덮으면 물을 막기 어렵고 상처를 볼 수 없다. 투명하고 얇은 필름으로 덮으면 물과 세균은 막고 상처는 들여다보인다.",
+          "en": "Gauze over a wound keeps out little water and hides the wound. A thin transparent film blocks water and germs while the wound stays visible."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "넓은 공간을 철골 지붕으로 덮으면 무겁고 짓는 데 오래 걸린다. 공기로 부풀린 막 구조로 기둥 없이 넓게 덮는다.",
+          "en": "Roofing a large space with steel is heavy and slow to build. An air-inflated membrane covers it without columns."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "딱딱한 기판은 접히는 기기의 경첩을 지나갈 수 없다. 얇고 휘는 필름 위에 배선을 만들어 경첩을 지나가게 한다.",
+          "en": "A rigid circuit board cannot pass through the hinge of a folding device. Wiring printed on a thin flexible film runs through the hinge."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 2,
+          "ko": "배낭 속 물건이 비에 젖는다. 가방 안에 얇은 방수 주머니를 넣어 물건을 따로 감싼다.",
+          "en": "Things in a backpack get wet in the rain. A thin waterproof bag inside the pack wraps them separately."
+        }
+      ]
     },
     {
       "id": 31,
@@ -1545,7 +1701,33 @@
           "An activated-carbon filter trapping odour in its pores",
           "A porous implant filled with medication"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "materials",
+          "sub_principle": 1,
+          "ko": "단열재를 두껍고 빽빽하게 만들면 무겁다. 미세한 기공이 가득한 소재를 쓰면 가벼우면서도 열이 잘 통하지 않는다.",
+          "en": "Thick, dense insulation is heavy. A material full of tiny pores is light and still blocks heat well."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "표면이 매끈한 인공 뼈는 주변 뼈와 잘 붙지 않는다. 표면을 다공질로 만들면 뼈가 기공 속으로 자라 들어가 단단히 붙는다.",
+          "en": "A smooth bone implant bonds poorly to the surrounding bone. A porous surface lets bone grow into the pores and anchor it firmly."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "전극 겉넓이가 작으면 저장할 수 있는 전하가 적다. 전극을 다공질로 만들어 겉넓이를 크게 늘리면 같은 크기에 훨씬 많은 전하를 담는다.",
+          "en": "An electrode with little surface area stores little charge. Making it porous multiplies the surface area and stores far more charge in the same size."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 2,
+          "ko": "설거지할 때마다 세제를 따로 짜야 한다. 스펀지 기공에 세제를 미리 채워 두면 물만 묻혀도 거품이 난다.",
+          "en": "Washing up means squeezing out detergent every time. A sponge with detergent already held in its pores lathers with just water."
+        }
+      ]
     },
     {
       "id": 32,
@@ -1578,7 +1760,33 @@
           "Lenses that darken in sunlight",
           "Fluorescent dye for locating a leak"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "경고 메시지가 다른 기록과 섞여 눈에 띄지 않는다. 심각도에 따라 색을 달리해 한눈에 구분하게 한다.",
+          "en": "Warnings get lost among other log lines. Colouring them by severity makes them stand out at a glance."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 4,
+          "ko": "수술 중 암 조직과 정상 조직의 경계가 잘 보이지 않는다. 암 조직에 붙는 형광 물질을 넣고 특수한 빛을 비추면 경계가 드러난다.",
+          "en": "During surgery, the border between tumour and healthy tissue is hard to see. A fluorescent agent that binds to the tumour lights it up under a special light."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 3,
+          "ko": "금속 표면의 미세한 균열은 눈으로 찾기 어렵다. 스며드는 색소를 바르고 닦아 낸 뒤 현상액을 뿌리면 균열 자리만 색이 드러난다.",
+          "en": "Fine cracks in a metal surface are hard to see. A penetrating dye is applied and wiped off, and a developer then shows colour only where the cracks are."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 2,
+          "ko": "창문을 가리려면 커튼이나 블라인드를 달아야 한다. 전기를 걸면 불투명해지는 유리를 쓰면 스위치 하나로 가린다.",
+          "en": "Covering a window needs curtains or blinds. Glass that turns opaque when switched gives privacy at the flick of a switch."
+        }
+      ]
     },
     {
       "id": 33,
@@ -1605,7 +1813,33 @@
           "An edible ice-cream cone cup",
           "A bottle and cap made from the same plastic"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "서로 다른 금속이 맞닿아 물기에 젖으면 한쪽이 빨리 부식된다. 맞닿는 부품을 같은 금속으로 만든다.",
+          "en": "Two different metals touching in the wet make one corrode fast. Parts that touch are made of the same metal."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "몸에 넣는 인공 재료는 거부 반응을 일으킬 수 있다. 환자 자신의 다른 부위 조직을 떼어 옮겨 심는다.",
+          "en": "An artificial implant can trigger rejection. Tissue taken from elsewhere in the patient's own body is grafted instead."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "칩과 기판의 열팽창 정도가 달라 온도가 바뀔 때마다 납땜이 갈라진다. 칩과 팽창 정도가 비슷한 기판 재료를 쓴다.",
+          "en": "Chip and board expand by different amounts, so solder joints crack with every temperature swing. A board material that expands like the chip is used."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "화면 쪽과 서버 쪽이 서로 다른 언어로 같은 입력 검사 규칙을 따로 만들면 결과가 어긋난다. 같은 규칙 코드를 양쪽에서 함께 쓴다.",
+          "en": "Front end and server each writing the same validation rules in different languages end up disagreeing. One shared rule definition is used on both sides."
+        }
+      ]
     },
     {
       "id": 34,
@@ -1634,7 +1868,33 @@
           "A capsule that dissolves once the drug is released",
           "A mechanical pencil that feeds fresh lead as it wears"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "몸속을 꿰맨 실을 뽑으려면 다시 수술해야 한다. 시간이 지나면 몸 안에서 녹아 없어지는 실을 쓴다.",
+          "en": "Removing internal stitches would mean another operation. Sutures that dissolve in the body over time need no removal."
+        },
+        {
+          "domain": "software",
+          "sub_principle": 1,
+          "ko": "다 쓴 데이터가 메모리에 남아 쌓이면 프로그램이 점점 느려진다. 더 이상 쓰이지 않는 데이터를 실행 중에 자동으로 치운다.",
+          "en": "Data no longer in use piles up in memory and slows the program. Unused data is cleared away automatically while it runs."
+        },
+        {
+          "domain": "mechanical",
+          "sub_principle": 2,
+          "ko": "연삭 숫돌 표면이 막히고 무뎌지면 기계를 멈추고 다듬어야 했다. 가공하는 동안 숫돌 표면을 계속 조금씩 다듬어 늘 날카롭게 유지한다.",
+          "en": "A grinding wheel that clogs and dulls used to need the machine stopped for dressing. Dressing the wheel lightly and continuously during grinding keeps it sharp."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 1,
+          "ko": "속이 복잡한 주물은 틀을 빼내기 어렵다. 속 모양을 모래나 왁스로 만들어 두고 주조가 끝나면 부수거나 녹여 없앤다.",
+          "en": "A casting with a complex interior leaves no way to pull the core out. The core is made of sand or wax and broken out or melted away after casting."
+        }
+      ]
     },
     {
       "id": 35,
@@ -1720,7 +1980,33 @@
           "A cooling vest that works like evaporating sweat",
           "Splitting rock with the expansion of freezing water"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "순간적으로 열이 많이 나는 부품은 짧은 순간 온도가 치솟는다. 녹으면서 열을 흡수하는 물질을 옆에 두면 녹는 동안 온도가 크게 오르지 않는다.",
+          "en": "A part that produces bursts of heat sees sharp temperature spikes. A material placed next to it absorbs heat as it melts and holds the temperature down meanwhile."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "전기가 없는 곳으로 백신을 운반하면 차갑게 유지하기 어렵다. 녹으면서 열을 흡수하는 팩을 넣은 상자로 며칠 동안 온도를 지킨다.",
+          "en": "Keeping vaccines cold on the way to places without power is hard. A box lined with packs that absorb heat while melting holds the temperature for days."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "주머니 손난로는 불을 쓰면 위험하다. 과포화 용액 속 금속판을 딸깍 눌러 결정이 생기게 하면 굳으면서 열을 낸다.",
+          "en": "Pocket warmers that burn fuel are risky. Clicking a metal disc in a supersaturated solution starts crystallization, which gives off heat as it sets."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 1,
+          "ko": "건물은 낮에는 너무 덥고 밤에는 식는다. 벽 속에 낮에 녹으며 열을 흡수하고 밤에 굳으며 열을 내놓는 물질을 넣으면 온도가 고르게 유지된다.",
+          "en": "A building overheats by day and cools at night. A material in the walls that melts and absorbs heat by day and sets and releases it at night evens out the temperature."
+        }
+      ]
     },
     {
       "id": 37,
@@ -1749,7 +2035,33 @@
           "Shrink-fit assembly by heating the outer part",
           "A greenhouse vent that opens with temperature"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "큰 볼트를 정해진 힘으로 조이기 어렵다. 볼트를 데워 늘린 상태에서 너트를 채우면 식으면서 줄어들어 정해진 힘으로 조인다.",
+          "en": "Tightening a large bolt to an exact load is hard. Heating the bolt so it stretches, running the nut down and letting it cool sets the load as it shrinks."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "전선 이음부를 테이프로 감으면 쉽게 풀리고 고르지 않다. 헐거운 튜브를 끼운 뒤 데우면 줄어들어 이음부를 꽉 감싼다.",
+          "en": "Taping a wire joint is loose and uneven. A loose sleeve slipped over the joint shrinks tight around it when heated."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 2,
+          "ko": "유리병의 금속 뚜껑이 꽉 끼어 열리지 않는다. 뚜껑에만 뜨거운 물을 부으면 금속이 유리보다 더 늘어나 쉽게 열린다.",
+          "en": "A metal lid stuck on a glass jar will not turn. Hot water poured over the lid expands the metal more than the glass, and it opens."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 1,
+          "ko": "두꺼운 유리를 원하는 선을 따라 자르기 어렵다. 선을 따라 데웠다가 급히 식히면 수축하는 힘으로 그 선을 따라 갈라진다.",
+          "en": "Thick glass is hard to cut along a chosen line. Heating along the line and cooling it quickly makes it split there under the contraction stress."
+        }
+      ]
     },
     {
       "id": 38,
@@ -1780,7 +2092,33 @@
           "Oxygen therapy in a hospital",
           "Ozone sterilisation"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "medical",
+          "sub_principle": 3,
+          "ko": "열로 소독하면 녹거나 망가지는 수술 도구가 있다. 활성화한 산소를 쓰는 저온 소독으로 도구를 상하지 않게 한다.",
+          "en": "Some surgical instruments melt or degrade under heat sterilization. Low-temperature sterilization with activated oxygen species spares them."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 1,
+          "ko": "노에 일반 공기를 불어 넣으면 쓸모없는 질소까지 데우느라 연료가 많이 든다. 산소를 늘린 공기를 불어 넣으면 적은 연료로 온도를 올린다.",
+          "en": "Blowing ordinary air into a furnace wastes fuel heating useless nitrogen. Oxygen-enriched air reaches the temperature with less fuel."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 3,
+          "ko": "반도체 표면의 유기물 찌꺼기를 용액으로 씻으면 폐액이 나온다. 자외선으로 만든 활성 산소로 찌꺼기를 태워 없앤다.",
+          "en": "Washing organic residue off semiconductor surfaces with solvents creates liquid waste. Active oxygen produced by ultraviolet light burns the residue off instead."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 2,
+          "ko": "물고기를 많이 기르는 양식장은 물속 산소가 모자라기 쉽다. 공기 대신 순수 산소를 물에 녹여 넣으면 적은 설비로 산소를 채운다.",
+          "en": "Densely stocked fish farms run short of dissolved oxygen. Dissolving pure oxygen instead of air tops it up with less equipment."
+        }
+      ]
     },
     {
       "id": 39,
@@ -1809,7 +2147,33 @@
           "Nitrogen-flushed food packaging",
           "A vacuum inside an incandescent bulb"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "납땜할 때 뜨거운 금속 표면이 공기와 만나 산화돼 잘 붙지 않는다. 질소를 채운 환경에서 납땜하면 산화가 줄어든다.",
+          "en": "Hot metal surfaces oxidize in air during soldering and wet poorly. Soldering in a nitrogen atmosphere cuts the oxidation."
+        },
+        {
+          "domain": "materials",
+          "sub_principle": 2,
+          "ko": "금속을 녹일 때 공기 중 기체와 반응해 불순물이 생긴다. 진공 속에서 녹이면 순도 높은 금속을 얻는다.",
+          "en": "Melting metal in air lets it react with gases and pick up impurities. Melting it in a vacuum gives a purer metal."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "병에 든 주사약이 병 속 공기와 반응해 변한다. 병 속 공기를 질소로 바꿔 채워 보관한다.",
+          "en": "An injectable drug reacts with the air in its vial and degrades. The air in the vial is replaced with nitrogen for storage."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 2,
+          "ko": "커피 원두의 향이 공기와 만나 빨리 날아간다. 포장 속 공기를 빼 진공으로 두면 향이 오래 남는다.",
+          "en": "Coffee beans lose their aroma quickly in air. Removing the air from the pack keeps the aroma longer."
+        }
+      ]
     },
     {
       "id": 40,
@@ -1836,7 +2200,33 @@
           "Reinforced concrete",
           "Plywood made of glued layers"
         ]
-      }
+      },
+      "cases": [
+        {
+          "domain": "mechanical",
+          "sub_principle": 1,
+          "ko": "금속 브레이크 원판은 뜨거워지면 제동력이 떨어지고 무겁다. 탄소 섬유와 세라믹을 합친 원판은 고온에서도 버티고 가볍다.",
+          "en": "Metal brake discs lose grip when hot and are heavy. Discs of carbon fibre combined with ceramic hold up at high temperature and weigh less."
+        },
+        {
+          "domain": "medical",
+          "sub_principle": 1,
+          "ko": "금속 인공 관절은 뼈보다 훨씬 단단해 하중을 대신 받는 바람에 주변 뼈가 약해진다. 뼈와 굳기가 비슷한 섬유 강화 복합재를 쓴다.",
+          "en": "A metal implant is so much stiffer than bone that it takes the load and the surrounding bone weakens. A fibre-reinforced composite with bone-like stiffness is used instead."
+        },
+        {
+          "domain": "electronics",
+          "sub_principle": 1,
+          "ko": "금속 기판은 열을 잘 빼지만 전기가 통해 회로를 올릴 수 없다. 금속판 위에 얇은 절연층을 입힌 기판을 쓰면 둘 다 된다.",
+          "en": "A metal board sheds heat well but conducts electricity, so circuits cannot sit on it. A metal plate with a thin insulating layer on top does both."
+        },
+        {
+          "domain": "everyday",
+          "sub_principle": 1,
+          "ko": "종이 우유팩은 물기에 약하고 빛과 공기를 막지 못한다. 종이에 얇은 플라스틱과 알루미늄 층을 겹친 재료로 만든다.",
+          "en": "Plain paper cartons go soggy and let in light and air. Cartons made of paper laminated with thin plastic and aluminium layers keep them out."
+        }
+      ]
     }
   ]
 }

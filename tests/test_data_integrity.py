@@ -88,6 +88,17 @@ def test_principles_complete(principles):
         assert p["examples"]["ko"]
 
 
+def test_every_principle_has_four_cases_from_distinct_domains(principles):
+    domains = {"mechanical", "electronics", "software", "materials", "medical", "everyday"}
+    for p in principles["principles"]:
+        cases = p.get("cases", [])
+        assert len(cases) == 4, p["id"]
+        assert len({c["domain"] for c in cases}) == 4 and {c["domain"] for c in cases} <= domains, p["id"]
+        for c in cases:
+            assert 1 <= c["sub_principle"] <= len(p["sub_principles"]["ko"]), p["id"]
+            assert c["ko"].strip() and c["en"].strip() and "#" not in c["ko"] + c["en"], p["id"]
+
+
 def test_separations_reference_valid_principles(separations):
     ids = [s["id"] for s in separations["separations"]]
     assert ids == ["space", "time", "condition", "direction", "system"]
