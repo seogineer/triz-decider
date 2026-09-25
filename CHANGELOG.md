@@ -1,6 +1,7 @@
 # Changelog
 
-## Unreleased
+## 0.3.1 — 2026-09-25
+- Skill: the case-usage rule moved to its own section (1.2) so both the technical and physical flows point to it; a stale chapter reference in `physical-contradiction.md` fixed. Rule text unchanged.
 - Data: 17 fixes to the industry cases after an AI review (two Claude passes over all 160). Two were factual problems (glass cutting on thick glass, the size of the distortion drop with feedback), eight were overstated or over-general claims (vaccine wording, prone positioning limited to severe lung injury, needle bevel, bus ramp and others), one case now cites the right sub-principle, two were wording, four were American spellings. Review is by AI only: same model family, no native speaker or domain expert. A second pass with a different model is pending.
 
 ## 0.3.0 — 2026-09-25
