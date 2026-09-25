@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "source": "Principle numbers and names cross-checked against independent public lists; sub-principle and example text written for this project (see DATA_SOURCES.md)",
   "principles": [
     {
@@ -2046,8 +2046,8 @@
         {
           "domain": "electronics",
           "sub_principle": 1,
-          "ko": "전선 이음부를 테이프로 감으면 쉽게 풀리고 고르지 않다. 헐거운 튜브를 끼운 뒤 데우면 줄어들어 이음부를 꽉 감싼다.",
-          "en": "Taping a wire joint is loose and uneven. A loose sleeve slipped over the joint shrinks tight around it when heated."
+          "ko": "아주 작은 부품을 움직이려면 모터를 넣을 자리가 없다. 가는 실리콘 팔에 전류를 흘려 데우면 늘어나는 길이만큼 부품을 밀어 움직인다.",
+          "en": "There is no room for a motor to move a microscopic part. Passing current through a thin silicon arm heats it, and its expansion pushes the part along."
         },
         {
           "domain": "everyday",

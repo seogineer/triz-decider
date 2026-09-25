@@ -144,7 +144,7 @@ flowchart TD
 | --- | --- | --- |
 | `parameters.json` | 39개 공학 파라미터 ID·명칭(ko/en)·정의·매핑 키워드 | \~15 KB |
 | `contradiction-matrix.json` | 개선×악화 셀별 원리 ID 목록 | \~30 KB |
-| `inventive-principles.json` | 40원리 ID·명칭·하위 원리·일반 예시 | \~40 KB |
+| `inventive-principles.json` | 40원리 ID·명칭·하위 원리·일반 예시·산업 사례(`cases`, v0.3) | \~110 KB |
 | `separation-principles.json` | 분리 원리 4종과 연계 발명 원리 | \~5 KB |
 
 ### 5.1 parameters.json

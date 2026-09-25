@@ -8,7 +8,7 @@
 | --- | --- |
 | `contradiction-matrix.json` | **3개 독립 계열 표결로 교차 검증 완료** (1248셀 확정, 보류 0셀). 아래 2장 |
 | `parameters.json` | 번호·명칭은 독립 자료와 대조 완료, 정의·키워드는 직접 작성 |
-| `inventive-principles.json` | 번호·명칭은 대조 완료, 본문은 직접 재작성 (3장) |
+| `inventive-principles.json` | 번호·명칭은 대조 완료, 본문과 산업 사례 160건은 직접 작성 (3장) |
 | `separation-principles.json` | 분리 유형·연계 원리는 MATRIZ 지식베이스 채택(전사본을 원문과 대조해 일치 확인). 질문·예시는 직접 작성 (5장) |
 
 ## 2. contradiction-matrix.json
