@@ -6,7 +6,7 @@ A Claude Code plugin that helps you resolve engineering and product trade-offs w
 
 No server, database or API key. Claude does the reasoning; a small standard-library Python script does every lookup, so matrix cells, separation types and principle numbers are never recalled from memory.
 
-> **Status: v0.2 (pre-release).** Technical and physical contradictions, a guided interview for vague inputs, and Markdown reports. See [Data status](#data-status) before relying on results.
+> **Status: v0.3 (pre-release).** Technical and physical contradictions, a guided interview for vague inputs, Markdown reports, and 160 industry cases (four per principle) used as analogies. See [Data status](#data-status) before relying on results.
 
 ## Install
 
@@ -34,7 +34,7 @@ You can also just describe the problem in plain language (English or Korean); th
 2. Map X and Y to the 39 engineering parameters (1–3 candidates each, with reasons)
 3. Look up every candidate pair in the matrix (`lookup.py matrix`)
 4. Rank principles by how often they appear
-5. Fetch each principle's definition (`lookup.py principle`)
+5. Fetch each principle's definition and four industry cases (`lookup.py principle --cases`)
 6. Write ideas tailored to your system, one to three per principle
 
 **Physical contradiction** ("X must be P for one reason and not-P for another"):
@@ -45,6 +45,41 @@ You can also just describe the problem in plain language (English or Korean); th
 4. Look up their related principles (`lookup.py separation`) and write ideas that implement the separation
 
 **Vague input, or a text that only describes a solution** (such as a patent abstract): the skill asks up to five questions, one at a time, to find the contradiction instead of guessing it. On an independent patent benchmark, guessing did no better than chance; see Data status.
+
+## Example
+
+A trimmed real run (v0.3.0, model `claude-opus-5-5`, contradiction confirmed up front). Only the first of the five principles' ideas is shown.
+
+```
+/triz Raising the top speed of my e-scooter drains the battery too fast.
+```
+
+> **Parameter mapping**
+>
+> | Role | Parameter | Why |
+> | --- | --- | --- |
+> | Improving | #9 Speed | The goal is a higher top speed. |
+> | Worsening | #19 Use of energy (moving object) | Battery power draw of the moving scooter goes up. |
+> | Worsening | #22 Loss of energy | At high speed, air drag and heat losses grow. |
+> | Worsening | #15 Duration of action (moving) | Shorter range and runtime per charge. |
+>
+> **Recommended principles (matrix lookup)**: cells 9×19 → 8, 15, 35, 38 · 9×22 → 14, 20, 19, 35 · 9×15 → 3, 19, 35, 5
+>
+> | Rank | Principle | Count |
+> | --- | --- | --- |
+> | 1 | #35 Parameter Changes | 3 |
+> | 2 | #19 Periodic Action | 2 |
+> | 3 | #8 Anti-Weight (Counterweight) | 1 |
+> | 4 | #14 Spheroidality (Curvature) | 1 |
+> | 5 | #3 Local Quality | 1 |
+>
+> **#35 Parameter Changes**
+> - *Manage motor and battery temperature (sub-principle 4).* Copper loss rises with winding temperature, and a cold or hot battery has higher internal resistance. Add a thermal path from the hub motor to the deck and warm the pack before winter rides.
+> - *Make suspension and tyres adjustable by speed (sub-principle 3).* Firm them up in a high-speed mode to cut rolling losses, soften them for rough roads. Same idea as a robot finger whose stiffness is set by air pressure (case: mechanical).
+>
+> **Next steps**: log Wh/km at 25, 30 and 35 km/h. If consumption grows roughly with the square of speed, air drag dominates and #8/#14 come first; if motor or controller temperature climbs, #35/#19 come first. Check the local speed limit.
+
+Every number in the tables comes from `lookup.py` output in that run. The "case" is one of the industry cases the script returns for a principle (`principle --cases`); the answer uses it as an analogy, not as the idea itself.
 
 ## How it works
 
@@ -82,7 +117,7 @@ The 40 principles are a checklist for generating ideas, not a guarantee. If the 
 | Data | Status |
 | --- | --- |
 | Contradiction matrix | all 1248 cells settled by a 2-of-3 vote of three independently transcribed sources (an English transcription family, the MATRIZ Knowledge Base, a Russian-language table). Nothing is withheld now; the `unverified_cell` warning remains for any future dispute. Not compared with a printed original (no printed copy was available). |
-| 39 parameters, 40 principles | Numbers and names cross-checked; definitions, sub-principles and examples written for this project |
+| 39 parameters, 40 principles | Numbers and names cross-checked; definitions, sub-principles and examples written for this project. 160 industry cases (four per principle, six domains) written for this project as analogies, with no company or product names; not yet reviewed by a native speaker or a domain expert |
 | Separation principles | Five types and their related principles follow the MATRIZ TRIZ Knowledge Base (CC BY 4.0), taken from a published transcription and checked against the MATRIZ wiki page (all five lists match). Questions and examples written for this project. Literature disagrees on these lists, so treat them as one reputable reading, not the only one |
 | Mapping accuracy | 32 blind-run cases: Top-3 hit rate 96-100% across runs (91/93 overall after the expected values were revised), 0 hallucinated principle numbers, and 9/9 disclosures when a withheld cell was hit. Small set with author-written expected values and some run-to-run variation, so treat it as a smoke test. **On an independent patent benchmark (TRIZBench) the plugin scored Hit@3 = 10% on the first 30 patents and 13% on 75 held-out patents, about the level of always guessing the three most common answers (9-16%)**: it works best when you state the trade-off yourself, not when the input only describes a solution (see `tests/eval/results-v0.1.md`). The technical cases still hit 30/32 after the v0.2 changes |
 | Physical contradictions | 10 blind-run cases: the separation type looked up matched the expected one in 9/10 (command) and 8/10 (plain language) runs, 10/10 counting the type the answer states; 0 hallucinated principles. Author-written cases with clearly stated demands, so treat it as a smoke test (`tests/eval/results-v0.2.md`) |
