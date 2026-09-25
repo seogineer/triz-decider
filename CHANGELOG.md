@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- Data: 17 fixes to the industry cases after an AI review (two Claude passes over all 160). Two were factual problems (glass cutting on thick glass, the size of the distortion drop with feedback), eight were overstated or over-general claims (vaccine wording, prone positioning limited to severe lung injury, needle bevel, bus ramp and others), one case now cites the right sub-principle, two were wording, four were American spellings. Review is by AI only: same model family, no native speaker or domain expert. A second pass with a different model is pending.
+
 ## 0.3.0 — 2026-09-25
 - **Industry cases.** Every principle now has four cases from different domains (mechanical, electronics, software/IT, chemistry/materials, medical/bio, everyday life/services), 160 in total. Each is a trade-off resolved by one named sub-principle, written for this project, with no company or product names. `lookup.py principle --cases` returns them with a localized `domain_name`; the default output is unchanged. `validate` checks four per principle, distinct domains, a valid sub-principle, both languages and no principle numbers in the text.
 - The skill fetches cases when it looks up principles and uses them only as labelled analogies, never as the user's idea. In smoke runs (e-scooter in English and Korean, umbrella) the answers cited cases as analogies and did not copy them. Nothing measures idea quality, so this release claims no metric improvement.

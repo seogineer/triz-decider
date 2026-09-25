@@ -215,8 +215,8 @@
         {
           "domain": "medical",
           "sub_principle": 2,
-          "ko": "주삿바늘 끝을 한 면만 비스듬히 깎으면 피부를 찢듯이 들어가 아프다. 끝을 여러 면으로 더 비대칭하게 깎으면 피부를 덜 찢고 들어가 통증이 준다.",
-          "en": "A needle tip ground on one bevel tears its way into the skin and hurts. Grinding the tip with several asymmetric bevels cuts in more cleanly and reduces pain."
+          "ko": "주삿바늘 끝을 짧고 가파르게 깎으면 피부를 뚫는 데 힘이 많이 들어 아프다. 비스듬한 면을 더 길고 완만하게 깎아 비대칭을 키우면 더 적은 힘으로 들어가 통증이 줄어든다.",
+          "en": "A needle tip ground with a short, steep bevel needs more force to enter the skin and hurts. Grinding a longer, shallower bevel, which makes the slant more asymmetric, lets it enter with less force and less pain."
         },
         {
           "domain": "everyday",
@@ -445,8 +445,8 @@
         {
           "domain": "everyday",
           "sub_principle": 1,
-          "ko": "물에 빠진 사람은 몸무게 때문에 가라앉는다. 부력이 큰 소재로 만든 조끼를 입히면 몸을 물 위로 받쳐 준다.",
-          "en": "A person in the water sinks under their own weight. A vest made of buoyant material holds them up at the surface."
+          "ko": "지치거나 의식을 잃은 사람은 물에 들어가면 가라앉기 쉽다. 부력이 큰 소재로 만든 조끼를 입히면 몸을 물 위로 받쳐 준다.",
+          "en": "A tired or unconscious person in the water tends to sink. A vest made of buoyant material holds them up at the surface."
         }
       ]
     },
@@ -483,7 +483,7 @@
           "domain": "mechanical",
           "sub_principle": 2,
           "ko": "높은 압력을 받는 두꺼운 관은 안쪽 벽부터 터진다. 만들 때 한 번 더 높은 압력을 걸어 안쪽에 압축 응력을 남겨 두면, 실제 압력이 걸릴 때 그만큼 더 버틴다.",
-          "en": "A thick tube under high pressure fails from the inner wall first. Pressurizing it once beyond its working level during manufacture leaves compressive stress inside, so it holds more in service."
+          "en": "A thick tube under high pressure fails from the inner wall first. Pressurising it once beyond its working level during manufacture leaves compressive stress inside, so it holds more in service."
         },
         {
           "domain": "electronics",
@@ -494,8 +494,8 @@
         {
           "domain": "medical",
           "sub_principle": 1,
-          "ko": "병원체에 처음 감염되면 몸이 방어할 준비가 안 돼 크게 앓는다. 약하게 만든 항원을 미리 넣어 면역을 길러 두면 실제 감염 때 빨리 막는다.",
-          "en": "A first infection catches the body unprepared. Giving a weakened antigen beforehand builds immunity so the real infection is stopped quickly."
+          "ko": "병원체에 처음 감염되면 몸이 방어할 준비가 안 돼 크게 앓는다. 약하게 만들거나 죽인 병원체, 또는 그 일부(항원)를 백신으로 미리 맞아 면역을 길러 두면 실제 감염 때 더 빨리 막는다.",
+          "en": "A first infection catches the body unprepared. A vaccine given beforehand, made from a weakened or inactivated pathogen or one of its antigens, builds immunity so the real infection is fought off faster."
         },
         {
           "domain": "everyday",
@@ -649,8 +649,8 @@
         {
           "domain": "electronics",
           "sub_principle": 1,
-          "ko": "장비마다 접지 전위가 조금씩 다르면 그 차이로 잡음 전류가 흐른다. 모든 장비를 한 점에 묶어 같은 전위로 맞추면 잡음이 사라진다.",
-          "en": "Small differences in ground potential between devices drive noise currents. Bonding all devices to one point puts them at the same potential and the noise goes."
+          "ko": "장비마다 접지 전위가 조금씩 다르면 그 차이로 잡음 전류가 흐른다. 모든 장비를 한 점에 묶어 같은 전위로 맞추면 잡음이 크게 줄어든다.",
+          "en": "Small differences in ground potential between devices drive noise currents. Bonding all devices to one point puts them at the same potential and the noise drops sharply."
         },
         {
           "domain": "medical",
@@ -661,8 +661,8 @@
         {
           "domain": "everyday",
           "sub_principle": 1,
-          "ko": "휠체어나 유모차는 버스 계단을 오르기 어렵다. 차체 바닥을 정류장 턱 높이까지 낮춘 버스면 그대로 굴러 들어간다.",
-          "en": "Wheelchairs and pushchairs struggle with bus steps. A bus whose floor sits at kerb height lets them roll straight in."
+          "ko": "휠체어나 유모차는 버스 계단을 오르기 어렵다. 바닥이 정류장 턱 높이에 가깝게 낮은 버스는 짧은 경사판만으로 들어갈 수 있다.",
+          "en": "Wheelchairs and pushchairs struggle with bus steps. A bus whose floor sits close to kerb height needs only a short ramp for them to roll in."
         }
       ]
     },
@@ -711,7 +711,7 @@
         },
         {
           "domain": "materials",
-          "sub_principle": 3,
+          "sub_principle": 1,
           "ko": "쇳물을 거푸집 위에서 부으면 거품과 찌꺼기가 함께 섞여 들어간다. 거푸집 아래쪽에서 쇳물을 밀어 올려 채우면 찌꺼기가 위로 떠 빠진다.",
           "en": "Pouring molten metal in from the top of a mould drags in bubbles and dross. Filling the mould from the bottom upward lets the dross float to the top."
         },
@@ -932,8 +932,8 @@
         {
           "domain": "medical",
           "sub_principle": 2,
-          "ko": "등을 대고 누운 환자는 폐의 일부에 공기가 잘 들어가지 않는다. 환자를 엎드린 자세로 돌려 눕히면 공기가 폐 전체로 더 고르게 퍼진다.",
-          "en": "In a patient lying on their back, part of the lungs gets little air. Turning the patient face down spreads the air more evenly through the lungs."
+          "ko": "급성 호흡곤란 증후군처럼 폐가 크게 상한 환자는 등을 대고 누우면 폐 뒤쪽에 공기가 잘 들어가지 않는다. 환자를 엎드린 자세로 돌려 눕히면 공기가 폐 전체로 더 고르게 퍼진다.",
+          "en": "In a patient with severe lung injury lying on their back, the rear part of the lungs gets little air. Turning the patient face down spreads the air more evenly through the lungs."
         },
         {
           "domain": "mechanical",
@@ -985,8 +985,8 @@
         {
           "domain": "medical",
           "sub_principle": 2,
-          "ko": "치석을 긁어내면 잇몸과 치아 표면이 상한다. 초음파로 떠는 끝을 대면 치석만 부서져 떨어진다.",
-          "en": "Scraping off tartar damages gums and enamel. A tip vibrating at ultrasonic frequency breaks the tartar away on its own."
+          "ko": "치석을 긁어내면 잇몸과 치아 표면이 상하기 쉽다. 초음파로 떠는 끝을 대면 치석이 잘게 부서져 더 약한 힘으로 떨어진다.",
+          "en": "Scraping off tartar can damage gums and enamel. A tip vibrating at ultrasonic frequency breaks the tartar into fragments with much less force."
         },
         {
           "domain": "mechanical",
@@ -1054,8 +1054,8 @@
         {
           "domain": "medical",
           "sub_principle": 1,
-          "ko": "오래 누워 있는 환자는 다리 혈관에 피가 고여 굳기 쉽다. 다리에 감은 공기 주머니가 주기적으로 부풀었다 빠지며 눌러 주면 피가 흐른다.",
-          "en": "Blood pools and clots in the legs of patients who lie still for long. Cuffs that inflate and deflate in cycles squeeze the legs and keep blood moving."
+          "ko": "오래 누워 있는 환자는 다리 혈관에 피가 고여 굳을 위험이 있다. 다리에 감은 공기 주머니가 주기적으로 부풀었다 빠지며 눌러 주면 피가 잘 흐른다.",
+          "en": "Patients who lie still for long are at risk of blood pooling and clotting in the leg veins. Cuffs that inflate and deflate in cycles squeeze the legs and keep blood moving."
         },
         {
           "domain": "electronics",
@@ -1222,7 +1222,7 @@
           "domain": "materials",
           "sub_principle": 2,
           "ko": "산성 폐수와 알칼리성 폐수를 따로 처리하면 중화 약품이 많이 든다. 둘을 섞어 서로 중화시키면 약품이 크게 준다.",
-          "en": "Treating acidic and alkaline waste water separately takes a lot of neutralizing chemicals. Mixing the two so they neutralize each other cuts the chemicals sharply."
+          "en": "Treating acidic and alkaline waste water separately takes a lot of neutralising chemicals. Mixing the two so they neutralise each other cuts the chemicals sharply."
         },
         {
           "domain": "medical",
@@ -1282,8 +1282,8 @@
         {
           "domain": "electronics",
           "sub_principle": 2,
-          "ko": "증폭기의 증폭률을 크게 하면 왜곡도 커진다. 출력의 일부를 반대 방향으로 되돌려 넣는 양을 늘리면 증폭률은 조금 줄지만 왜곡이 크게 준다.",
-          "en": "Raising an amplifier's gain raises its distortion too. Feeding back more of the output in opposite phase gives up some gain but cuts distortion sharply."
+          "ko": "증폭기는 증폭률을 크게 잡으면 왜곡도 커진다. 출력의 일부를 반대 위상으로 되돌려 넣는 양을 늘리면 남아도는 증폭률을 내주는 대신 왜곡이 줄고 특성이 안정된다.",
+          "en": "A high-gain amplifier also distorts more. Feeding back a larger share of the output in opposite phase trades surplus gain for lower, more stable distortion."
         }
       ]
     },
@@ -1485,7 +1485,7 @@
           "domain": "medical",
           "sub_principle": 1,
           "ko": "체온계 끝을 환자마다 소독하면 시간이 들고 감염 위험이 남는다. 한 번 쓰고 버리는 얇은 덮개를 씌워 잰다.",
-          "en": "Disinfecting a thermometer tip between patients takes time and still leaves a risk. A thin single-use cover goes over the tip for each reading."
+          "en": "Disinfecting a thermometre tip between patients takes time and still leaves a risk. A thin single-use cover goes over the tip for each reading."
         },
         {
           "domain": "mechanical",
@@ -1652,7 +1652,7 @@
           "domain": "medical",
           "sub_principle": 2,
           "ko": "상처를 거즈로 덮으면 물을 막기 어렵고 상처를 볼 수 없다. 투명하고 얇은 필름으로 덮으면 물과 세균은 막고 상처는 들여다보인다.",
-          "en": "Gauze over a wound keeps out little water and hides the wound. A thin transparent film blocks water and germs while the wound stays visible."
+          "en": "Gauze over a wound does little to keep water out and hides the wound. A thin transparent film blocks water and germs while the wound stays visible."
         },
         {
           "domain": "mechanical",
@@ -1891,8 +1891,8 @@
         {
           "domain": "materials",
           "sub_principle": 1,
-          "ko": "속이 복잡한 주물은 틀을 빼내기 어렵다. 속 모양을 모래나 왁스로 만들어 두고 주조가 끝나면 부수거나 녹여 없앤다.",
-          "en": "A casting with a complex interior leaves no way to pull the core out. The core is made of sand or wax and broken out or melted away after casting."
+          "ko": "속이 복잡한 주물은 속 틀(코어)을 빼내기 어렵다. 속 모양을 모래나 왁스로 만들어 두고 주조가 끝나면 부수거나 녹여 없앤다.",
+          "en": "A casting with a complex interior makes the core hard to pull out. The core is made of sand or wax and broken out or melted away after casting."
         }
       ]
     },
@@ -1998,7 +1998,7 @@
           "domain": "everyday",
           "sub_principle": 1,
           "ko": "주머니 손난로는 불을 쓰면 위험하다. 과포화 용액 속 금속판을 딸깍 눌러 결정이 생기게 하면 굳으면서 열을 낸다.",
-          "en": "Pocket warmers that burn fuel are risky. Clicking a metal disc in a supersaturated solution starts crystallization, which gives off heat as it sets."
+          "en": "Pocket warmers that burn fuel are risky. Clicking a metal disc in a supersaturated solution starts crystallisation, which gives off heat as it sets."
         },
         {
           "domain": "materials",
@@ -2058,8 +2058,8 @@
         {
           "domain": "materials",
           "sub_principle": 1,
-          "ko": "두꺼운 유리를 원하는 선을 따라 자르기 어렵다. 선을 따라 데웠다가 급히 식히면 수축하는 힘으로 그 선을 따라 갈라진다.",
-          "en": "Thick glass is hard to cut along a chosen line. Heating along the line and cooling it quickly makes it split there under the contraction stress."
+          "ko": "얇은 유리를 원하는 선을 따라 깔끔하게 자르기 어렵다. 선을 따라 좁게 가열하고 바로 뒤를 냉각하면 생기는 인장 응력으로 그 선을 따라 갈라진다.",
+          "en": "Thin glass is hard to cut cleanly along a chosen line. Heating a narrow line and cooling right behind it creates tensile stress that splits the glass along that line."
         }
       ]
     },
@@ -2098,7 +2098,7 @@
           "domain": "medical",
           "sub_principle": 3,
           "ko": "열로 소독하면 녹거나 망가지는 수술 도구가 있다. 활성화한 산소를 쓰는 저온 소독으로 도구를 상하지 않게 한다.",
-          "en": "Some surgical instruments melt or degrade under heat sterilization. Low-temperature sterilization with activated oxygen species spares them."
+          "en": "Some surgical instruments melt or degrade under heat sterilisation. Low-temperature sterilisation with activated oxygen species spares them."
         },
         {
           "domain": "materials",
@@ -2153,7 +2153,7 @@
           "domain": "electronics",
           "sub_principle": 1,
           "ko": "납땜할 때 뜨거운 금속 표면이 공기와 만나 산화돼 잘 붙지 않는다. 질소를 채운 환경에서 납땜하면 산화가 줄어든다.",
-          "en": "Hot metal surfaces oxidize in air during soldering and wet poorly. Soldering in a nitrogen atmosphere cuts the oxidation."
+          "en": "Hot metal surfaces oxidise in air during soldering and wet poorly. Soldering in a nitrogen atmosphere cuts the oxidation."
         },
         {
           "domain": "materials",
