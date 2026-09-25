@@ -1,6 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.3.0 — 2026-09-25
+- **Industry cases.** Every principle now has four cases from different domains (mechanical, electronics, software/IT, chemistry/materials, medical/bio, everyday life/services), 160 in total. Each is a trade-off resolved by one named sub-principle, written for this project, with no company or product names. `lookup.py principle --cases` returns them with a localized `domain_name`; the default output is unchanged. `validate` checks four per principle, distinct domains, a valid sub-principle, both languages and no principle numbers in the text.
+- The skill fetches cases when it looks up principles and uses them only as labelled analogies, never as the user's idea. In smoke runs (e-scooter in English and Korean, umbrella) the answers cited cases as analogies and did not copy them. Nothing measures idea quality, so this release claims no metric improvement.
+- README (en/ko): a trimmed real-run example and the v0.3 status.
+- The blind-run evaluations (32 technical, 10 physical cases) were not rerun for this release; the figures in README are v0.2 measurements. Cases enter only after parameter mapping and carry no principle numbers.
+- Data: `inventive-principles.json` version 0.3.0 (schema gained `cases`).
 - Data: the five separation lists were checked against the MATRIZ wiki page "Algorithm of resolving physical contradictions"; all match the data in number and order. No data values changed.
 - Physical flow: with one separation type, the skill may reuse the full `separation` lookup from step 2 and must say so; answers name only commands that were actually run.
 - Eval: the scorer now reads lookup JSON inside chained command output (e.g. `cat guide.md && lookup.py separation`). Before, such runs had every cited principle counted as a hallucination.
